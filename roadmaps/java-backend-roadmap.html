@@ -4636,7 +4636,10 @@
               <button class="auth-btn" id="logout-btn" style="width: 100%; justify-content: center;">Logout</button>
             </div>
           `;
-          document.getElementById("logout-btn").onclick = () => logout();
+          document.getElementById("logout-btn").onclick = () => {
+            sessionStorage.removeItem("synced");
+            logout();
+          };
         } else {
           authContainer.innerHTML = `<button class="auth-btn" id="login-trigger-new" style="width: 100%; justify-content: center;">Login to Sync</button>`;
           const btn = document.getElementById("login-trigger-new");
@@ -4679,7 +4682,11 @@
         updateAuthUI(user);
         if (user) {
           const synced = await syncLocalStorageWithFirestore(user.uid);
-          if (synced) location.reload();
+
+          if (synced && !sessionStorage.getItem("synced")) {
+            sessionStorage.setItem("synced", "true");
+            location.reload();
+          }
 
           window.onRoadmapStateChange = (key, data) => {
             const update = {};
