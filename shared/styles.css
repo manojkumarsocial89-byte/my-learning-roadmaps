@@ -1532,3 +1532,43 @@ body {
   text-align: center;
   display: none;
 }
+
+/* ── Page Loader ── */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.page-loader.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.page-loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: var(--a1, #7c6fff);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.page-loader-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "DM Sans", sans-serif;
+  letter-spacing: 0.03em;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

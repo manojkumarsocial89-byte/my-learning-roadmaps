@@ -1,48 +1,51 @@
 /**
  * shared/roadmap.js
- * Common logic for all roadmap pages.
- * Each page calls initRoadmap({ storageKey, themeKey, phaseIds }) on DOMContentLoaded.
+ * Core roadmap logic. auth-ui.js handles theme Firestore sync.
+ * initRoadmap({ storageKey, phaseIds })  ← themeKey removed
  */
-
 (function () {
-  // ── THEME ──────────────────────────────────────────────
-  window.setTheme = function (t, themeKey) {
+  const THEME_KEY = "hub-theme";
+
+  /* ── Theme (minimal; auth-ui.js overrides window.setTheme with full version) ── */
+  window.setTheme = function (t) {
     document.documentElement.setAttribute("data-theme", t);
-    const btnDark = document.getElementById("btn-dark");
-    const btnLight = document.getElementById("btn-light");
-    if (btnDark) btnDark.classList.toggle("active", t === "dark");
-    if (btnLight) btnLight.classList.toggle("active", t === "light");
+    document
+      .getElementById("btn-dark")
+      ?.classList.toggle("active", t === "dark");
+    document
+      .getElementById("btn-light")
+      ?.classList.toggle("active", t === "light");
     try {
-      localStorage.setItem(themeKey, t);
-      if (window.onRoadmapStateChange) {
-        window.onRoadmapStateChange(themeKey, t);
-      }
+      localStorage.setItem(THEME_KEY, t);
     } catch (e) {}
+    // auth-ui.js wires window.onRoadmapStateChange to persist theme to Firestore
+    if (window.onRoadmapStateChange) {
+      window.onRoadmapStateChange(THEME_KEY, t);
+    }
   };
 
-  // ── TOPIC EXPAND/COLLAPSE ───────────────────────────────
+  /* ── Topic expand / collapse ── */
   window.toggleTopic = function (id) {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle("open");
+    document.getElementById(id)?.classList.toggle("open");
   };
 
-  // ── MARK DONE ──────────────────────────────────────────
+  /* ── Mark topic done ── */
   window.markDone = function (e, id) {
     e.stopPropagation();
     const el = document.getElementById(id);
     if (!el) return;
-    const isDone = el.classList.toggle("done-topic");
+    const done = el.classList.toggle("done-topic");
     const check = el.querySelector(".topic-check");
-    if (check) check.textContent = isDone ? "✓" : "";
+    if (check) check.textContent = done ? "✓" : "";
     window._roadmapSave();
     window._roadmapUpdateProgress();
   };
 
-  // ── SKIP PHASE ─────────────────────────────────────────
+  /* ── Skip phase ── */
   window.skipPhase = function (containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    container.querySelectorAll(".topic").forEach((t) => {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    el.querySelectorAll(".topic").forEach((t) => {
       t.classList.add("done-topic");
       const c = t.querySelector(".topic-check");
       if (c) c.textContent = "✓";
@@ -51,7 +54,7 @@
     window._roadmapUpdateProgress();
   };
 
-  // ── MOBILE SIDEBAR ─────────────────────────────────────
+  /* ── Mobile sidebar ── */
   function initMobileSidebar() {
     const btn = document.querySelector(".mobile-menu-btn");
     const sidebar = document.querySelector(".sidebar");
@@ -60,28 +63,27 @@
 
     btn.addEventListener("click", () => {
       sidebar.classList.toggle("open");
-      if (overlay) overlay.classList.toggle("open");
+      overlay?.classList.toggle("open");
     });
-    if (overlay) {
-      overlay.addEventListener("click", () => {
-        sidebar.classList.remove("open");
-        overlay.classList.remove("open");
-      });
-    }
-    // Close sidebar on nav link click (mobile)
+    overlay?.addEventListener("click", () => {
+      sidebar.classList.remove("open");
+      overlay.classList.remove("open");
+    });
     sidebar.querySelectorAll(".nav-link").forEach((link) => {
       link.addEventListener("click", () => {
         if (window.innerWidth <= 820) {
           sidebar.classList.remove("open");
-          if (overlay) overlay.classList.remove("open");
+          overlay?.classList.remove("open");
         }
       });
     });
   }
 
-  // ── INIT ───────────────────────────────────────────────
-  window.initRoadmap = function ({ storageKey, themeKey, phaseIds }) {
-    // ── Save / Load ──
+  /* ══════════════════════════════════════
+     MAIN INIT  — called by each roadmap page
+  ══════════════════════════════════════ */
+  window.initRoadmap = function ({ storageKey, phaseIds }) {
+    /* Save state to localStorage (+ Firestore via hook if logged in) */
     window._roadmapSave = function () {
       const state = {};
       document.querySelectorAll(".topic").forEach((t) => {
@@ -95,6 +97,7 @@
       } catch (e) {}
     };
 
+    /* Load state from localStorage */
     function loadState() {
       try {
         const state = JSON.parse(localStorage.getItem(storageKey) || "{}");
@@ -110,20 +113,24 @@
       } catch (e) {}
     }
 
-    // ── Progress ──
+    /* Update sidebar nav checkmarks */
     function updateNavDone() {
-      const navLinks = document.querySelectorAll(".nav-link");
+      const links = document.querySelectorAll(".nav-link");
       phaseIds.forEach((id, i) => {
-        const phaseEl = document.getElementById(id);
-        if (!phaseEl) return;
-        const all = phaseEl.querySelectorAll(".topic");
-        const done = phaseEl.querySelectorAll(".topic.done-topic");
-        if (navLinks[i] && all.length > 0 && all.length === done.length)
-          navLinks[i].classList.add("section-done");
-        else if (navLinks[i]) navLinks[i].classList.remove("section-done");
+        const phase = document.getElementById(id);
+        if (!phase) return;
+        const all = phase.querySelectorAll(".topic");
+        const done = phase.querySelectorAll(".topic.done-topic");
+        if (links[i]) {
+          links[i].classList.toggle(
+            "section-done",
+            all.length > 0 && all.length === done.length,
+          );
+        }
       });
     }
 
+    /* Update progress bar */
     window._roadmapUpdateProgress = function () {
       const all = document.querySelectorAll(".topic");
       const done = document.querySelectorAll(".topic.done-topic");
@@ -134,25 +141,25 @@
       if (pctEl) pctEl.textContent = pct + "%";
       if (fillEl) fillEl.style.width = pct + "%";
       if (countEl)
-        countEl.textContent = done.length + " / " + all.length + " topics done";
+        countEl.textContent = `${done.length} / ${all.length} topics done`;
       updateNavDone();
     };
 
-    // ── Theme init ──
+    /* Apply saved theme */
     try {
-      const saved = localStorage.getItem(themeKey);
-      if (saved) setTheme(saved, themeKey);
+      const saved = localStorage.getItem(THEME_KEY);
+      if (saved) window.setTheme(saved);
     } catch (e) {}
 
-    // ── Intersection observer for nav highlight ──
+    /* Nav highlight on scroll */
     const phases = document.querySelectorAll(".phase");
-    const navLinks = document.querySelectorAll(".nav-link");
+    const links = document.querySelectorAll(".nav-link");
     const obs = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const id = e.target.id;
-            navLinks.forEach((l) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((l) =>
               l.classList.toggle("active", l.getAttribute("href") === "#" + id),
             );
           }
@@ -162,10 +169,7 @@
     );
     phases.forEach((p) => obs.observe(p));
 
-    // ── Mobile sidebar ──
     initMobileSidebar();
-
-    // ── Boot ──
     loadState();
     window._roadmapUpdateProgress();
   };
