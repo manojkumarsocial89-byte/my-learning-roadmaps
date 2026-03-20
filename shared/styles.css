@@ -1446,7 +1446,7 @@ body {
   max-width: 400px;
   padding: 32px;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 .modal-close {
   position: absolute;

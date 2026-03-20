@@ -55,12 +55,22 @@
             onclick="setTheme('dark', 'jbr-theme')">
             🌙 Dark
           </button>
-          <button class="theme-btn" id="btn-light" onclick="setTheme('light', 'jbr-theme')">
+          <button
+            class="theme-btn"
+            id="btn-light"
+            onclick="setTheme('light', 'jbr-theme')">
             ☀️ Light
           </button>
         </div>
-        <div id="auth-sidebar-container" style="padding: 10px 18px; border-bottom: 1px solid var(--border);">
-           <button class="auth-btn" id="login-trigger" style="width: 100%; justify-content: center;">Login to Sync</button>
+        <div
+          id="auth-sidebar-container"
+          style="padding: 10px 18px; border-bottom: 1px solid var(--border)">
+          <button
+            class="auth-btn"
+            id="login-trigger"
+            style="width: 100%; justify-content: center">
+            Login to Sync
+          </button>
         </div>
 
         <div class="progress-wrap">
@@ -4557,33 +4567,64 @@
         <form class="auth-form" id="auth-form">
           <div class="form-group">
             <label class="form-label">Email</label>
-            <input type="email" id="auth-email" class="form-input" required>
+            <input type="email" id="auth-email" class="form-input" required />
           </div>
           <div class="form-group">
             <label class="form-label">Password</label>
-            <input type="password" id="auth-password" class="form-input" required>
+            <input
+              type="password"
+              id="auth-password"
+              class="form-input"
+              required />
           </div>
-          <button type="submit" class="submit-btn" id="auth-submit">Login</button>
-          <div id="auth-error" style="color: var(--a6); font-size: 11px; margin-top: 10px; display: none;"></div>
+          <button type="submit" class="submit-btn" id="auth-submit">
+            Login
+          </button>
+          <div
+            id="auth-error"
+            style="
+              color: var(--a6);
+              font-size: 11px;
+              margin-top: 10px;
+              display: none;
+            "></div>
         </form>
-        <div class="auth-switch" style="margin-top:16px; font-size:12px; text-align:center; color:var(--sub);">
-          <span id="auth-switch-link" style="color:var(--a1); cursor:pointer; text-decoration:underline;">Don't have an account? Sign up</span>
+        <div
+          class="auth-switch"
+          style="
+            margin-top: 16px;
+            font-size: 12px;
+            text-align: center;
+            color: var(--sub);
+          ">
+          <span
+            id="auth-switch-link"
+            style="
+              color: var(--a1);
+              cursor: pointer;
+              text-decoration: underline;
+            "
+            >Don't have an account? Sign up</span
+          >
         </div>
       </div>
     </div>
 
     <script type="module">
-      import { login, signup, logout, onAuthChange } from '../shared/auth.js';
-      import { syncLocalStorageWithFirestore, saveProgress } from '../shared/db.js';
+      import { login, signup, logout, onAuthChange } from "../shared/auth.js";
+      import {
+        syncLocalStorageWithFirestore,
+        saveProgress,
+      } from "../shared/db.js";
 
-      const modal = document.getElementById('auth-modal');
-      const authForm = document.getElementById('auth-form');
-      const authEmail = document.getElementById('auth-email');
-      const authPassword = document.getElementById('auth-password');
-      const authSubmit = document.getElementById('auth-submit');
-      const authError = document.getElementById('auth-error');
-      const authSwitchLink = document.getElementById('auth-switch-link');
-      const authContainer = document.getElementById('auth-sidebar-container');
+      const modal = document.getElementById("auth-modal");
+      const authForm = document.getElementById("auth-form");
+      const authEmail = document.getElementById("auth-email");
+      const authPassword = document.getElementById("auth-password");
+      const authSubmit = document.getElementById("auth-submit");
+      const authError = document.getElementById("auth-error");
+      const authSwitchLink = document.getElementById("auth-switch-link");
+      const authContainer = document.getElementById("auth-sidebar-container");
 
       let isLogin = true;
 
@@ -4595,33 +4636,43 @@
               <button class="auth-btn" id="logout-btn" style="width: 100%; justify-content: center;">Logout</button>
             </div>
           `;
-          document.getElementById('logout-btn').onclick = () => logout();
+          document.getElementById("logout-btn").onclick = () => logout();
         } else {
           authContainer.innerHTML = `<button class="auth-btn" id="login-trigger-new" style="width: 100%; justify-content: center;">Login to Sync</button>`;
-          const btn = document.getElementById('login-trigger-new');
-          if(btn) btn.onclick = () => modal.classList.add('active');
+          const btn = document.getElementById("login-trigger-new");
+          if (btn) btn.onclick = () => modal.classList.add("active");
         }
       };
 
-      document.addEventListener('click', (e) => {
-        if (e.target.id === 'login-trigger' || e.target.id === 'login-trigger-new') modal.classList.add('active');
-        if (e.target.id === 'modal-close' || e.target === modal) modal.classList.remove('active');
+      document.addEventListener("click", (e) => {
+        if (
+          e.target.id === "login-trigger" ||
+          e.target.id === "login-trigger-new"
+        )
+          modal.classList.add("active");
+        if (e.target.id === "modal-close" || e.target === modal)
+          modal.classList.remove("active");
       });
 
       authSwitchLink.onclick = () => {
         isLogin = !isLogin;
-        authSubmit.textContent = isLogin ? 'Login' : 'Sign Up';
-        authSwitchLink.textContent = isLogin ? "Don't have an account? Sign up" : "Already have an account? Login";
+        authSubmit.textContent = isLogin ? "Login" : "Sign Up";
+        authSwitchLink.textContent = isLogin
+          ? "Don't have an account? Sign up"
+          : "Already have an account? Login";
       };
 
       authForm.onsubmit = async (e) => {
         e.preventDefault();
-        authError.style.display = 'none';
+        authError.style.display = "none";
         try {
           if (isLogin) await login(authEmail.value, authPassword.value);
           else await signup(authEmail.value, authPassword.value);
-          modal.classList.remove('active');
-        } catch (err) { authError.textContent = err.message; authError.style.display = 'block'; }
+          modal.classList.remove("active");
+        } catch (err) {
+          authError.textContent = err.message;
+          authError.style.display = "block";
+        }
       };
 
       onAuthChange(async (user) => {
@@ -4629,7 +4680,7 @@
         if (user) {
           const synced = await syncLocalStorageWithFirestore(user.uid);
           if (synced) location.reload();
-          
+
           window.onRoadmapStateChange = (key, data) => {
             const update = {};
             update[key] = data;

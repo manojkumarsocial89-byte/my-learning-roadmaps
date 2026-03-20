@@ -1,6 +1,10 @@
 // db.js
-import { db } from './firebase-config.js';
-import { doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+import { db } from "./firebase-config.js";
+import {
+  doc,
+  getDoc,
+  setDoc,
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const PROGRESS_COLLECTION = "user_progress";
 
@@ -33,7 +37,7 @@ export const fetchProgress = async (userId) => {
 export const syncLocalStorageWithFirestore = async (userId) => {
   const cloudData = await fetchProgress(userId);
   if (cloudData) {
-    Object.keys(cloudData).forEach(key => {
+    Object.keys(cloudData).forEach((key) => {
       // Merge logic: prefer cloud data or local data?
       // Usually, cloud is source of truth for logged in users.
       localStorage.setItem(key, JSON.stringify(cloudData[key]));

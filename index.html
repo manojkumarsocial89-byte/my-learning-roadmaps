@@ -246,18 +246,32 @@
       <div class="modal-content">
         <button class="modal-close" id="modal-close">&times;</button>
         <h2 class="modal-title" id="modal-title">Welcome back</h2>
-        <p class="modal-desc" id="modal-desc">Login to sync your progress across devices.</p>
-        
+        <p class="modal-desc" id="modal-desc">
+          Login to sync your progress across devices.
+        </p>
+
         <form class="auth-form" id="auth-form">
           <div class="form-group">
             <label class="form-label">Email Address</label>
-            <input type="email" id="auth-email" class="form-input" required placeholder="you@example.com">
+            <input
+              type="email"
+              id="auth-email"
+              class="form-input"
+              required
+              placeholder="you@example.com" />
           </div>
           <div class="form-group">
             <label class="form-label">Password</label>
-            <input type="password" id="auth-password" class="form-input" required placeholder="••••••••">
+            <input
+              type="password"
+              id="auth-password"
+              class="form-input"
+              required
+              placeholder="••••••••" />
           </div>
-          <button type="submit" class="submit-btn" id="auth-submit">Login</button>
+          <button type="submit" class="submit-btn" id="auth-submit">
+            Login
+          </button>
           <div id="auth-error"></div>
         </form>
 
@@ -268,46 +282,58 @@
     </div>
 
     <script type="module">
-      import { login, signup, logout, onAuthChange } from './shared/auth.js';
-      import { syncLocalStorageWithFirestore, saveProgress } from './shared/db.js';
+      import { login, signup, logout, onAuthChange } from "./shared/auth.js";
+      import {
+        syncLocalStorageWithFirestore,
+        saveProgress,
+      } from "./shared/db.js";
 
-      const modal = document.getElementById('auth-modal');
-      const loginTrigger = document.getElementById('login-trigger');
-      const modalClose = document.getElementById('modal-close');
-      const authForm = document.getElementById('auth-form');
-      const authEmail = document.getElementById('auth-email');
-      const authPassword = document.getElementById('auth-password');
-      const authSubmit = document.getElementById('auth-submit');
-      const authError = document.getElementById('auth-error');
-      const authSwitchLink = document.getElementById('auth-switch-link');
-      const modalTitle = document.getElementById('modal-title');
-      const modalDesc = document.getElementById('modal-desc');
-      const authContainer = document.getElementById('auth-container');
+      const modal = document.getElementById("auth-modal");
+      const loginTrigger = document.getElementById("login-trigger");
+      const modalClose = document.getElementById("modal-close");
+      const authForm = document.getElementById("auth-form");
+      const authEmail = document.getElementById("auth-email");
+      const authPassword = document.getElementById("auth-password");
+      const authSubmit = document.getElementById("auth-submit");
+      const authError = document.getElementById("auth-error");
+      const authSwitchLink = document.getElementById("auth-switch-link");
+      const modalTitle = document.getElementById("modal-title");
+      const modalDesc = document.getElementById("modal-desc");
+      const authContainer = document.getElementById("auth-container");
 
       let isLogin = true;
 
       // Modal Toggle
-      loginTrigger.addEventListener('click', () => modal.classList.add('active'));
-      modalClose.addEventListener('click', () => modal.classList.remove('active'));
-      modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('active'); });
+      loginTrigger.addEventListener("click", () =>
+        modal.classList.add("active"),
+      );
+      modalClose.addEventListener("click", () =>
+        modal.classList.remove("active"),
+      );
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("active");
+      });
 
       // Switch between Login / Signup
-      authSwitchLink.addEventListener('click', () => {
+      authSwitchLink.addEventListener("click", () => {
         isLogin = !isLogin;
-        modalTitle.textContent = isLogin ? 'Welcome back' : 'Create Account';
-        modalDesc.textContent = isLogin ? 'Login to sync your progress across devices.' : 'Start tracking your journey today.';
-        authSubmit.textContent = isLogin ? 'Login' : 'Sign Up';
-        authSwitchLink.textContent = isLogin ? 'Sign up' : 'Login';
-        document.getElementById('auth-switch-text').firstChild.textContent = isLogin ? "Don't have an account? " : "Already have an account? ";
-        authError.style.display = 'none';
+        modalTitle.textContent = isLogin ? "Welcome back" : "Create Account";
+        modalDesc.textContent = isLogin
+          ? "Login to sync your progress across devices."
+          : "Start tracking your journey today.";
+        authSubmit.textContent = isLogin ? "Login" : "Sign Up";
+        authSwitchLink.textContent = isLogin ? "Sign up" : "Login";
+        document.getElementById("auth-switch-text").firstChild.textContent =
+          isLogin ? "Don't have an account? " : "Already have an account? ";
+        authError.style.display = "none";
       });
 
       // Handle Form Submit
-      authForm.addEventListener('submit', async (e) => {
+      authForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        authError.style.display = 'none';
+        authError.style.display = "none";
         authSubmit.disabled = true;
-        authSubmit.textContent = 'Processing...';
+        authSubmit.textContent = "Processing...";
 
         try {
           if (isLogin) {
@@ -315,13 +341,13 @@
           } else {
             await signup(authEmail.value, authPassword.value);
           }
-          modal.classList.remove('active');
+          modal.classList.remove("active");
         } catch (error) {
           authError.textContent = error.message;
-          authError.style.display = 'block';
+          authError.style.display = "block";
         } finally {
           authSubmit.disabled = false;
-          authSubmit.textContent = isLogin ? 'Login' : 'Sign Up';
+          authSubmit.textContent = isLogin ? "Login" : "Sign Up";
         }
       });
 
@@ -335,8 +361,10 @@
               <button class="auth-btn" id="logout-btn">Logout</button>
             </div>
           `;
-          document.getElementById('logout-btn').addEventListener('click', () => logout());
-          
+          document
+            .getElementById("logout-btn")
+            .addEventListener("click", () => logout());
+
           // Initial sync from Cloud to Local
           const synced = await syncLocalStorageWithFirestore(user.uid);
           if (synced) {
@@ -349,11 +377,12 @@
             originalSetTheme(t);
             saveProgress(user.uid, { "hub-theme": t });
           };
-
         } else {
           // Logged Out
           authContainer.innerHTML = `<button class="auth-btn" id="login-trigger-new">Login / Signup</button>`;
-          document.getElementById('login-trigger-new').addEventListener('click', () => modal.classList.add('active'));
+          document
+            .getElementById("login-trigger-new")
+            .addEventListener("click", () => modal.classList.add("active"));
         }
       });
 
@@ -369,8 +398,8 @@
         document.documentElement.setAttribute("data-theme", t);
         const btnDark = document.getElementById("btn-dark");
         const btnLight = document.getElementById("btn-light");
-        if(btnDark) btnDark.classList.toggle("active", t === "dark");
-        if(btnLight) btnLight.classList.toggle("active", t === "light");
+        if (btnDark) btnDark.classList.toggle("active", t === "dark");
+        if (btnLight) btnLight.classList.toggle("active", t === "light");
         try {
           localStorage.setItem("hub-theme", t);
         } catch (e) {}
