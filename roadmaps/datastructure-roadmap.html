@@ -1,0 +1,4326 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>DSA Roadmap — Data Structures & Algorithms · Interview Ready</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../shared/styles.css" />
+  </head>
+  <body>
+    <!-- Mobile hamburger -->
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="shell">
+      <nav class="sidebar">
+        <div class="sidebar-head">
+          <div class="eyebrow">Beginner → Interview Ready · 34 Topics</div>
+          <h2>DSA<br /><em>Complete Track</em></h2>
+        </div>
+        <a class="sidebar-home" href="../index.html">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 6L6 1L11 6"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round" />
+            <path
+              d="M2 5.5V11H5V8H7V11H10V5.5"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          ← All Roadmaps
+        </a>
+        <div class="theme-toggle">
+          <button
+            class="theme-btn active"
+            id="btn-dark"
+            onclick="setTheme('dark')">
+            🌙 Dark
+          </button>
+          <button class="theme-btn" id="btn-light" onclick="setTheme('light')">
+            ☀️ Light
+          </button>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>Progress</span><span id="prog-pct">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="prog-fill"></div>
+          </div>
+          <div id="prog-counts">0 / 0 topics done</div>
+        </div>
+        <div class="nav-scroll">
+          <div class="nav-group">Phase 1 — Foundations</div>
+          <a class="nav-link" href="#ph1"
+            ><span class="nav-dot"></span>Complexity Analysis<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W1</span></a
+          >
+          <a class="nav-link" href="#ph2"
+            ><span class="nav-dot"></span>Arrays &amp; Strings<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W1</span></a
+          >
+          <a class="nav-link" href="#ph3"
+            ><span class="nav-dot"></span>Recursion<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W2</span></a
+          >
+
+          <div class="nav-group">Phase 2 — Linear Structures</div>
+          <a class="nav-link" href="#ph4"
+            ><span class="nav-dot"></span>Linked Lists<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W2</span></a
+          >
+          <a class="nav-link" href="#ph5"
+            ><span class="nav-dot"></span>Stacks &amp; Queues<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W3</span></a
+          >
+          <a class="nav-link" href="#ph6"
+            ><span class="nav-dot"></span>Hashing &amp; Hash Maps<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W3</span></a
+          >
+
+          <div class="nav-group">Phase 3 — Sorting &amp; Searching</div>
+          <a class="nav-link" href="#ph7"
+            ><span class="nav-dot"></span>Sorting Algorithms<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W4</span></a
+          >
+          <a class="nav-link" href="#ph8"
+            ><span class="nav-dot"></span>Binary Search<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W4</span></a
+          >
+          <a class="nav-link" href="#ph9"
+            ><span class="nav-dot"></span>Two Pointers &amp; Sliding Window<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W5</span></a
+          >
+
+          <div class="nav-group">Phase 4 — Trees</div>
+          <a class="nav-link" href="#ph10"
+            ><span class="nav-dot"></span>Binary Trees<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W5</span></a
+          >
+          <a class="nav-link" href="#ph11"
+            ><span class="nav-dot"></span>Binary Search Trees<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W6</span></a
+          >
+          <a class="nav-link" href="#ph12"
+            ><span class="nav-dot"></span>Heaps &amp; Priority Queues<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W6</span></a
+          >
+          <a class="nav-link" href="#ph13"
+            ><span class="nav-dot"></span>Tries<span class="nav-check">✓</span
+            ><span class="nav-week">W7</span></a
+          >
+
+          <div class="nav-group">Phase 5 — Graphs</div>
+          <a class="nav-link" href="#ph14"
+            ><span class="nav-dot"></span>Graph Fundamentals<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W7</span></a
+          >
+          <a class="nav-link" href="#ph15"
+            ><span class="nav-dot"></span>BFS &amp; DFS<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W8</span></a
+          >
+          <a class="nav-link" href="#ph16"
+            ><span class="nav-dot"></span>Shortest Paths<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W8</span></a
+          >
+          <a class="nav-link" href="#ph17"
+            ><span class="nav-dot"></span>Advanced Graphs<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W9</span></a
+          >
+
+          <div class="nav-group">Phase 6 — Algorithm Patterns</div>
+          <a class="nav-link" href="#ph18"
+            ><span class="nav-dot"></span>Divide &amp; Conquer<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W9</span></a
+          >
+          <a class="nav-link" href="#ph19"
+            ><span class="nav-dot"></span>Greedy Algorithms<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W10</span></a
+          >
+          <a class="nav-link" href="#ph20"
+            ><span class="nav-dot"></span>Dynamic Programming — 1D<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W10</span></a
+          >
+          <a class="nav-link" href="#ph21"
+            ><span class="nav-dot"></span>Dynamic Programming — 2D<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W11</span></a
+          >
+          <a class="nav-link" href="#ph22"
+            ><span class="nav-dot"></span>Backtracking<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W11</span></a
+          >
+          <a class="nav-link" href="#ph23"
+            ><span class="nav-dot"></span>Bit Manipulation<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W12</span></a
+          >
+
+          <div class="nav-group">Phase 7 — Advanced DS</div>
+          <a class="nav-link" href="#ph24"
+            ><span class="nav-dot"></span>Segment Trees &amp; BIT<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W12</span></a
+          >
+          <a class="nav-link" href="#ph25"
+            ><span class="nav-dot"></span>Union-Find (DSU)<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W13</span></a
+          >
+          <a class="nav-link" href="#ph26"
+            ><span class="nav-dot"></span>Advanced Tree Structures<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W13</span></a
+          >
+
+          <div class="nav-group">Phase 8 — Interview Prep</div>
+          <a class="nav-link" href="#ph27"
+            ><span class="nav-dot"></span>Problem Patterns Guide<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W14</span></a
+          >
+          <a class="nav-link" href="#ph28"
+            ><span class="nav-dot"></span>Math &amp; Number Theory<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W14</span></a
+          >
+          <a class="nav-link" href="#ph29"
+            ><span class="nav-dot"></span>String Algorithms<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W15</span></a
+          >
+          <a class="nav-link" href="#ph30"
+            ><span class="nav-dot"></span>Monotonic Stack/Queue<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W15</span></a
+          >
+          <a class="nav-link" href="#ph31"
+            ><span class="nav-dot"></span>Intervals &amp; Sweep Line<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W16</span></a
+          >
+          <a class="nav-link" href="#ph32"
+            ><span class="nav-dot"></span>Top LeetCode Patterns<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W16</span></a
+          >
+          <a class="nav-link" href="#ph33"
+            ><span class="nav-dot"></span>System Design + DSA<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W17</span></a
+          >
+          <a class="nav-link" href="#ph34"
+            ><span class="nav-dot"></span>Interview Strategy<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W17</span></a
+          >
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="hero">
+          <div class="kicker">
+            Complete Path · Beginner → Interview Ready · 34 Topics · LeetCode
+            Mapped
+          </div>
+          <h1>Data Structures<br />&amp; <em>Algorithms</em></h1>
+          <p>
+            Every important DSA topic in exact order — from Big-O basics to
+            dynamic programming, graphs, and advanced data structures. Each
+            topic maps to real interview problems. Built for Java backend
+            engineers targeting product company interviews.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">⚡ 3–4 months intensive</div>
+            <div class="meta-pill">🎯 34 topics, 150+ patterns</div>
+            <div class="meta-pill">💻 LeetCode problems per topic</div>
+            <div class="meta-pill">🔢 Complexity analysis included</div>
+            <div class="meta-pill">✓ Progress saved in browser</div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 1 — FOUNDATIONS ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 1 — Foundations</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 1–2 · ~20 hrs</div>
+        </div>
+
+        <div class="phase" id="ph1">
+          <div class="phase-head">
+            <div class="phase-num">01</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Foundations</div>
+              <div class="phase-title">
+                Complexity Analysis — Big-O, Time &amp; Space
+              </div>
+              <div class="phase-time">
+                ⏱ 2 days · Learn this first — everything else is measured by it
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Every problem you solve must come with a complexity analysis.
+            Interviewers will always ask "what's the time and space complexity?"
+            Know how to derive it, not just memorize it.
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph1')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph1">
+            <div class="topic" id="t001">
+              <div class="topic-header" onclick="toggleTopic('t001')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't001')"></div>
+                <div class="topic-name">
+                  Big-O Notation — Time Complexity, Space Complexity,
+                  Best/Worst/Average
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Big-O</strong> — describes upper bound growth rate
+                    as input size n→∞. Drop constants and lower-order terms:
+                    O(2n + 5) = O(n) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Common complexities (fast → slow):</strong> O(1) →
+                    O(log n) → O(n) → O(n log n) → O(n²) → O(2ⁿ) → O(n!)
+                  </li>
+                  <li>
+                    <strong>O(1)</strong> — array index access, hash map lookup,
+                    push/pop stack
+                  </li>
+                  <li>
+                    <strong>O(log n)</strong> — binary search, balanced BST
+                    operations. Input halved each step
+                  </li>
+                  <li>
+                    <strong>O(n)</strong> — linear scan, traversing array or
+                    linked list
+                  </li>
+                  <li>
+                    <strong>O(n log n)</strong> — merge sort, heap sort, most
+                    efficient comparison sorts
+                  </li>
+                  <li>
+                    <strong>O(n²)</strong> — nested loops, bubble sort,
+                    selection sort, comparing all pairs
+                  </li>
+                  <li>
+                    <strong>O(2ⁿ)</strong> — subsets, Fibonacci naive recursion,
+                    exponential backtracking
+                  </li>
+                  <li>
+                    <strong>Space complexity:</strong> auxiliary space used by
+                    algorithm (not counting input). Recursion stack depth counts
+                    as space <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Best vs Worst vs Average:</strong> Quick Sort best
+                    O(n log n) avg, worst O(n²). Interviewers want worst-case
+                    unless stated otherwise
+                  </li>
+                  <li>
+                    <strong>Amortized complexity:</strong> dynamic array append
+                    is O(1) amortized even though occasional resize is O(n).
+                    Average cost per operation over a sequence
+                  </li>
+                  <li>
+                    <strong>How to derive:</strong> count loops (each nested
+                    loop multiplies), count recursive calls (draw recursion
+                    tree), count space on call stack
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "What is the time and space complexity of your solution?" —
+                    Always answer both. For recursive solutions: time = nodes in
+                    recursion tree × work per node. Space = max depth of call
+                    stack (if no memoization).
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.bigocheatsheet.com/"
+                    target="_blank"
+                    >📖 Big-O Cheat Sheet</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=Mo4vesaut8g"
+                    target="_blank"
+                    >▶ Big-O Explained Simply</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph2">
+          <div class="phase-head">
+            <div class="phase-num">02</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Foundations</div>
+              <div class="phase-title">
+                Arrays &amp; Strings — The Most Common Interview Data Structure
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · ~40% of all interview problems involve arrays or
+                strings
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph2')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph2">
+            <div class="topic" id="t002">
+              <div class="topic-header" onclick="toggleTopic('t002')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't002')"></div>
+                <div class="topic-name">
+                  Array Operations, Prefix Sums, Kadane's Algorithm
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Array internals:</strong> contiguous memory. Access
+                    O(1), insert middle O(n), append amortized O(1)
+                  </li>
+                  <li>
+                    <strong>Prefix sum array:</strong> precompute prefix[i] =
+                    sum of arr[0..i]. Range sum query [l,r] in O(1):
+                    <code>prefix[r] - prefix[l-1]</code>
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>2D prefix sum:</strong> extend to grids. Submatrix
+                    sum in O(1) after O(n²) preprocessing
+                  </li>
+                  <li>
+                    <strong>Difference array:</strong> range update in O(1),
+                    read in O(n). Add val to arr[l..r] without looping
+                  </li>
+                  <li>
+                    <strong>Kadane's Algorithm</strong> — maximum subarray sum
+                    in O(n): track current sum and global max. Reset current to
+                    0 when negative <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Dutch National Flag (3-way partition):</strong> sort
+                    array of 0s, 1s, 2s in O(n) one pass. Three pointers: lo,
+                    mid, hi
+                  </li>
+                  <li>
+                    <strong>Rotate array:</strong> reverse entire array, reverse
+                    first k, reverse rest. O(n) time O(1) space
+                  </li>
+                  <li>
+                    <strong>In-place vs out-of-place:</strong> always clarify —
+                    can you modify input? Do you need O(1) extra space?
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/maximum-subarray/"
+                    target="_blank"
+                    >💻 LC 53: Maximum Subarray</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/range-sum-query-immutable/"
+                    target="_blank"
+                    >💻 LC 303: Range Sum Query</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/sort-colors/"
+                    target="_blank"
+                    >💻 LC 75: Sort Colors</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="topic" id="t003">
+              <div class="topic-header" onclick="toggleTopic('t003')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't003')"></div>
+                <div class="topic-name">
+                  String Manipulation, StringBuilder, Anagrams, Pattern Matching
+                  Basics
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>String immutability in Java:</strong> String is
+                    immutable. Concatenation in loop = O(n²). Always use
+                    StringBuilder for building strings iteratively
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>char[] tricks:</strong> convert to array for
+                    in-place modification. <code>s.toCharArray()</code>
+                  </li>
+                  <li>
+                    <strong>Frequency count with int[26]:</strong> int[26] array
+                    for lowercase letters — faster than HashMap for character
+                    frequency
+                  </li>
+                  <li>
+                    <strong>Anagram check:</strong> sort both O(n log n), or
+                    frequency count comparison O(n). Two strings are anagrams
+                    iff same character frequencies
+                  </li>
+                  <li>
+                    <strong>Palindrome check:</strong> two pointers from both
+                    ends. O(n) time O(1) space
+                  </li>
+                  <li>
+                    <strong>String comparison:</strong> always use .equals() not
+                    == in Java. == compares references
+                  </li>
+                  <li>
+                    <strong>StringBuilder methods:</strong> append(), insert(),
+                    delete(), reverse(), toString(). All O(1) amortized append
+                  </li>
+                  <li>
+                    <strong
+                      >String.valueOf(), Integer.parseInt(),
+                      Character.isDigit/isLetter/toLowerCase</strong
+                    >
+                    — utility methods
+                  </li>
+                  <li>
+                    <strong>Longest common prefix:</strong> sort array, compare
+                    first and last strings only
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/valid-anagram/"
+                    target="_blank"
+                    >💻 LC 242: Valid Anagram</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/reverse-string/"
+                    target="_blank"
+                    >💻 LC 344: Reverse String</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/valid-palindrome/"
+                    target="_blank"
+                    >💻 LC 125: Valid Palindrome</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph3">
+          <div class="phase-head">
+            <div class="phase-num">03</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Foundations</div>
+              <div class="phase-title">
+                Recursion — The Mental Model Underlying Trees, Graphs &amp; DP
+              </div>
+              <div class="phase-time">
+                ⏱ 3 days · Must be fluent before trees and DP
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Recursion is the foundation of tree traversal, DFS, backtracking,
+            and divide-and-conquer. If recursion feels uncomfortable, spend
+            extra time here — it unlocks everything else.
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph3')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph3">
+            <div class="topic" id="t004">
+              <div class="topic-header" onclick="toggleTopic('t004')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't004')"></div>
+                <div class="topic-name">
+                  Recursion Fundamentals, Call Stack, Memoization Intro
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Recursion structure:</strong> base case (stops
+                    recursion) + recursive case (smaller subproblem). Missing
+                    base case = StackOverflowError
+                  </li>
+                  <li>
+                    <strong>Call stack:</strong> each recursive call adds a
+                    stack frame. Stack depth = space complexity. Java default
+                    stack ~500-1000 frames deep
+                  </li>
+                  <li>
+                    <strong>Recursion tree:</strong> visualize by drawing each
+                    call as a node. Useful to derive time complexity (count
+                    nodes × work per node)
+                  </li>
+                  <li>
+                    <strong>Fibonacci naive:</strong> O(2ⁿ) — same subproblems
+                    computed repeatedly. This is WHY memoization exists
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Memoization:</strong> store results in HashMap or
+                    array. Fibonacci becomes O(n) with memo. Top-down DP =
+                    recursion + memoization
+                  </li>
+                  <li>
+                    <strong>Tail recursion:</strong> recursive call is last
+                    operation. Can be optimized to loop by compiler (Java JVM
+                    typically does NOT optimize this)
+                  </li>
+                  <li>
+                    <strong>Think recursively:</strong> "If I had the answer for
+                    n-1, how do I get the answer for n?" — Inductive thinking
+                  </li>
+                  <li>
+                    <strong>Template:</strong> solve base case → trust recursive
+                    call → combine results
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "What is the time complexity of this recursive solution?" —
+                    Draw recursion tree. Nodes = number of calls, each edge =
+                    one recursive call. Total work = sum of work at each node.
+                    For balanced trees with halving: O(log n) depth × O(n) work
+                    per level = O(n log n).
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/climbing-stairs/"
+                    target="_blank"
+                    >💻 LC 70: Climbing Stairs</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/fibonacci-number/"
+                    target="_blank"
+                    >💻 LC 509: Fibonacci Number</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=ngCos392W4w"
+                    target="_blank"
+                    >▶ Recursion Explained</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 2 — LINEAR STRUCTURES ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 2 — Linear Data Structures</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 2–3 · ~30 hrs</div>
+        </div>
+
+        <div class="phase" id="ph4">
+          <div class="phase-head">
+            <div class="phase-num">04</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Linear</div>
+              <div class="phase-title">
+                Linked Lists — Singly, Doubly, Circular, Fast/Slow Pointers
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · Classic interview topic — pointer manipulation
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph4')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph4">
+            <div class="topic" id="t005">
+              <div class="topic-header" onclick="toggleTopic('t005')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't005')"></div>
+                <div class="topic-name">
+                  Singly &amp; Doubly Linked List — Insert, Delete, Reverse
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Node structure:</strong>
+                    <code>class ListNode { int val; ListNode next; }</code>
+                  </li>
+                  <li>
+                    <strong>Singly linked list:</strong> each node points to
+                    next. O(1) insert at head, O(n) search/delete arbitrary node
+                  </li>
+                  <li>
+                    <strong>Doubly linked list:</strong> each node has next +
+                    prev. O(1) delete with reference to node. Used in LRU Cache
+                  </li>
+                  <li>
+                    <strong>Reverse singly linked list:</strong> three pointers
+                    (prev, curr, next). Iterative O(n) O(1). Recursive O(n) O(n)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Dummy/sentinel node:</strong> create a dummy head to
+                    simplify edge cases (empty list, inserting at head). Return
+                    dummy.next
+                  </li>
+                  <li>
+                    <strong>Common errors:</strong> dereferencing null (check
+                    curr != null before curr.next), losing reference to next
+                    before updating pointers
+                  </li>
+                  <li>
+                    <strong>Linked list vs array:</strong> LL = O(1)
+                    insert/delete at known position, O(n) access by index. Array
+                    = O(1) access, O(n) insert/delete middle
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Java's LinkedList</strong> — implements both List
+                    and Deque. Use as queue or stack
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/reverse-linked-list/"
+                    target="_blank"
+                    >💻 LC 206: Reverse Linked List</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/merge-two-sorted-lists/"
+                    target="_blank"
+                    >💻 LC 21: Merge Two Sorted Lists</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
+                    target="_blank"
+                    >💻 LC 19: Remove Nth From End</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="topic" id="t006">
+              <div class="topic-header" onclick="toggleTopic('t006')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't006')"></div>
+                <div class="topic-name">
+                  Fast &amp; Slow Pointers — Cycle Detection, Middle Node,
+                  Intersections
+                </div>
+                <div class="topic-badge b1">Interview Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong
+                      >Floyd's Cycle Detection (Tortoise &amp; Hare):</strong
+                    >
+                    slow moves 1 step, fast moves 2. If cycle: they meet. If no
+                    cycle: fast reaches null
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Cycle entry point:</strong> after meeting, reset
+                    slow to head, move both 1 step. They meet at cycle start
+                  </li>
+                  <li>
+                    <strong>Middle of linked list:</strong> slow/fast pointers.
+                    When fast reaches end, slow is at middle
+                  </li>
+                  <li>
+                    <strong>Check palindrome linked list:</strong> find middle,
+                    reverse second half, compare both halves
+                  </li>
+                  <li>
+                    <strong>Intersection of two lists:</strong> two pointers,
+                    each traverses both lists. They meet at intersection or null
+                    after 2n steps
+                  </li>
+                  <li>
+                    <strong>Reorder list (L0→Ln→L1→Ln-1):</strong> find middle,
+                    reverse second half, merge two halves alternating
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Detect a cycle in a linked list." — Floyd's algorithm.
+                    Fast/slow pointers. Space O(1) vs HashSet O(n). Follow-up:
+                    find cycle entry point. Then: what's the cycle length?
+                    (count steps after meeting point)
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/linked-list-cycle/"
+                    target="_blank"
+                    >💻 LC 141: Linked List Cycle</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/middle-of-the-linked-list/"
+                    target="_blank"
+                    >💻 LC 876: Middle of Linked List</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/palindrome-linked-list/"
+                    target="_blank"
+                    >💻 LC 234: Palindrome Linked List</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph5">
+          <div class="phase-head">
+            <div class="phase-num">05</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Linear</div>
+              <div class="phase-title">
+                Stacks &amp; Queues — LIFO, FIFO, Deque, Monotonic Patterns
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph5')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph5">
+            <div class="topic" id="t007">
+              <div class="topic-header" onclick="toggleTopic('t007')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't007')"></div>
+                <div class="topic-name">
+                  Stack, Queue, Deque — Operations, Implementation, Classic
+                  Problems
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Stack (LIFO):</strong> push, pop, peek — all O(1).
+                    Use: undo operations, call stack simulation, DFS iterative,
+                    expression evaluation
+                  </li>
+                  <li>
+                    <strong>Queue (FIFO):</strong> enqueue (offer), dequeue
+                    (poll), peek — all O(1). Use: BFS, task scheduling, sliding
+                    window
+                  </li>
+                  <li>
+                    <strong>Java stack:</strong> use
+                    <code
+                      >Deque&lt;Integer&gt; stack = new
+                      ArrayDeque&lt;&gt;()</code
+                    >
+                    — NOT the legacy Stack class (synchronized, slow)
+                  </li>
+                  <li>
+                    <strong>Java queue:</strong>
+                    <code
+                      >Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;()</code
+                    >
+                    or <code>new ArrayDeque&lt;&gt;()</code>
+                  </li>
+                  <li>
+                    <strong>Deque (double-ended queue):</strong>
+                    addFirst/addLast, removeFirst/removeLast. Supports stack and
+                    queue operations
+                  </li>
+                  <li>
+                    <strong>Valid parentheses:</strong> push opening brackets,
+                    pop on closing, check match. Empty at end = valid
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Min stack:</strong> maintain auxiliary stack
+                    tracking minimum so far. O(1) getMin
+                  </li>
+                  <li>
+                    <strong>Implement queue using 2 stacks:</strong> classic
+                    interview problem. Amortized O(1) per operation
+                  </li>
+                  <li>
+                    <strong>Stack for DFS, Queue for BFS</strong> — fundamental
+                    pattern for tree/graph traversal
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/valid-parentheses/"
+                    target="_blank"
+                    >💻 LC 20: Valid Parentheses</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/min-stack/"
+                    target="_blank"
+                    >💻 LC 155: Min Stack</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/implement-queue-using-stacks/"
+                    target="_blank"
+                    >💻 LC 232: Queue Using Stacks</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph6">
+          <div class="phase-head">
+            <div class="phase-num">06</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Linear</div>
+              <div class="phase-title">
+                Hashing &amp; Hash Maps — O(1) Lookup, Collision, Frequency
+                Problems
+              </div>
+              <div class="phase-time">
+                ⏱ 3 days · Used in 60%+ of optimal solutions
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph6')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph6">
+            <div class="topic" id="t008">
+              <div class="topic-header" onclick="toggleTopic('t008')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't008')"></div>
+                <div class="topic-name">
+                  HashMap, HashSet, How Hashing Works, Collision Resolution
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Hash function:</strong> maps key → bucket index.
+                    Good hash function distributes keys uniformly
+                  </li>
+                  <li>
+                    <strong>Collision resolution:</strong> Separate chaining
+                    (linked list per bucket) or Open addressing (probe next
+                    slot) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Load factor:</strong> n/capacity. When &gt; 0.75
+                    (Java default), resize and rehash. Resize = O(n) but
+                    amortized O(1) per insertion
+                  </li>
+                  <li>
+                    <strong>HashMap complexity:</strong> O(1) average
+                    get/put/remove. O(n) worst case (all keys collide to same
+                    bucket). Java 8+: bucket becomes TreeMap at 8 entries →
+                    O(log n) worst case
+                  </li>
+                  <li>
+                    <strong>equals() + hashCode() contract:</strong> MUST
+                    override both. If a.equals(b) then a.hashCode() ==
+                    b.hashCode(). Using custom objects as keys: override both
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Common patterns:</strong> frequency count (count
+                    chars/words), two-sum (store complements), grouping (group
+                    by property)
+                  </li>
+                  <li>
+                    <strong>getOrDefault(key, 0):</strong> avoid NPE when
+                    incrementing counters
+                  </li>
+                  <li>
+                    <strong>LinkedHashMap:</strong> HashMap + insertion order.
+                    Use for LRU cache
+                  </li>
+                  <li>
+                    <strong>TreeMap:</strong> sorted by key, O(log n).
+                    floorKey(), ceilingKey(), firstKey(), lastKey()
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "How does a HashMap work internally?" — Array of buckets,
+                    hash(key) % capacity gives index, linked list/tree for
+                    collisions. Also: "When would you use HashMap vs TreeMap?" —
+                    HashMap = O(1) unordered. TreeMap = O(log n) sorted order
+                    (range queries, ordered iteration).
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/two-sum/"
+                    target="_blank"
+                    >💻 LC 1: Two Sum</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/group-anagrams/"
+                    target="_blank"
+                    >💻 LC 49: Group Anagrams</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/top-k-frequent-elements/"
+                    target="_blank"
+                    >💻 LC 347: Top K Frequent Elements</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/lru-cache/"
+                    target="_blank"
+                    >💻 LC 146: LRU Cache</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 3 — SORTING & SEARCHING ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 3 — Sorting &amp; Searching</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 3–5 · ~35 hrs</div>
+        </div>
+
+        <div class="phase" id="ph7">
+          <div class="phase-head">
+            <div class="phase-num">07</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Sort &amp; Search</div>
+              <div class="phase-title">
+                Sorting Algorithms — Merge Sort, Quick Sort, Counting Sort
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph7')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph7">
+            <div class="topic" id="t009">
+              <div class="topic-header" onclick="toggleTopic('t009')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't009')"></div>
+                <div class="topic-name">
+                  Merge Sort, Quick Sort, Heap Sort, Counting/Radix Sort — When
+                  to Use Each
+                </div>
+                <div class="topic-badge b3">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <table class="complexity-table">
+                  <tr>
+                    <th>Algorithm</th>
+                    <th>Best</th>
+                    <th>Average</th>
+                    <th>Worst</th>
+                    <th>Space</th>
+                    <th>Stable</th>
+                  </tr>
+                  <tr>
+                    <td>Merge Sort</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-ok">O(n)</td>
+                    <td>✓ Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Quick Sort</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-bad">O(n²)</td>
+                    <td class="tc-good">O(log n)</td>
+                    <td>✗ No</td>
+                  </tr>
+                  <tr>
+                    <td>Heap Sort</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-good">O(n log n)</td>
+                    <td class="tc-good">O(1)</td>
+                    <td>✗ No</td>
+                  </tr>
+                  <tr>
+                    <td>Bubble Sort</td>
+                    <td class="tc-good">O(n)</td>
+                    <td class="tc-bad">O(n²)</td>
+                    <td class="tc-bad">O(n²)</td>
+                    <td class="tc-good">O(1)</td>
+                    <td>✓ Yes</td>
+                  </tr>
+                  <tr>
+                    <td>Counting Sort</td>
+                    <td class="tc-good">O(n+k)</td>
+                    <td class="tc-good">O(n+k)</td>
+                    <td class="tc-good">O(n+k)</td>
+                    <td class="tc-ok">O(k)</td>
+                    <td>✓ Yes</td>
+                  </tr>
+                </table>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Merge Sort</strong> — divide into halves, sort each,
+                    merge. Guaranteed O(n log n). Best for linked lists. Used in
+                    Java's Arrays.sort for objects (TimSort = merge + insertion)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Quick Sort</strong> — pick pivot, partition around
+                    it (smaller left, larger right), recurse. O(n log n)
+                    average, O(n²) worst (sorted array, bad pivot). Java
+                    Arrays.sort for primitives uses dual-pivot quicksort
+                  </li>
+                  <li>
+                    <strong>Quick Select</strong> — find kth smallest in O(n)
+                    average using partition logic. No full sort needed
+                  </li>
+                  <li>
+                    <strong>Counting Sort</strong> — count frequency of each
+                    value. O(n+k) where k = range. Works only on integers with
+                    known bounded range
+                  </li>
+                  <li>
+                    <strong>Radix Sort</strong> — sort digit by digit from least
+                    to most significant. O(d×n) where d = digits. For integers
+                    and strings
+                  </li>
+                  <li>
+                    <strong>Custom comparator in Java:</strong>
+                    <code>Arrays.sort(arr, (a,b) -> b - a)</code> (descending).
+                    For objects: compare by specific field
+                  </li>
+                  <li>
+                    <strong>Java's Arrays.sort:</strong> O(n log n) guaranteed.
+                    Use it in interviews unless specifically implementing a
+                    sorting algorithm
+                  </li>
+                  <li>
+                    <strong>When to choose:</strong> stability needed → Merge.
+                    In-place &amp; general → Quick. Guaranteed worst case →
+                    Merge/Heap. Bounded integers → Counting/Radix
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/sort-an-array/"
+                    target="_blank"
+                    >💻 LC 912: Sort an Array</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/kth-largest-element-in-an-array/"
+                    target="_blank"
+                    >💻 LC 215: Kth Largest Element</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=4VqmGXwpLqc"
+                    target="_blank"
+                    >▶ Merge Sort Explained</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph8">
+          <div class="phase-head">
+            <div class="phase-num">08</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Sort &amp; Search</div>
+              <div class="phase-title">
+                Binary Search — Template, Variants, Search Space Abstraction
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · Appears in ~20% of medium/hard problems
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Binary search is not just for sorted arrays — it works on any
+            monotone decision function. Once you understand the "search space"
+            abstraction, you'll recognize binary search problems everywhere.
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph8')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph8">
+            <div class="topic" id="t010">
+              <div class="topic-header" onclick="toggleTopic('t010')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't010')"></div>
+                <div class="topic-name">
+                  Binary Search Template, Find First/Last, Rotated Arrays,
+                  Search Space
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Classic template:</strong>
+                    <code
+                      >lo=0, hi=n-1. while(lo&lt;=hi): mid=(lo+hi)/2. if
+                      arr[mid]==target return mid. else update lo or hi</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Overflow-safe mid:</strong>
+                    <code>mid = lo + (hi - lo) / 2</code> — avoids integer
+                    overflow when lo+hi &gt; Integer.MAX_VALUE
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Find first/leftmost occurrence:</strong> when found,
+                    set hi = mid - 1 (keep searching left). Return lo
+                  </li>
+                  <li>
+                    <strong>Find last/rightmost occurrence:</strong> when found,
+                    set lo = mid + 1 (keep searching right). Return hi
+                  </li>
+                  <li>
+                    <strong>Search in rotated sorted array:</strong> one half is
+                    always sorted. Check which half is sorted, determine if
+                    target is in that half, update bounds accordingly
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Search in 2D matrix:</strong> treat as 1D array.
+                    <code>mid_row = mid/cols, mid_col = mid%cols</code>
+                  </li>
+                  <li>
+                    <strong>Binary search on answer:</strong> "What's the
+                    minimum/maximum X such that condition holds?" — Search on X,
+                    check condition. Works when condition is monotone (if X
+                    works, X+1 also works)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Examples of search on answer:</strong> Koko Eating
+                    Bananas, Ship Packages in D Days, Minimum Capacity,
+                    Painter's Partition
+                  </li>
+                  <li>
+                    <strong>Find peak element:</strong> if arr[mid] &lt;
+                    arr[mid+1], peak is on right. O(log n)
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Binary search on answer" is a very common medium/hard
+                    pattern. Key insight: if you can write a function isValid(x)
+                    that is monotone (all valid x form a contiguous range), you
+                    can binary search on x. Example: "Can we ship all packages
+                    in D days with capacity x?" — increase x if yes, decrease if
+                    no.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/binary-search/"
+                    target="_blank"
+                    >💻 LC 704: Binary Search</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/search-in-rotated-sorted-array/"
+                    target="_blank"
+                    >💻 LC 33: Rotated Array</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/koko-eating-bananas/"
+                    target="_blank"
+                    >💻 LC 875: Koko Eating Bananas</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
+                    target="_blank"
+                    >💻 LC 153: Min in Rotated Array</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph9">
+          <div class="phase-head">
+            <div class="phase-num">09</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Sort &amp; Search</div>
+              <div class="phase-title">
+                Two Pointers &amp; Sliding Window — Array/String Optimization
+                Patterns
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · Converts O(n²) to O(n) — appears constantly
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph9')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph9">
+            <div class="topic" id="t011">
+              <div class="topic-header" onclick="toggleTopic('t011')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't011')"></div>
+                <div class="topic-name">
+                  Two Pointers — Opposite Ends, Same Direction, 3Sum, Container
+                  with Water
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Two pointers (opposite ends):</strong> lo at start,
+                    hi at end. Move based on condition. Requires sorted array or
+                    specific structure
+                  </li>
+                  <li>
+                    <strong>Two Sum on sorted array:</strong> if arr[lo]+arr[hi]
+                    &lt; target: lo++. If &gt; target: hi--. If == return. O(n)
+                  </li>
+                  <li>
+                    <strong>Container with Most Water:</strong> move pointer
+                    with smaller height inward. Greedy argument: moving larger
+                    height can only decrease width and can't help
+                  </li>
+                  <li>
+                    <strong>3Sum:</strong> sort array, fix first element, two
+                    pointers for remaining two. Skip duplicates. O(n²)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Trapping Rain Water:</strong> two pointers. Track
+                    max left and max right heights. Water at i = min(maxL, maxR)
+                    - height[i]
+                  </li>
+                  <li>
+                    <strong>Two pointers (same direction):</strong> both start
+                    at beginning, one leads. Remove duplicates in sorted array:
+                    slow tracks insertion point, fast scans
+                  </li>
+                  <li>
+                    <strong>Remove element in-place:</strong> slow/fast
+                    pointers. Fast scans, slow writes non-target values
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
+                    target="_blank"
+                    >💻 LC 167: Two Sum II</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/3sum/"
+                    target="_blank"
+                    >💻 LC 15: 3Sum</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/container-with-most-water/"
+                    target="_blank"
+                    >💻 LC 11: Container with Water</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/trapping-rain-water/"
+                    target="_blank"
+                    >💻 LC 42: Trapping Rain Water</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="topic" id="t012">
+              <div class="topic-header" onclick="toggleTopic('t012')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't012')"></div>
+                <div class="topic-name">
+                  Sliding Window — Fixed &amp; Variable Size, Substring Problems
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Fixed-size window:</strong> maintain window of
+                    exactly k elements. Add new element, remove oldest element
+                    each step. O(n)
+                  </li>
+                  <li>
+                    <strong>Variable-size window (shrink when invalid):</strong>
+                    expand right pointer, shrink left when window condition
+                    violated. Template:
+                    <code>while window invalid: remove arr[left], left++</code>
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Longest substring without repeating chars:</strong>
+                    HashSet tracks current window. When duplicate: remove from
+                    left until no duplicate
+                  </li>
+                  <li>
+                    <strong>Minimum window substring:</strong> expand right to
+                    include all required chars, then shrink left while valid.
+                    Track count of satisfied requirements
+                  </li>
+                  <li>
+                    <strong>Sliding window maximum:</strong> use monotonic
+                    deque. O(n). Remove elements outside window from front,
+                    remove smaller elements from back
+                  </li>
+                  <li>
+                    <strong>Subarray sum equals k:</strong> prefix sum +
+                    HashMap. <code>prefixSum[i] - k == prefixSum[j]</code> means
+                    subarray [j+1,i] sums to k
+                  </li>
+                  <li>
+                    <strong>When to use sliding window:</strong> problem asks
+                    for optimal contiguous subarray/substring. Condition on
+                    window can be maintained incrementally
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/longest-substring-without-repeating-characters/"
+                    target="_blank"
+                    >💻 LC 3: Longest Substring</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/minimum-window-substring/"
+                    target="_blank"
+                    >💻 LC 76: Minimum Window</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/sliding-window-maximum/"
+                    target="_blank"
+                    >💻 LC 239: Sliding Window Max</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/subarray-sum-equals-k/"
+                    target="_blank"
+                    >💻 LC 560: Subarray Sum = K</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 4 — TREES ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 4 — Trees</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 5–7 · ~40 hrs</div>
+        </div>
+
+        <div class="phase" id="ph10">
+          <div class="phase-head">
+            <div class="phase-num">10</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Trees</div>
+              <div class="phase-title">
+                Binary Trees — Traversals, Height, Paths, LCA
+              </div>
+              <div class="phase-time">
+                ⏱ 5 days · Most popular interview category after arrays
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Binary trees test recursion fluency. The same DFS pattern — process
+            current node, recurse left, recurse right — solves dozens of
+            problems. Internalize it deeply.
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph10')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph10">
+            <div class="topic" id="t013">
+              <div class="topic-header" onclick="toggleTopic('t013')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't013')"></div>
+                <div class="topic-name">
+                  DFS Traversals — Inorder, Preorder, Postorder (Recursive +
+                  Iterative)
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Inorder (Left → Root → Right):</strong> BST inorder
+                    gives sorted order. Most common traversal
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Preorder (Root → Left → Right):</strong> used for
+                    tree serialization, copying tree structure
+                  </li>
+                  <li>
+                    <strong>Postorder (Left → Right → Root):</strong> used when
+                    children must be processed before parent (delete tree,
+                    subtree problems)
+                  </li>
+                  <li>
+                    <strong>Iterative inorder:</strong> stack + curr pointer.
+                    Push current, go left until null, process top, go right.
+                    Essential to know <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Iterative preorder:</strong> push root, pop and
+                    process, push right then left (right first so left processed
+                    first)
+                  </li>
+                  <li>
+                    <strong>Iterative postorder:</strong> reverse of modified
+                    preorder (Root→Right→Left reversed = Left→Right→Root)
+                  </li>
+                  <li>
+                    <strong>Morris traversal:</strong> O(1) space inorder using
+                    threaded binary tree. Advanced — know concept
+                  </li>
+                  <li>
+                    <strong>Level order (BFS):</strong> use Queue. Process level
+                    by level. Track level size to group nodes by level
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/binary-tree-inorder-traversal/"
+                    target="_blank"
+                    >💻 LC 94: Inorder Traversal</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/binary-tree-level-order-traversal/"
+                    target="_blank"
+                    >💻 LC 102: Level Order</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
+                    target="_blank"
+                    >💻 LC 103: Zigzag Level Order</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="topic" id="t014">
+              <div class="topic-header" onclick="toggleTopic('t014')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't014')"></div>
+                <div class="topic-name">
+                  Tree Height/Depth, Diameter, Path Sum, LCA,
+                  Serialize/Deserialize
+                </div>
+                <div class="topic-badge b1">Interview Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Height of tree:</strong>
+                    <code>1 + max(height(left), height(right))</code>. Base:
+                    null → -1 or 0
+                  </li>
+                  <li>
+                    <strong>Diameter of binary tree:</strong> at each node,
+                    diameter through that node = height(left) + height(right) +
+                    2. Global max across all nodes
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Path sum problems:</strong> "does path from root to
+                    leaf sum to target?" Pass remaining sum down. At leaf: check
+                    if remaining == 0
+                  </li>
+                  <li>
+                    <strong>Max path sum (any path):</strong> at each node, max
+                    contribution = node.val + max(0, maxPath(left)) + max(0,
+                    maxPath(right)). Return node.val + max(0, max child
+                    contribution)
+                  </li>
+                  <li>
+                    <strong>LCA (Lowest Common Ancestor):</strong> if both p and
+                    q in right subtree → recurse right. If both left → recurse
+                    left. Else: current node is LCA
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Balanced tree check:</strong> height function
+                    returns -1 if unbalanced. O(n) with this combined approach
+                  </li>
+                  <li>
+                    <strong>Serialize/Deserialize:</strong> preorder traversal
+                    with null markers. Deserialize by consuming from queue.
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Symmetric tree:</strong> check left subtree is
+                    mirror of right. Helper: isMirror(left, right)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/diameter-of-binary-tree/"
+                    target="_blank"
+                    >💻 LC 543: Diameter of Tree</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
+                    target="_blank"
+                    >💻 LC 236: LCA</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/binary-tree-maximum-path-sum/"
+                    target="_blank"
+                    >💻 LC 124: Max Path Sum</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/"
+                    target="_blank"
+                    >💻 LC 297: Serialize/Deserialize</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph11">
+          <div class="phase-head">
+            <div class="phase-num">11</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Trees</div>
+              <div class="phase-title">
+                Binary Search Trees — Properties, Validation, Operations
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph11')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph11">
+            <div class="topic" id="t015">
+              <div class="topic-header" onclick="toggleTopic('t015')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't015')"></div>
+                <div class="topic-name">
+                  BST Property, Search/Insert/Delete, Validate BST, Kth
+                  Smallest, Successor
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>BST property:</strong> all left subtree values &lt;
+                    root, all right subtree values &gt; root. Inorder gives
+                    sorted sequence <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Search:</strong> if target &lt; node.val: go left.
+                    If &gt;: go right. O(h) where h = height. O(log n) balanced,
+                    O(n) worst
+                  </li>
+                  <li>
+                    <strong>Insert:</strong> find correct leaf position using
+                    BST property. Create new node there
+                  </li>
+                  <li>
+                    <strong>Delete:</strong> three cases: leaf (just remove),
+                    one child (replace with child), two children (replace with
+                    inorder successor — smallest in right subtree)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Validate BST:</strong> pass min/max bounds down. At
+                    each node: val must be in (min, max). Common mistake: only
+                    checking parent not full subtree constraint
+                  </li>
+                  <li>
+                    <strong>Kth smallest in BST:</strong> inorder traversal,
+                    count nodes. Can also track subtree sizes for O(h) query
+                  </li>
+                  <li>
+                    <strong>Inorder successor:</strong> if right subtree exists:
+                    leftmost node in right subtree. Else: lowest ancestor for
+                    which this node is in left subtree
+                  </li>
+                  <li>
+                    <strong>Balanced BST (AVL, Red-Black):</strong> know
+                    conceptually — height O(log n) guaranteed. Java's TreeMap
+                    uses Red-Black tree
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/validate-binary-search-tree/"
+                    target="_blank"
+                    >💻 LC 98: Validate BST</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
+                    target="_blank"
+                    >💻 LC 230: Kth Smallest in BST</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/delete-node-in-a-bst/"
+                    target="_blank"
+                    >💻 LC 450: Delete Node in BST</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph12">
+          <div class="phase-head">
+            <div class="phase-num">12</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Trees</div>
+              <div class="phase-title">
+                Heaps &amp; Priority Queues — Min/Max Heap, K-th Largest, Merge
+                K Lists
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph12')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph12">
+            <div class="topic" id="t016">
+              <div class="topic-header" onclick="toggleTopic('t016')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't016')"></div>
+                <div class="topic-name">
+                  Heap Implementation, PriorityQueue in Java, Top-K Problems,
+                  Heapify
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Binary heap property:</strong> parent ≤ children
+                    (min-heap) or parent ≥ children (max-heap). Complete binary
+                    tree stored as array
+                  </li>
+                  <li>
+                    <strong>Array representation:</strong> parent of i =
+                    (i-1)/2. Left child = 2i+1. Right child = 2i+2
+                  </li>
+                  <li>
+                    <strong>Insert (bubble up):</strong> add at end, swap with
+                    parent until heap property restored. O(log n)
+                  </li>
+                  <li>
+                    <strong>Extract min/max (sift down):</strong> replace root
+                    with last element, sift down. O(log n)
+                  </li>
+                  <li>
+                    <strong>Heapify (build heap from array):</strong> O(n) — not
+                    O(n log n). Start from last non-leaf, sift down each
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Java PriorityQueue:</strong> min-heap by default.
+                    <code
+                      >new
+                      PriorityQueue&lt;&gt;(Collections.reverseOrder())</code
+                    >
+                    for max-heap. poll() = extract min. peek() = view min
+                  </li>
+                  <li>
+                    <strong>Top K largest:</strong> min-heap of size k. For each
+                    element, if &gt; heap.peek(): poll and add. Result: k
+                    elements in heap
+                  </li>
+                  <li>
+                    <strong>Top K smallest:</strong> max-heap of size k. If &lt;
+                    heap.peek(): poll and add
+                  </li>
+                  <li>
+                    <strong>Merge K sorted lists:</strong> push first node of
+                    each list to min-heap. Poll min, push its next. O(N log k)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Find median from data stream:</strong> two heaps —
+                    max-heap for lower half, min-heap for upper half. Balance
+                    sizes. Median = peek of larger or average of both tops
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Why is building a heap O(n) and not O(n log n)?" —
+                    Sift-down is O(h) per node. Nodes near leaves have small
+                    height. Most nodes are at bottom levels. Sum of h × (n/2^h)
+                    for all levels converges to O(n).
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/kth-largest-element-in-a-stream/"
+                    target="_blank"
+                    >💻 LC 703: Kth Largest in Stream</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/merge-k-sorted-lists/"
+                    target="_blank"
+                    >💻 LC 23: Merge K Sorted Lists</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/find-median-from-data-stream/"
+                    target="_blank"
+                    >💻 LC 295: Median from Stream</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph13">
+          <div class="phase-head">
+            <div class="phase-num">13</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Trees</div>
+              <div class="phase-title">
+                Tries — Prefix Trees for String Search &amp; Autocomplete
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph13')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph13">
+            <div class="topic" id="t017">
+              <div class="topic-header" onclick="toggleTopic('t017')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't017')"></div>
+                <div class="topic-name">
+                  Trie Insert/Search/StartsWith, Word Search, Autocomplete
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Trie node:</strong>
+                    <code
+                      >class TrieNode { TrieNode[] children = new TrieNode[26];
+                      boolean isEnd; }</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Insert:</strong> for each char, create child node if
+                    not exists, move to child. Mark isEnd at last char. O(L)
+                    where L = word length
+                  </li>
+                  <li>
+                    <strong>Search:</strong> traverse char by char. If any node
+                    missing: return false. Check isEnd at last node. O(L)
+                  </li>
+                  <li>
+                    <strong>StartsWith (prefix search):</strong> same as search
+                    but don't check isEnd. O(L)
+                  </li>
+                  <li>
+                    <strong>Why trie over hashmap:</strong> prefix operations,
+                    lexicographic ordering, space-efficient for common prefixes
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Word Search II (find all words in board):</strong>
+                    trie + DFS backtracking. Prune by checking if prefix exists
+                    in trie
+                  </li>
+                  <li>
+                    <strong>Add and Search words with wildcards:</strong> DFS
+                    through trie. When '.': explore all children
+                  </li>
+                  <li>
+                    <strong>Space optimization:</strong> use HashMap instead of
+                    array for sparse tries (non-lowercase-only)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/implement-trie-prefix-tree/"
+                    target="_blank"
+                    >💻 LC 208: Implement Trie</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/word-search-ii/"
+                    target="_blank"
+                    >💻 LC 212: Word Search II</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/design-add-and-search-words-data-structure/"
+                    target="_blank"
+                    >💻 LC 211: Add &amp; Search Words</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 5 — GRAPHS ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 5 — Graphs</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 7–9 · ~40 hrs</div>
+        </div>
+
+        <div class="phase" id="ph14">
+          <div class="phase-head">
+            <div class="phase-num">14</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Graphs</div>
+              <div class="phase-title">
+                Graph Fundamentals — Representations, Terminology, Properties
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph14')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph14">
+            <div class="topic" id="t018">
+              <div class="topic-header" onclick="toggleTopic('t018')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't018')"></div>
+                <div class="topic-name">
+                  Graph Representations, Directed/Undirected, Weighted, Cycle
+                  Detection
+                </div>
+                <div class="topic-badge b3">Foundations</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Adjacency list:</strong>
+                    <code>Map&lt;Integer, List&lt;Integer&gt;&gt;</code> or
+                    <code>List&lt;List&lt;Integer&gt;&gt;</code>. Space O(V+E).
+                    Efficient for sparse graphs (most interview problems)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Adjacency matrix:</strong> int[n][n]. Space O(V²).
+                    Edge check O(1) but slow traversal. Use for dense graphs
+                  </li>
+                  <li>
+                    <strong>Edge list:</strong> list of (u, v, weight) pairs.
+                    Used in Kruskal's MST algorithm
+                  </li>
+                  <li>
+                    <strong>Directed vs undirected:</strong> directed = edges
+                    have direction. Undirected: add edge in both adjacency lists
+                  </li>
+                  <li>
+                    <strong>Weighted graphs:</strong>
+                    <code>Map&lt;Integer, List&lt;int[]&gt;&gt;</code> where
+                    int[] = {neighbor, weight}
+                  </li>
+                  <li>
+                    <strong>Cycle detection in undirected:</strong> DFS with
+                    visited set. If visiting a neighbor that's already visited
+                    (and not parent): cycle exists
+                  </li>
+                  <li>
+                    <strong>Cycle detection in directed:</strong> DFS with 3
+                    states: WHITE (unvisited), GRAY (in current path), BLACK
+                    (fully processed). Gray → Gray = cycle
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Bipartite graph check:</strong> 2-color with
+                    BFS/DFS. If adjacent nodes have same color: not bipartite
+                  </li>
+                  <li>
+                    <strong>Connected components:</strong> DFS/BFS from each
+                    unvisited node. Count how many times you start fresh
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/"
+                    target="_blank"
+                    >💻 LC 323: Connected Components</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/is-graph-bipartite/"
+                    target="_blank"
+                    >💻 LC 785: Bipartite Graph</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph15">
+          <div class="phase-head">
+            <div class="phase-num">15</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Graphs</div>
+              <div class="phase-title">
+                BFS &amp; DFS — Graph Traversal, Grid Problems, Topological Sort
+              </div>
+              <div class="phase-time">
+                ⏱ 5 days · The two fundamental graph algorithms
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph15')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph15">
+            <div class="topic" id="t019">
+              <div class="topic-header" onclick="toggleTopic('t019')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't019')"></div>
+                <div class="topic-name">
+                  BFS — Shortest Path in Unweighted Graph, Grid Traversal,
+                  Multi-source BFS
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>BFS template:</strong> add source to queue +
+                    visited. While queue not empty: poll, process, add unvisited
+                    neighbors to queue + visited
+                  </li>
+                  <li>
+                    <strong>Shortest path in unweighted graph:</strong> BFS
+                    gives shortest path. Level = distance.
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Grid BFS:</strong> 4-directional or 8-directional.
+                    Use int[][] dirs = {{0,1},{1,0},{0,-1},{-1,0}}. Check bounds
+                    + not visited
+                  </li>
+                  <li>
+                    <strong>Number of Islands:</strong> BFS/DFS from each
+                    unvisited '1', mark all connected '1's visited. Count starts
+                  </li>
+                  <li>
+                    <strong>Multi-source BFS:</strong> add all sources to queue
+                    simultaneously. All at distance 0. BFS expands outward.
+                    Rotting Oranges, Distance to Nearest 0
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Bidirectional BFS:</strong> BFS from both source and
+                    target simultaneously. Meets in middle. Reduces O(b^d) to
+                    O(b^(d/2)). Word Ladder
+                  </li>
+                  <li>
+                    <strong>BFS level tracking:</strong> use queue size at start
+                    of each level iteration, or add sentinel null node
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/number-of-islands/"
+                    target="_blank"
+                    >💻 LC 200: Number of Islands</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/rotting-oranges/"
+                    target="_blank"
+                    >💻 LC 994: Rotting Oranges</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/word-ladder/"
+                    target="_blank"
+                    >💻 LC 127: Word Ladder</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/01-matrix/"
+                    target="_blank"
+                    >💻 LC 542: 01 Matrix</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="topic" id="t020">
+              <div class="topic-header" onclick="toggleTopic('t020')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't020')"></div>
+                <div class="topic-name">
+                  DFS on Graphs, Topological Sort (DFS + Kahn's), DAGs
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>DFS template:</strong> if visited: return. Mark
+                    visited. Process. Recurse on neighbors
+                  </li>
+                  <li>
+                    <strong>DFS vs BFS:</strong> DFS = deep first, uses stack
+                    (recursion or explicit). BFS = wide first, uses queue. BFS
+                    for shortest path. DFS for exhaustive search, backtracking
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Topological sort (DFS):</strong> post-order DFS —
+                    add node to result AFTER all neighbors processed. Reverse =
+                    topo order. Works on DAG only
+                  </li>
+                  <li>
+                    <strong>Topological sort (Kahn's BFS):</strong> compute
+                    in-degrees. Add all 0 in-degree nodes to queue. Process:
+                    poll, decrement neighbors' in-degree, add newly zero
+                    in-degree. If result size != V: cycle exists
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Course Schedule:</strong> courses = nodes,
+                    prerequisites = edges. Detect cycle in directed graph.
+                    Topological sort if no cycle
+                  </li>
+                  <li>
+                    <strong>All paths in DAG:</strong> DFS with path tracking.
+                    Backtrack when done
+                  </li>
+                  <li>
+                    <strong>Clone graph:</strong> DFS with HashMap (original
+                    node → cloned node) to handle cycles
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/course-schedule/"
+                    target="_blank"
+                    >💻 LC 207: Course Schedule</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/course-schedule-ii/"
+                    target="_blank"
+                    >💻 LC 210: Course Schedule II</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/all-paths-source-target/"
+                    target="_blank"
+                    >💻 LC 797: All Paths Source→Target</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph16">
+          <div class="phase-head">
+            <div class="phase-num">16</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Graphs</div>
+              <div class="phase-title">
+                Shortest Path Algorithms — Dijkstra, Bellman-Ford,
+                Floyd-Warshall
+              </div>
+              <div class="phase-time">⏱ 4 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph16')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph16">
+            <div class="topic" id="t021">
+              <div class="topic-header" onclick="toggleTopic('t021')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't021')"></div>
+                <div class="topic-name">
+                  Dijkstra, Bellman-Ford, Floyd-Warshall — When to Use Which
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Dijkstra's algorithm:</strong> single source,
+                    non-negative weights. Priority queue (min-heap) based.
+                    O((V+E) log V). Process node when first popped (lowest
+                    distance) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Dijkstra template:</strong> dist[src]=0, all others
+                    ∞. PQ with (dist, node). Pop min, skip if already processed,
+                    relax edges, push updates
+                  </li>
+                  <li>
+                    <strong>Why Dijkstra fails with negative edges:</strong>
+                    greedy assumption breaks — a shorter path through negative
+                    edge might exist after a node is "finalized"
+                  </li>
+                  <li>
+                    <strong>Bellman-Ford:</strong> single source, handles
+                    negative weights. O(VE). Relax all edges V-1 times. If can
+                    relax on Vth iteration: negative cycle exists
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Floyd-Warshall:</strong> all-pairs shortest paths.
+                    O(V³) DP.
+                    <code
+                      >dist[i][j] = min(dist[i][j], dist[i][k]+dist[k][j])</code
+                    >
+                    for all k
+                  </li>
+                  <li>
+                    <strong>Network delay time:</strong> Dijkstra from source,
+                    return max distance to all nodes. If any unreachable: -1
+                  </li>
+                  <li>
+                    <strong>Cheapest flights within K stops:</strong> modified
+                    Dijkstra/Bellman-Ford with stop count constraint
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/network-delay-time/"
+                    target="_blank"
+                    >💻 LC 743: Network Delay Time</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/cheapest-flights-within-k-stops/"
+                    target="_blank"
+                    >💻 LC 787: Cheapest Flights</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/path-with-minimum-effort/"
+                    target="_blank"
+                    >💻 LC 1631: Min Effort Path</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph17">
+          <div class="phase-head">
+            <div class="phase-num">17</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Graphs</div>
+              <div class="phase-title">
+                Advanced Graphs — MST, Strongly Connected Components
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph17')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph17">
+            <div class="topic" id="t022">
+              <div class="topic-header" onclick="toggleTopic('t022')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't022')"></div>
+                <div class="topic-name">
+                  Minimum Spanning Tree (Kruskal's + Prim's), Bridges,
+                  Articulation Points
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Minimum Spanning Tree (MST):</strong> connect all V
+                    vertices with V-1 edges, minimum total weight. Undirected
+                    connected graph only <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Kruskal's algorithm:</strong> sort edges by weight,
+                    add if doesn't create cycle (use Union-Find). O(E log E)
+                  </li>
+                  <li>
+                    <strong>Prim's algorithm:</strong> start from any node,
+                    greedily add minimum weight edge connecting tree to non-tree
+                    vertex. Priority queue. O(E log V)
+                  </li>
+                  <li>
+                    <strong>Min Cost to Connect All Points:</strong> Prim's on
+                    grid where edge weight = Manhattan distance
+                  </li>
+                  <li>
+                    <strong>Bridge in graph:</strong> edge whose removal
+                    disconnects the graph. Tarjan's algorithm with low-link
+                    values. O(V+E)
+                  </li>
+                  <li>
+                    <strong>Articulation point:</strong> vertex whose removal
+                    disconnects graph. Also Tarjan's algorithm
+                  </li>
+                  <li>
+                    <strong>Strongly Connected Components (SCC):</strong> in
+                    directed graph, all nodes in SCC can reach each other.
+                    Kosaraju's (2 DFS) or Tarjan's (1 DFS)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/min-cost-to-connect-all-points/"
+                    target="_blank"
+                    >💻 LC 1584: Min Cost Connect Points</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/critical-connections-in-a-network/"
+                    target="_blank"
+                    >💻 LC 1192: Critical Connections</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 6 — ALGORITHM PATTERNS ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 6 — Core Algorithm Patterns</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 9–12 · ~60 hrs</div>
+        </div>
+
+        <div class="phase" id="ph18">
+          <div class="phase-head">
+            <div class="phase-num">18</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Algorithms</div>
+              <div class="phase-title">
+                Divide &amp; Conquer — Merge Sort, Quick Select, Closest Pair
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph18')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph18">
+            <div class="topic" id="t023">
+              <div class="topic-header" onclick="toggleTopic('t023')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't023')"></div>
+                <div class="topic-name">
+                  Divide &amp; Conquer Pattern, Merge Sort Variants, Count
+                  Inversions
+                </div>
+                <div class="topic-badge b2">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>D&amp;C pattern:</strong> divide into smaller
+                    subproblems, solve recursively, combine results. Recurrence:
+                    T(n) = 2T(n/2) + O(n) → O(n log n)
+                  </li>
+                  <li>
+                    <strong>Master theorem:</strong> T(n) = aT(n/b) + f(n).
+                    Quick way to derive complexity of divide-and-conquer
+                    recurrences <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Count inversions:</strong> modified merge sort.
+                    During merge, if arr[i] &gt; arr[j]: all remaining left
+                    elements form inversions with arr[j]. Add (mid - i + 1) to
+                    count
+                  </li>
+                  <li>
+                    <strong>Merge K sorted arrays:</strong> D&amp;C — merge
+                    pairs, then merge results. O(N log k)
+                  </li>
+                  <li>
+                    <strong>Closest pair of points:</strong> O(n log n) D&amp;C.
+                    Split by median x, recurse each half, then check strip near
+                    split line
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/reverse-pairs/"
+                    target="_blank"
+                    >💻 LC 493: Reverse Pairs</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/"
+                    target="_blank"
+                    >💻 LC 315: Count of Smaller Numbers</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph19">
+          <div class="phase-head">
+            <div class="phase-num">19</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Algorithms</div>
+              <div class="phase-title">
+                Greedy Algorithms — Interval Problems, Activity Selection,
+                Huffman
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Greedy is tricky — it works when a locally optimal choice leads to a
+            globally optimal solution. Proving correctness requires an exchange
+            argument. In interviews: propose greedy, prove it, implement it.
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph19')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph19">
+            <div class="topic" id="t024">
+              <div class="topic-header" onclick="toggleTopic('t024')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't024')"></div>
+                <div class="topic-name">
+                  Greedy Pattern, Interval Scheduling, Jump Game, Task Scheduler
+                </div>
+                <div class="topic-badge b2">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Greedy strategy:</strong> at each step, make locally
+                    optimal choice. Requires proof that greedy doesn't miss a
+                    better solution (exchange argument)
+                  </li>
+                  <li>
+                    <strong>Activity selection / Interval scheduling:</strong>
+                    sort by end time, greedily pick non-overlapping intervals.
+                    Classic greedy <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Meeting rooms II (min rooms):</strong> sort by
+                    start, use min-heap of end times. If new meeting starts
+                    after heap.peek(): reuse room (poll, add new end). Else: new
+                    room
+                  </li>
+                  <li>
+                    <strong>Jump Game:</strong> track max reachable index. If
+                    current index &gt; max reachable: can't proceed. O(n)
+                  </li>
+                  <li>
+                    <strong>Jump Game II (min jumps):</strong> track current
+                    range end and next range end. When reach current end:
+                    increment jumps, update current to next range
+                  </li>
+                  <li>
+                    <strong>Gas Station:</strong> if total gas ≥ total cost:
+                    solution exists. Find start by tracking running sum; when
+                    negative: reset and try next station
+                  </li>
+                  <li>
+                    <strong>Task Scheduler:</strong> most frequent task
+                    determines minimum time. Formula: (maxFreq-1) * (n+1) +
+                    countMaxFreq. Compare with task count
+                  </li>
+                  <li>
+                    <strong>Greedy fails when:</strong> future choices affect
+                    current optimality (use DP instead). Coin change with
+                    arbitrary denominations
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/non-overlapping-intervals/"
+                    target="_blank"
+                    >💻 LC 435: Non-Overlapping Intervals</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/jump-game/"
+                    target="_blank"
+                    >💻 LC 55: Jump Game</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/meeting-rooms-ii/"
+                    target="_blank"
+                    >💻 LC 253: Meeting Rooms II</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/task-scheduler/"
+                    target="_blank"
+                    >💻 LC 621: Task Scheduler</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph20">
+          <div class="phase-head">
+            <div class="phase-num">20</div>
+            <div class="phase-meta">
+              <div class="phase-tag c6">Dynamic Programming</div>
+              <div class="phase-title">
+                Dynamic Programming — 1D Problems, Fibonacci to Longest
+                Increasing Subsequence
+              </div>
+              <div class="phase-time">
+                ⏱ 6 days · The hardest and most important algorithmic skill
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            DP is the topic most people struggle with most. Key insight: DP =
+            recursion + memoization (top-down) OR iterative table-filling
+            (bottom-up). Master the recurrence relation first, then optimize.
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph20')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph20">
+            <div class="topic" id="t025">
+              <div class="topic-header" onclick="toggleTopic('t025')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't025')"></div>
+                <div class="topic-name">
+                  DP Fundamentals, Coin Change, House Robber, LIS, Longest
+                  Palindromic Substring
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">DP Framework</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>DP conditions:</strong> overlapping subproblems
+                    (same subproblem computed multiple times) + optimal
+                    substructure (optimal solution uses optimal subsolutions)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Top-down (memoization):</strong> recursion + cache.
+                    More intuitive to write. Space = O(n) call stack + O(n) memo
+                  </li>
+                  <li>
+                    <strong>Bottom-up (tabulation):</strong> fill DP table
+                    iteratively. Often more space-efficient. No recursion
+                    overhead
+                  </li>
+                  <li>
+                    <strong>How to approach DP:</strong> (1) Define state: dp[i]
+                    means... (2) Recurrence: dp[i] = f(dp[i-1], ...) (3) Base
+                    cases (4) Order of computation (5) Answer location
+                  </li>
+                </ul>
+                <div class="sub-section-head">Classic 1D DP Problems</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Coin Change (min coins):</strong> dp[amount] =
+                    min(dp[amount - coin] + 1) for each coin. Bottom-up.
+                    O(amount × coins)
+                  </li>
+                  <li>
+                    <strong>Coin Change (ways):</strong> dp[amount] += dp[amount
+                    - coin]. Order matters: outer loop = coins (each coin used
+                    multiple times, unbounded knapsack)
+                  </li>
+                  <li>
+                    <strong>House Robber:</strong> dp[i] = max(dp[i-2] +
+                    nums[i], dp[i-1]). Optimize to O(1) space with two variables
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Climbing Stairs:</strong> dp[i] = dp[i-1] + dp[i-2].
+                    Fibonacci pattern
+                  </li>
+                  <li>
+                    <strong>LIS (Longest Increasing Subsequence):</strong> O(n²)
+                    DP: dp[i] = max(dp[j]+1) for j&lt;i where
+                    nums[j]&lt;nums[i]. O(n log n) patience sorting with binary
+                    search
+                  </li>
+                  <li>
+                    <strong>Longest Palindromic Substring:</strong> expand
+                    around center O(n²). Or DP table dp[i][j] = palindrome from
+                    i to j
+                  </li>
+                  <li>
+                    <strong>Word Break:</strong> dp[i] = any dp[j] where s[j..i]
+                    is a word. O(n² × max word length)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/coin-change/"
+                    target="_blank"
+                    >💻 LC 322: Coin Change</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/house-robber/"
+                    target="_blank"
+                    >💻 LC 198: House Robber</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/longest-increasing-subsequence/"
+                    target="_blank"
+                    >💻 LC 300: LIS</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/word-break/"
+                    target="_blank"
+                    >💻 LC 139: Word Break</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph21">
+          <div class="phase-head">
+            <div class="phase-num">21</div>
+            <div class="phase-meta">
+              <div class="phase-tag c6">Dynamic Programming</div>
+              <div class="phase-title">
+                DP — 2D Problems, Knapsack, Edit Distance, Matrix DP
+              </div>
+              <div class="phase-time">⏱ 6 days · The hardest DP problems</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph21')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph21">
+            <div class="topic" id="t026">
+              <div class="topic-header" onclick="toggleTopic('t026')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't026')"></div>
+                <div class="topic-name">
+                  0/1 Knapsack, Unbounded Knapsack, LCS, Edit Distance, Matrix
+                  Chain
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">Knapsack Variants</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>0/1 Knapsack:</strong> dp[i][w] = max value using
+                    first i items, capacity w. Either include item i:
+                    dp[i-1][w-wt[i]] + val[i], or exclude: dp[i-1][w]. O(n×W)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Unbounded Knapsack:</strong> can use same item
+                    multiple times. dp[w] = max(dp[w], dp[w-wt[i]] + val[i]).
+                    Inner loop: iterate capacity forward (not backward)
+                  </li>
+                  <li>
+                    <strong>Subset Sum:</strong> special case of 0/1 knapsack.
+                    dp[i][s] = can we make sum s using first i elements?
+                  </li>
+                  <li>
+                    <strong>Partition Equal Subset Sum:</strong> subset sum
+                    where target = totalSum/2
+                  </li>
+                </ul>
+                <div class="sub-section-head">String DP</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>LCS (Longest Common Subsequence):</strong> dp[i][j]
+                    = LCS of s1[0..i] and s2[0..j]. If chars match:
+                    dp[i-1][j-1]+1. Else: max(dp[i-1][j], dp[i][j-1])
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Edit Distance (Levenshtein):</strong> dp[i][j] = min
+                    ops to convert s1[0..i] to s2[0..j]. Match: dp[i-1][j-1].
+                    Else: 1 + min(insert, delete, replace)
+                  </li>
+                  <li>
+                    <strong>Distinct Subsequences:</strong> dp[i][j] = # ways
+                    s[0..i] contains t[0..j] as subsequence
+                  </li>
+                  <li>
+                    <strong>Wildcard Matching / Regex:</strong> 2D DP handling *
+                    and ? patterns
+                  </li>
+                </ul>
+                <div class="sub-section-head">Matrix/Grid DP</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Unique Paths:</strong> dp[i][j] = dp[i-1][j] +
+                    dp[i][j-1]. Space optimize to 1D array
+                  </li>
+                  <li>
+                    <strong>Minimum Path Sum:</strong> same structure, take min
+                    instead of sum
+                  </li>
+                  <li>
+                    <strong>Maximal Square:</strong> dp[i][j] = min(dp[i-1][j],
+                    dp[i][j-1], dp[i-1][j-1]) + 1 if cell is '1'
+                  </li>
+                  <li>
+                    <strong>Dungeon Game:</strong> solve backwards from
+                    bottom-right to top-left. dp[i][j] = min health needed to
+                    survive from this cell
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/partition-equal-subset-sum/"
+                    target="_blank"
+                    >💻 LC 416: Partition Equal Subset</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/edit-distance/"
+                    target="_blank"
+                    >💻 LC 72: Edit Distance</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/longest-common-subsequence/"
+                    target="_blank"
+                    >💻 LC 1143: LCS</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/maximal-square/"
+                    target="_blank"
+                    >💻 LC 221: Maximal Square</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph22">
+          <div class="phase-head">
+            <div class="phase-num">22</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Algorithms</div>
+              <div class="phase-title">
+                Backtracking — Permutations, Combinations, Subsets, N-Queens
+              </div>
+              <div class="phase-time">⏱ 4 days · DFS + undo = backtracking</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph22')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph22">
+            <div class="topic" id="t027">
+              <div class="topic-header" onclick="toggleTopic('t027')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't027')"></div>
+                <div class="topic-name">
+                  Backtracking Template, Permutations, Combinations, Sudoku,
+                  N-Queens
+                </div>
+                <div class="topic-badge b2">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Backtracking template:</strong>
+                    <code
+                      >void bt(state, choices): if done: add to results. for
+                      each choice: make choice → recurse → undo choice</code
+                    >
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Subsets:</strong> at each index, either include or
+                    exclude. 2ⁿ subsets. O(n × 2ⁿ)
+                  </li>
+                  <li>
+                    <strong>Permutations:</strong> at each position, try all
+                    unused elements. n! permutations. O(n × n!)
+                  </li>
+                  <li>
+                    <strong>Combinations:</strong> choose k from n, only forward
+                    index (no repeats in set). C(n,k) combinations
+                  </li>
+                  <li>
+                    <strong>Handle duplicates:</strong> sort array first. Skip
+                    duplicate choices at same level:
+                    <code>if i > start && nums[i] == nums[i-1]: continue</code>
+                  </li>
+                  <li>
+                    <strong>Pruning:</strong> stop early when current state
+                    can't lead to valid solution. E.g. remaining sum &lt; 0 in
+                    combination sum
+                  </li>
+                  <li>
+                    <strong>N-Queens:</strong> place queen row by row. Check
+                    column, diagonal, anti-diagonal conflicts. O(n!)
+                  </li>
+                  <li>
+                    <strong>Sudoku Solver:</strong> try 1-9 for empty cells,
+                    check row/col/box constraints, backtrack if no valid digit
+                  </li>
+                  <li>
+                    <strong>Word Search (grid backtracking):</strong> DFS from
+                    each cell, mark visited with temp value, restore on
+                    backtrack
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/subsets/"
+                    target="_blank"
+                    >💻 LC 78: Subsets</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/permutations/"
+                    target="_blank"
+                    >💻 LC 46: Permutations</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/combination-sum/"
+                    target="_blank"
+                    >💻 LC 39: Combination Sum</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/n-queens/"
+                    target="_blank"
+                    >💻 LC 51: N-Queens</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph23">
+          <div class="phase-head">
+            <div class="phase-num">23</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Algorithms</div>
+              <div class="phase-title">
+                Bit Manipulation — XOR Tricks, Bit Masks, Power of 2
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph23')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph23">
+            <div class="topic" id="t028">
+              <div class="topic-header" onclick="toggleTopic('t028')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't028')"></div>
+                <div class="topic-name">
+                  Bit Operators, XOR Properties, Masks, Counting Bits
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Operators:</strong> &amp; (AND), | (OR), ^ (XOR), ~
+                    (NOT), &lt;&lt; (left shift = ×2), &gt;&gt; (right shift =
+                    ÷2)
+                  </li>
+                  <li>
+                    <strong>XOR properties:</strong> a^a=0, a^0=a, XOR is
+                    commutative+associative. XOR all array elements = single
+                    non-duplicate element <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Check bit i:</strong>
+                    <code>(n &gt;&gt; i) &amp; 1</code>
+                  </li>
+                  <li>
+                    <strong>Set bit i:</strong> <code>n | (1 &lt;&lt; i)</code>
+                  </li>
+                  <li>
+                    <strong>Clear bit i:</strong>
+                    <code>n &amp; ~(1 &lt;&lt; i)</code>
+                  </li>
+                  <li>
+                    <strong>Count set bits (popcount):</strong>
+                    <code>Integer.bitCount(n)</code>. Or:
+                    <code>n &amp;= (n-1)</code> repeatedly (clears lowest set
+                    bit) until n=0, count iterations
+                  </li>
+                  <li>
+                    <strong>Check power of 2:</strong>
+                    <code>n &gt; 0 &amp;&amp; (n &amp; (n-1)) == 0</code>. Power
+                    of 2 has exactly one set bit
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Two numbers missing/appearing:</strong> use XOR to
+                    cancel duplicates, then split into two groups
+                  </li>
+                  <li>
+                    <strong>Bitmask DP:</strong> represent subset as integer.
+                    dp[mask] = result for subset represented by mask. For n ≤ 20
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/single-number/"
+                    target="_blank"
+                    >💻 LC 136: Single Number</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/number-of-1-bits/"
+                    target="_blank"
+                    >💻 LC 191: Number of 1 Bits</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/counting-bits/"
+                    target="_blank"
+                    >💻 LC 338: Counting Bits</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/power-of-two/"
+                    target="_blank"
+                    >💻 LC 231: Power of Two</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 7 — ADVANCED DS ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 7 — Advanced Data Structures</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 12–13 · ~25 hrs</div>
+        </div>
+
+        <div class="phase" id="ph24">
+          <div class="phase-head">
+            <div class="phase-num">24</div>
+            <div class="phase-meta">
+              <div class="phase-tag c7">Advanced DS</div>
+              <div class="phase-title">
+                Segment Trees &amp; Binary Indexed Trees — Range Query &amp;
+                Update
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph24')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph24">
+            <div class="topic" id="t029">
+              <div class="topic-header" onclick="toggleTopic('t029')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't029')"></div>
+                <div class="topic-name">
+                  Segment Tree (Range Query+Update), Binary Indexed Tree
+                  (Fenwick)
+                </div>
+                <div class="topic-badge b3">Advanced</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">Segment Tree</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Purpose:</strong> range queries (sum, min, max) +
+                    point updates in O(log n). Better than prefix sum when array
+                    is mutable
+                  </li>
+                  <li>
+                    <strong>Structure:</strong> binary tree. Leaf = array
+                    element. Internal node = aggregate of range. Size = 4×n
+                    array
+                  </li>
+                  <li>
+                    <strong>Build:</strong> O(n). Query: O(log n). Update: O(log
+                    n)
+                  </li>
+                  <li>
+                    <strong>Lazy propagation:</strong> range updates (add val to
+                    all elements in range) in O(log n). Push down pending
+                    updates when needed
+                  </li>
+                  <li>
+                    <strong>When to use:</strong> range sum/min/max with point
+                    updates, range updates
+                  </li>
+                </ul>
+                <div class="sub-section-head">
+                  Binary Indexed Tree (Fenwick Tree)
+                </div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Purpose:</strong> prefix sum queries + point updates
+                    in O(log n). Simpler than segment tree, less memory
+                  </li>
+                  <li>
+                    <strong>Key operation:</strong> <code>i &amp; (-i)</code> =
+                    lowest set bit of i. Used to navigate the tree
+                  </li>
+                  <li>
+                    <strong>Update:</strong> add to BIT[i], then BIT[i + (i
+                    &amp; -i)], repeat
+                  </li>
+                  <li>
+                    <strong>Query prefix sum [1..i]:</strong> sum BIT[i] + BIT[i
+                    - (i &amp; -i)] + ..., repeat
+                  </li>
+                  <li>
+                    <strong>Count inversions:</strong> process elements right to
+                    left, query prefix sum of smaller elements, update
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/range-sum-query-mutable/"
+                    target="_blank"
+                    >💻 LC 307: Range Sum Query Mutable</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/"
+                    target="_blank"
+                    >💻 LC 315: Count Smaller (BIT)</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph25">
+          <div class="phase-head">
+            <div class="phase-num">25</div>
+            <div class="phase-meta">
+              <div class="phase-tag c7">Advanced DS</div>
+              <div class="phase-title">
+                Union-Find (Disjoint Set Union) — Connected Components, Cycle
+                Detection
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph25')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph25">
+            <div class="topic" id="t030">
+              <div class="topic-header" onclick="toggleTopic('t030')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't030')"></div>
+                <div class="topic-name">
+                  Union-Find with Path Compression + Union by Rank
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Purpose:</strong> efficiently track connected
+                    components. Support union (merge two sets) and find (which
+                    set does element belong to?)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Find with path compression:</strong> on find, make
+                    all nodes on path point directly to root. Nearly O(1)
+                    amortized
+                  </li>
+                  <li>
+                    <strong>Union by rank:</strong> attach smaller tree under
+                    larger tree. Keeps tree flat. O(α(n)) amortized per
+                    operation (inverse Ackermann — practically constant)
+                  </li>
+                  <li>
+                    <strong>Cycle detection:</strong> before union(u,v), if
+                    find(u) == find(v): adding this edge creates cycle
+                  </li>
+                  <li>
+                    <strong>Connected components count:</strong> start with n
+                    components, decrement on each union. Track with components
+                    variable
+                  </li>
+                  <li>
+                    <strong>Number of Islands (Union-Find approach):</strong>
+                    union adjacent land cells. Count distinct sets
+                  </li>
+                  <li>
+                    <strong>Accounts Merge:</strong> union emails belonging to
+                    same account (same person). Group by representative
+                  </li>
+                  <li>
+                    <strong>Redundant Connection:</strong> find edge that
+                    creates first cycle using union-find. If both endpoints
+                    already in same component: redundant
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/number-of-provinces/"
+                    target="_blank"
+                    >💻 LC 547: Number of Provinces</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/redundant-connection/"
+                    target="_blank"
+                    >💻 LC 684: Redundant Connection</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/accounts-merge/"
+                    target="_blank"
+                    >💻 LC 721: Accounts Merge</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph26">
+          <div class="phase-head">
+            <div class="phase-num">26</div>
+            <div class="phase-meta">
+              <div class="phase-tag c7">Advanced DS</div>
+              <div class="phase-title">
+                Advanced Tree Structures — AVL, Red-Black, B-Trees (Conceptual)
+              </div>
+              <div class="phase-time">
+                ⏱ 2 days · Know concepts + when each is used in practice
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph26')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph26">
+            <div class="topic" id="t031">
+              <div class="topic-header" onclick="toggleTopic('t031')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't031')"></div>
+                <div class="topic-name">
+                  AVL Trees, Red-Black Trees, B-Trees, Skip Lists — Concepts
+                  &amp; Usage
+                </div>
+                <div class="topic-badge b3">Know Concepts</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>AVL Tree:</strong> self-balancing BST. Balance
+                    factor = |height(left) - height(right)| ≤ 1. Rotations (LL,
+                    LR, RL, RR) maintain balance. O(log n) all ops. Stricter
+                    balance than Red-Black
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Red-Black Tree:</strong> 5 properties ensure O(log
+                    n) height. Less rotations than AVL (faster insert/delete).
+                    Java's TreeMap/TreeSet use Red-Black tree
+                  </li>
+                  <li>
+                    <strong>B-Tree:</strong> generalized BST where each node can
+                    have many keys and children. Minimizes disk I/O. Used in
+                    databases and filesystems. PostgreSQL B-tree index
+                  </li>
+                  <li>
+                    <strong>B+ Tree:</strong> all data in leaves, internal nodes
+                    only have keys. Linked list of leaves for range scans. Most
+                    DB indexes use B+ trees
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Skip List:</strong> layered linked list with O(log
+                    n) expected search. Used in Redis sorted sets. Simpler to
+                    implement than balanced BST
+                  </li>
+                  <li>
+                    <strong>When asked about TreeMap:</strong> O(log n)
+                    get/put/remove. floorKey(k), ceilingKey(k), headMap(k),
+                    tailMap(k) for range operations
+                  </li>
+                  <li>
+                    <strong>In practice:</strong> you won't implement these in
+                    interviews. Know: what they guarantee, what Java uses
+                    internally, when to use TreeMap vs HashMap
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=qvZGUFHWchY"
+                    target="_blank"
+                    >▶ Red-Black Tree Explained</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=aZjYr87r1b8"
+                    target="_blank"
+                    >▶ B-Trees and B+ Trees</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══ PHASE 8 — INTERVIEW PREP ═══ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 8 — Interview Preparation</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 14–17 · ~50 hrs</div>
+        </div>
+
+        <div class="phase" id="ph27">
+          <div class="phase-head">
+            <div class="phase-num">27</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                Problem Recognition Guide — How to Identify the Right Pattern
+              </div>
+              <div class="phase-time">
+                ⏱ 2 days · Pattern recognition = interview speed
+              </div>
+            </div>
+          </div>
+          <div class="topics" id="ph27">
+            <div class="topic" id="t032">
+              <div class="topic-header" onclick="toggleTopic('t032')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't032')"></div>
+                <div class="topic-name">
+                  Pattern Recognition — Input Type → Algorithm Mapping
+                </div>
+                <div class="topic-badge b1">Interview Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">By Problem Characteristics</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Sorted array / Search for value:</strong> Binary
+                    Search
+                  </li>
+                  <li>
+                    <strong>Contiguous subarray / substring:</strong> Sliding
+                    Window or Prefix Sum
+                  </li>
+                  <li>
+                    <strong>Pair in sorted array (sum, difference):</strong> Two
+                    Pointers
+                  </li>
+                  <li>
+                    <strong>Top K / Kth largest/smallest:</strong> Heap
+                    (PriorityQueue) or Quick Select
+                  </li>
+                  <li>
+                    <strong>Tree — order/path/LCA:</strong> DFS recursion or BFS
+                    level order
+                  </li>
+                  <li>
+                    <strong>Shortest path in unweighted graph:</strong> BFS
+                  </li>
+                  <li>
+                    <strong>Shortest path in weighted graph:</strong> Dijkstra
+                    (positive weights) or Bellman-Ford (negative)
+                  </li>
+                  <li>
+                    <strong>Ordering with dependencies:</strong> Topological
+                    Sort
+                  </li>
+                  <li>
+                    <strong>Connected components / cycle detection:</strong>
+                    Union-Find or DFS
+                  </li>
+                  <li>
+                    <strong
+                      >Count/enumerate all combinations/permutations:</strong
+                    >
+                    Backtracking
+                  </li>
+                  <li>
+                    <strong
+                      >Optimize count/sum with overlapping subproblems:</strong
+                    >
+                    Dynamic Programming
+                  </li>
+                  <li>
+                    <strong>Nearest larger/smaller element:</strong> Monotonic
+                    Stack
+                  </li>
+                  <li>
+                    <strong>Interval problems (merge/overlap):</strong> Sort by
+                    start time + greedy/heap
+                  </li>
+                  <li>
+                    <strong>Prefix / autocomplete / word dict:</strong> Trie
+                  </li>
+                  <li>
+                    <strong>Frequent/duplicate items across stream:</strong>
+                    HashMap frequency count
+                  </li>
+                  <li>
+                    <strong>Parentheses / expression evaluation:</strong> Stack
+                  </li>
+                </ul>
+                <div class="sub-section-head">
+                  Complexity Clues in Problem Statement
+                </div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>O(n log n) expected:</strong> sorting involved, or
+                    heap, or binary search combined with linear scan
+                  </li>
+                  <li>
+                    <strong>O(1) space constraint:</strong> two pointers,
+                    in-place algorithms, no recursion (or tail-recursive)
+                  </li>
+                  <li>
+                    <strong>n ≤ 20:</strong> bitmask DP or backtracking O(2ⁿ)
+                  </li>
+                  <li><strong>n ≤ 1000:</strong> O(n²) DP acceptable</li>
+                  <li><strong>n ≤ 10⁵:</strong> O(n log n) required</li>
+                  <li><strong>n ≤ 10⁶:</strong> O(n) or O(n log n) max</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph28">
+          <div class="phase-head">
+            <div class="phase-num">28</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                Math &amp; Number Theory — GCD, Primes, Modular Arithmetic
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph28')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph28">
+            <div class="topic" id="t033">
+              <div class="topic-header" onclick="toggleTopic('t033')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't033')"></div>
+                <div class="topic-name">
+                  GCD/LCM, Prime Sieve, Modular Arithmetic, Fast Power
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Euclidean GCD:</strong>
+                    <code>gcd(a, b) = gcd(b, a%b)</code> until b=0. O(log
+                    min(a,b)). LCM = a×b/gcd(a,b)
+                  </li>
+                  <li>
+                    <strong>Sieve of Eratosthenes:</strong> find all primes up
+                    to n in O(n log log n). Mark multiples of each prime as
+                    composite
+                  </li>
+                  <li>
+                    <strong>Modular arithmetic:</strong> (a+b)%m =
+                    ((a%m)+(b%m))%m. Important for large number problems.
+                    <code>(a*b)%m = ((a%m)*(b%m))%m</code>
+                  </li>
+                  <li>
+                    <strong>Fast Power (Binary Exponentiation):</strong>
+                    <code>pow(base, exp, mod)</code> in O(log exp). Square base,
+                    halve exp. Handle odd exp separately
+                  </li>
+                  <li>
+                    <strong>Overflow prevention:</strong> use long in Java. When
+                    multiplying two ints: cast to long first
+                  </li>
+                  <li>
+                    <strong>Factorial and combinations modulo prime:</strong>
+                    precompute factorials and modular inverses using Fermat's
+                    little theorem
+                  </li>
+                  <li>
+                    <strong>Base conversion:</strong> n to base b: repeatedly
+                    divide, collect remainders in reverse
+                  </li>
+                  <li>
+                    <strong>Integer square root:</strong> binary search or
+                    Newton's method. Check mid*mid &lt;= n
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/count-primes/"
+                    target="_blank"
+                    >💻 LC 204: Count Primes</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/powx-n/"
+                    target="_blank"
+                    >💻 LC 50: Pow(x, n)</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/ugly-number-ii/"
+                    target="_blank"
+                    >💻 LC 264: Ugly Number II</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph29">
+          <div class="phase-head">
+            <div class="phase-num">29</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                String Algorithms — KMP, Rabin-Karp, Z-Algorithm
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph29')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph29">
+            <div class="topic" id="t034a">
+              <div class="topic-header" onclick="toggleTopic('t034a')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't034a')"></div>
+                <div class="topic-name">
+                  KMP Pattern Matching, Rabin-Karp (Rolling Hash), Longest
+                  Palindrome (Manacher)
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Naive pattern matching:</strong> O(n×m). Compare
+                    pattern at each position in text
+                  </li>
+                  <li>
+                    <strong>KMP (Knuth-Morris-Pratt):</strong> O(n+m).
+                    Precompute failure function (LPS array) for pattern. On
+                    mismatch, don't restart from beginning of pattern
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong
+                      >LPS (Longest Proper Prefix which is also Suffix):</strong
+                    >
+                    lps[i] = length of longest prefix of pattern[0..i] that is
+                    also a suffix
+                  </li>
+                  <li>
+                    <strong>Rabin-Karp (Rolling Hash):</strong> hash the
+                    pattern, slide window over text comparing hashes. O(n+m)
+                    average. Handle hash collisions with exact comparison
+                  </li>
+                  <li>
+                    <strong>Rolling hash formula:</strong> hash = (hash -
+                    text[i] × base^(m-1)) × base + text[i+m]. O(1) per slide
+                  </li>
+                  <li>
+                    <strong>Manacher's Algorithm:</strong> find all palindromic
+                    substrings in O(n). Use previously computed palindromes to
+                    expand
+                  </li>
+                  <li>
+                    <strong>In practice:</strong> Java has
+                    <code>str.indexOf(pattern)</code> — use it in interviews.
+                    Implement KMP only when explicitly asked
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
+                    target="_blank"
+                    >💻 LC 28: Find First Occurrence</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/longest-palindromic-substring/"
+                    target="_blank"
+                    >💻 LC 5: Longest Palindrome</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph30">
+          <div class="phase-head">
+            <div class="phase-num">30</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                Monotonic Stack &amp; Queue — Next Greater, Histogram,
+                Temperature
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph30')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph30">
+            <div class="topic" id="t034b">
+              <div class="topic-header" onclick="toggleTopic('t034b')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't034b')"></div>
+                <div class="topic-name">
+                  Monotonic Stack — Next Greater Element, Largest Rectangle in
+                  Histogram
+                </div>
+                <div class="topic-badge b2">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Monotonic stack:</strong> stack where elements are
+                    in monotone order (increasing or decreasing). Pop when
+                    invariant violated <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Next Greater Element:</strong> maintain decreasing
+                    stack. When element is larger than top: top's NGE is current
+                    element. Pop and record. O(n)
+                  </li>
+                  <li>
+                    <strong>Daily Temperatures:</strong> same pattern. Stack
+                    stores indices. When warmer day found: pop indices with
+                    cooler temperature, compute days waited
+                  </li>
+                  <li>
+                    <strong>Largest Rectangle in Histogram:</strong> stack
+                    stores indices of bars in increasing order. When bar shorter
+                    than top: pop, compute area with popped bar as height. Width
+                    = right boundary - stack.peek() - 1. O(n)
+                  </li>
+                  <li>
+                    <strong>Maximal Rectangle (matrix):</strong> convert to
+                    histogram row by row, apply histogram algorithm on each row
+                  </li>
+                  <li>
+                    <strong>Monotonic deque (sliding window max):</strong>
+                    maintain decreasing deque. Front = maximum of current
+                    window. Remove expired elements from front, smaller elements
+                    from back
+                  </li>
+                  <li>
+                    <strong>Sum of Subarray Minimums:</strong> for each element,
+                    find number of subarrays where it's minimum using monotonic
+                    stack. Multiply contribution
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/daily-temperatures/"
+                    target="_blank"
+                    >💻 LC 739: Daily Temperatures</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/largest-rectangle-in-histogram/"
+                    target="_blank"
+                    >💻 LC 84: Largest Rectangle</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/next-greater-element-i/"
+                    target="_blank"
+                    >💻 LC 496: Next Greater Element</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph31">
+          <div class="phase-head">
+            <div class="phase-num">31</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                Intervals &amp; Sweep Line — Merge, Insert, Meeting Rooms
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('ph31')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="ph31">
+            <div class="topic" id="t034c">
+              <div class="topic-header" onclick="toggleTopic('t034c')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't034c')"></div>
+                <div class="topic-name">
+                  Merge Intervals, Insert Interval, Sweep Line, Meeting Rooms
+                </div>
+                <div class="topic-badge b2">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Merge Intervals:</strong> sort by start time. Merge
+                    if next.start &lt;= prev.end: update end = max(prev.end,
+                    next.end). O(n log n) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Insert Interval:</strong> find where new interval
+                    fits. Merge all overlapping. Three phases: add
+                    non-overlapping left, merge overlapping, add non-overlapping
+                    right
+                  </li>
+                  <li>
+                    <strong>Two intervals overlap when:</strong> a.start &lt;=
+                    b.end AND b.start &lt;= a.end. Non-overlapping: a.end &lt;
+                    b.start OR b.end &lt; a.start
+                  </li>
+                  <li>
+                    <strong>Sweep line:</strong> add events (start: +1, end:
+                    -1). Sort events by time. Track running sum. Useful for "max
+                    overlapping at any point"
+                  </li>
+                  <li>
+                    <strong>Meeting rooms I:</strong> sort by start. If any
+                    consecutive pair overlaps: can't attend all. Return false
+                  </li>
+                  <li>
+                    <strong>Meeting rooms II:</strong> min rooms = max
+                    simultaneous overlapping meetings. Sweep line or min-heap of
+                    end times
+                  </li>
+                  <li>
+                    <strong>Employee free time:</strong> merge all intervals
+                    across employees, find gaps between merged intervals
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/merge-intervals/"
+                    target="_blank"
+                    >💻 LC 56: Merge Intervals</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/insert-interval/"
+                    target="_blank"
+                    >💻 LC 57: Insert Interval</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/"
+                    target="_blank"
+                    >💻 LC 452: Burst Balloons Arrows</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph32">
+          <div class="phase-head">
+            <div class="phase-num">32</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                Top LeetCode Problem Patterns — The Curated 150
+              </div>
+              <div class="phase-time">⏱ Ongoing · Practice every day</div>
+            </div>
+          </div>
+          <div class="topics" id="ph32">
+            <div class="topic" id="t034d">
+              <div class="topic-header" onclick="toggleTopic('t034d')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't034d')"></div>
+                <div class="topic-name">
+                  Must-Solve Problem List by Category — Grind 75 / NeetCode 150
+                </div>
+                <div class="topic-badge b1">Practice List</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">Arrays (do all of these)</div>
+                <ul class="sub-list">
+                  <li>
+                    Two Sum (LC 1), Best Time to Buy Stock (LC 121), Contains
+                    Duplicate (LC 217), Product of Array Except Self (LC 238),
+                    Maximum Subarray (LC 53), Maximum Product Subarray (LC 152),
+                    Find Min in Rotated Sorted Array (LC 153), Search Rotated
+                    Sorted Array (LC 33), 3Sum (LC 15), Container with Most
+                    Water (LC 11)
+                  </li>
+                </ul>
+                <div class="sub-section-head">Strings</div>
+                <ul class="sub-list">
+                  <li>
+                    Valid Anagram (LC 242), Group Anagrams (LC 49), Longest
+                    Substring Without Repeating (LC 3), Minimum Window Substring
+                    (LC 76), Valid Parentheses (LC 20), Longest Palindromic
+                    Substring (LC 5), Palindromic Substrings (LC 647)
+                  </li>
+                </ul>
+                <div class="sub-section-head">Trees</div>
+                <ul class="sub-list">
+                  <li>
+                    Max Depth (LC 104), Same Tree (LC 100), Invert Binary Tree
+                    (LC 226), Binary Tree Max Path Sum (LC 124),
+                    Serialize/Deserialize (LC 297), Subtree of Another Tree (LC
+                    572), Construct from Preorder/Inorder (LC 105), Validate BST
+                    (LC 98), Kth Smallest in BST (LC 230), LCA of BST (LC 235)
+                  </li>
+                </ul>
+                <div class="sub-section-head">Dynamic Programming</div>
+                <ul class="sub-list">
+                  <li>
+                    Climbing Stairs (LC 70), Coin Change (LC 322), Longest
+                    Increasing Subsequence (LC 300), Word Break (LC 139),
+                    Combination Sum IV (LC 377), House Robber (LC 198, 213),
+                    Decode Ways (LC 91), Unique Paths (LC 62), Longest Common
+                    Subsequence (LC 1143), Edit Distance (LC 72), Burst Balloons
+                    (LC 312)
+                  </li>
+                </ul>
+                <div class="sub-section-head">Graphs</div>
+                <ul class="sub-list">
+                  <li>
+                    Clone Graph (LC 133), Course Schedule (LC 207), Number of
+                    Islands (LC 200), Rotting Oranges (LC 994), Pacific Atlantic
+                    Waterflow (LC 417), Word Ladder (LC 127), Number of
+                    Connected Components (LC 323), Graph Valid Tree (LC 261),
+                    Alien Dictionary (LC 269)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link prac"
+                    href="https://neetcode.io/practice"
+                    target="_blank"
+                    >💻 NeetCode 150 (organized by pattern)</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/studyplan/leetcode-75/"
+                    target="_blank"
+                    >💻 LeetCode 75 Study Plan</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://www.techinterviewhandbook.org/grind75"
+                    target="_blank"
+                    >💻 Grind 75</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/c/NeetCode"
+                    target="_blank"
+                    >▶ NeetCode YouTube (solutions)</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph33">
+          <div class="phase-head">
+            <div class="phase-num">33</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                System Design + DSA — Where DSA Shows Up in Real Systems
+              </div>
+              <div class="phase-time">
+                ⏱ 2 days · Connect theory to practice
+              </div>
+            </div>
+          </div>
+          <div class="topics" id="ph33">
+            <div class="topic" id="t034e">
+              <div class="topic-header" onclick="toggleTopic('t034e')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't034e')"></div>
+                <div class="topic-name">
+                  Real-World DSA — Where Each Data Structure Is Actually Used
+                </div>
+                <div class="topic-badge b2">System Design</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>HashMap / HashSet:</strong> database indexes (hash
+                    index), HTTP routing tables, DNS cache, compiler symbol
+                    tables, deduplification
+                  </li>
+                  <li>
+                    <strong>B+ Tree:</strong> PostgreSQL/MySQL indexes,
+                    filesystem metadata (NTFS, ext4), key-value stores (RocksDB,
+                    InnoDB)
+                  </li>
+                  <li>
+                    <strong>Heap / Priority Queue:</strong> OS scheduler (CPU
+                    task scheduling), Dijkstra in routing protocols (OSPF),
+                    event simulation, Huffman encoding, A* pathfinding
+                  </li>
+                  <li>
+                    <strong>Skip List:</strong> Redis Sorted Sets, LevelDB
+                    memtable, concurrent data structures
+                  </li>
+                  <li>
+                    <strong>Trie:</strong> autocomplete (Google search, IDE), IP
+                    routing (longest prefix match), spell checkers, t9
+                    prediction
+                  </li>
+                  <li>
+                    <strong>LRU Cache (HashMap + Doubly Linked List):</strong>
+                    CPU cache replacement, browser cache, Redis maxmemory
+                    eviction policy, OS page replacement
+                  </li>
+                  <li>
+                    <strong>Bloom Filter:</strong> check if item definitely NOT
+                    in set. CDN negative cache, DB query optimization, weak
+                    password check
+                  </li>
+                  <li>
+                    <strong>Consistent Hashing:</strong> distributing data
+                    across servers in DynamoDB, Cassandra, Redis Cluster, load
+                    balancers
+                  </li>
+                  <li>
+                    <strong>Queue (BFS pattern):</strong> web crawler URL
+                    frontier, task queue (RabbitMQ, SQS), BFS in recommendation
+                    systems
+                  </li>
+                  <li>
+                    <strong>Graph algorithms:</strong> Google PageRank (power
+                    iteration), social network friend suggestions (BFS),
+                    navigation (Dijkstra), dependency resolution (topological
+                    sort in package managers)
+                  </li>
+                  <li>
+                    <strong>Segment Tree / BIT:</strong> range query in
+                    databases, analytics systems, leaderboard scoring
+                  </li>
+                  <li>
+                    <strong>Suffix Array / Suffix Tree:</strong> full-text
+                    search engine indexing, bioinformatics sequence matching
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Design an LRU Cache" — HashMap (O(1) lookup) + Doubly
+                    Linked List (O(1) move to front/remove). HashMap maps key →
+                    node in DLL. DLL head = most recent, tail = least recent. On
+                    get: move to head. On put: add to head, if over capacity:
+                    remove tail. Also know: Java's LinkedHashMap with
+                    accessOrder=true is a built-in LRU.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="ph34">
+          <div class="phase-head">
+            <div class="phase-num">34</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Patterns</div>
+              <div class="phase-title">
+                Interview Strategy — How to Approach, Communicate, Handle
+                Pressure
+              </div>
+              <div class="phase-time">
+                ⏱ 1 day · The meta-skill that separates good coders from good
+                interviewees
+              </div>
+            </div>
+          </div>
+          <div class="topics" id="ph34">
+            <div class="topic" id="t034f">
+              <div class="topic-header" onclick="toggleTopic('t034f')">
+                <div
+                  class="topic-check"
+                  onclick="markDone(event, 't034f')"></div>
+                <div class="topic-name">
+                  UMPIRE Method, Communication, Edge Cases, Optimization Flow
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">
+                  UMPIRE Method (Structured Problem Solving)
+                </div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>U — Understand:</strong> repeat problem in own
+                    words. Ask clarifying questions: input constraints? Sorted?
+                    Duplicates? What to return if no solution? Edge cases?
+                  </li>
+                  <li>
+                    <strong>M — Match:</strong> identify pattern. Does it look
+                    like a known problem? Which data structure fits?
+                  </li>
+                  <li>
+                    <strong>P — Plan:</strong> talk through approach BEFORE
+                    coding. State time/space complexity upfront. Get buy-in from
+                    interviewer
+                  </li>
+                  <li>
+                    <strong>I — Implement:</strong> write clean code while
+                    narrating. Use meaningful variable names. Helper functions
+                    are fine
+                  </li>
+                  <li>
+                    <strong>R — Review:</strong> trace through with example.
+                    Catch bugs before interviewer does
+                  </li>
+                  <li>
+                    <strong>E — Evaluate:</strong> state complexity again.
+                    Discuss tradeoffs. Can it be optimized?
+                  </li>
+                </ul>
+                <div class="sub-section-head">Communication Tips</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Think out loud:</strong> interviewers want to see
+                    thought process. Silence is bad. Say "I'm thinking about
+                    using a HashMap because..."
+                  </li>
+                  <li>
+                    <strong>Start with brute force:</strong> always mention
+                    brute force first, then optimize. Shows you can solve it,
+                    then shows you can think deeper
+                  </li>
+                  <li>
+                    <strong>Ask before coding:</strong> "Does this approach make
+                    sense before I start implementing?"
+                  </li>
+                  <li>
+                    <strong>Handle unknowns:</strong> "I'm not immediately sure
+                    of the optimal solution, but here's what I can see..."
+                  </li>
+                  <li>
+                    <strong>Edge cases to always check:</strong> empty input,
+                    single element, all same values, negative numbers, overflow,
+                    already sorted/reversed
+                  </li>
+                </ul>
+                <div class="sub-section-head">Java Interview Tips</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Use ArrayDeque, not Stack class</strong> —
+                    Deque&lt;Integer&gt; stack = new ArrayDeque&lt;&gt;()
+                  </li>
+                  <li>
+                    <strong>Use Long for large multiplications</strong> — (long)
+                    a * b before modulo
+                  </li>
+                  <li>
+                    <strong>Integer.MAX_VALUE/MIN_VALUE</strong> for
+                    initialization. Be careful of overflow when adding 1 to
+                    MAX_VALUE
+                  </li>
+                  <li>
+                    <strong
+                      >Arrays.sort() for primitives, Collections.sort() for
+                      objects</strong
+                    >
+                  </li>
+                  <li>
+                    <strong>List.of(), Map.of()</strong> for immutable
+                    collections in tests/initialization
+                  </li>
+                </ul>
+                <div class="build-box">
+                  <div class="build-box-lbl">🏗 Practice Schedule</div>
+                  <p>
+                    Week 1–4: 2 easy + 1 medium per day. Week 5–8: 1 medium +
+                    attempt 1 hard per day. Week 9–12: timed mock interviews (25
+                    min per problem). Week 13–16: company-specific questions
+                    (Glassdoor/Leetcode company tags). Review every problem you
+                    couldn't solve within 30 minutes.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.techinterviewhandbook.org/coding-interview-techniques/"
+                    target="_blank"
+                    >📖 Tech Interview Handbook</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://neetcode.io/practice"
+                    target="_blank"
+                    >💻 NeetCode Practice</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/explore/interview/card/top-interview-questions-medium/"
+                    target="_blank"
+                    >💻 LeetCode Top Interview</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=dir_ACT8at8"
+                    target="_blank"
+                    >▶ Mock Interview Example</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          Data Structures &amp; Algorithms · Complete Roadmap · 34 Topics<br />
+          Arrays · Linked Lists · Trees · Graphs · DP · Backtracking · Advanced
+          DS<br />
+          <span style="color: var(--dim)"
+            >Solve 2–3 problems per topic · Track progress · Review failures
+            more than successes</span
+          >
+        </div>
+      </main>
+    </div>
+
+    <script src="../shared/roadmap.js"></script>
+    <script>
+      initRoadmap({
+        storageKey: "dsa-state",
+        themeKey: "dsa-theme",
+        phaseIds: [
+          "ph1",
+          "ph2",
+          "ph3",
+          "ph4",
+          "ph5",
+          "ph6",
+          "ph7",
+          "ph8",
+          "ph9",
+          "ph10",
+          "ph11",
+          "ph12",
+          "ph13",
+          "ph14",
+          "ph15",
+          "ph16",
+          "ph17",
+          "ph18",
+          "ph19",
+          "ph20",
+          "ph21",
+          "ph22",
+          "ph23",
+          "ph24",
+          "ph25",
+          "ph26",
+          "ph27",
+          "ph28",
+          "ph29",
+          "ph30",
+          "ph31",
+          "ph32",
+          "ph33",
+          "ph34",
+        ],
+      });
+
+      // Wire theme buttons
+      document
+        .getElementById("btn-dark")
+        .addEventListener("click", () => setTheme("dark", "dsa-theme"));
+      document
+        .getElementById("btn-light")
+        .addEventListener("click", () => setTheme("light", "dsa-theme"));
+    </script>
+  </body>
+</html>

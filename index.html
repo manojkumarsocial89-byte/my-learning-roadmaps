@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>Dev Roadmaps — Your Learning Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <style>
+      /* ── THEME ── */
+      [data-theme="dark"] {
+        --bg: #0d0d0d;
+        --bg2: #141414;
+        --bg3: #1a1a1a;
+        --bg4: #202020;
+        --border: rgba(255, 255, 255, 0.07);
+        --border2: rgba(255, 255, 255, 0.13);
+        --text: #f0f0e8;
+        --muted: #5c5c54;
+        --dim: #343430;
+        --sub: #8a8a80;
+        --card-hover: rgba(255, 255, 255, 0.03);
+        --shadow: none;
+      }
+      [data-theme="light"] {
+        --bg: #f5f4f0;
+        --bg2: #ffffff;
+        --bg3: #f0efe9;
+        --bg4: #e8e7e0;
+        --border: rgba(0, 0, 0, 0.08);
+        --border2: rgba(0, 0, 0, 0.15);
+        --text: #1a1a16;
+        --muted: #888880;
+        --dim: #c8c8c0;
+        --sub: #606058;
+        --card-hover: rgba(0, 0, 0, 0.02);
+        --shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+      }
+      :root {
+        --a1: #c8a96e;
+        --a1l: rgba(200, 169, 110, 0.12);
+        --a1b: rgba(200, 169, 110, 0.25);
+        --a2: #6eb896;
+        --a2l: rgba(110, 184, 150, 0.12);
+        --a2b: rgba(110, 184, 150, 0.25);
+        --a3: #6ea0c8;
+        --a3l: rgba(110, 160, 200, 0.12);
+        --a3b: rgba(110, 160, 200, 0.25);
+        --a4: #c87a9a;
+        --a4l: rgba(200, 122, 154, 0.12);
+        --a4b: rgba(200, 122, 154, 0.25);
+        --a5: #9a7ec8;
+        --a5l: rgba(154, 126, 200, 0.12);
+        --a5b: rgba(154, 126, 200, 0.25);
+        --mono: "IBM Plex Mono", monospace;
+        --serif: "Fraunces", serif;
+        --sans: "DM Sans", sans-serif;
+      }
+
+      /* ── RESET ── */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        min-height: 100vh;
+        transition:
+          background 0.25s,
+          color 0.25s;
+        overflow-x: hidden;
+      }
+
+      /* ── NOISE TEXTURE (dark mode) ── */
+      [data-theme="dark"] body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.025;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      /* ── SCROLLBAR ── */
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg2);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--dim);
+        border-radius: 3px;
+      }
+
+      /* ── TOPBAR ── */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--bg2);
+        border-bottom: 1px solid var(--border);
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 52px;
+        backdrop-filter: blur(8px);
+        transition:
+          background 0.25s,
+          border-color 0.25s;
+      }
+      .topbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+      .topbar-logo {
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(135deg, var(--a1), var(--a2));
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: #0d0d0d;
+        flex-shrink: 0;
+      }
+      .topbar-name {
+        font-family: var(--mono);
+        font-size: 0.6875rem;
+        letter-spacing: 0.08em;
+        color: var(--text);
+        text-transform: uppercase;
+      }
+      .topbar-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .theme-btn-top {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 10px;
+        background: var(--bg3);
+        border: 1px solid var(--border2);
+        border-radius: 20px;
+        cursor: pointer;
+        font-family: var(--mono);
+        font-size: 0.625rem;
+        color: var(--sub);
+        transition: all 0.15s;
+        min-height: 30px;
+      }
+      .theme-btn-top:hover {
+        border-color: var(--a1);
+        color: var(--a1);
+      }
+      .theme-btn-top.active {
+        background: var(--a1l);
+        border-color: var(--a1);
+        color: var(--a1);
+      }
+
+      /* ── PAGE WRAP ── */
+      .page {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        padding: 80px 40px 72px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .hero-eyebrow {
+        font-family: var(--mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.18em;
+        color: var(--a2);
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--a2);
+      }
+      .hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 6vw, 4.25rem);
+        font-weight: 300;
+        line-height: 1.05;
+        color: var(--text);
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+      .hero h1 em {
+        font-style: italic;
+        color: var(--a1);
+      }
+      .hero p {
+        font-size: 1rem;
+        color: var(--sub);
+        max-width: 520px;
+        line-height: 1.8;
+        margin-bottom: 36px;
+      }
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .hero-stat {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        background: var(--bg3);
+        border: 1px solid var(--border2);
+        border-radius: 24px;
+        font-family: var(--mono);
+        font-size: 0.625rem;
+        color: var(--muted);
+      }
+      .hero-stat strong {
+        color: var(--text);
+      }
+
+      /* ── SECTION ── */
+      .section {
+        padding: 0 40px 80px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .section-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+      .section-label {
+        font-family: var(--mono);
+        font-size: 0.5625rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .section-line {
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* ── ROADMAP GRID ── */
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      /* ── ROADMAP CARD ── */
+      .roadmap-card {
+        position: relative;
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition:
+          border-color 0.2s,
+          transform 0.2s,
+          box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        animation: cardIn 0.4s ease both;
+      }
+      .roadmap-card:hover {
+        border-color: var(--border2);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+      .roadmap-card:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .roadmap-card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .roadmap-card:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .roadmap-card:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+
+      .card-top {
+        padding: 20px 20px 16px;
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .card-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+        border: 1px solid var(--border);
+      }
+      .card-meta {
+        flex: 1;
+        min-width: 0;
+      }
+      .card-tag {
+        font-family: var(--mono);
+        font-size: 0.5rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+      }
+      .card-title {
+        font-family: var(--serif);
+        font-size: 1.1875rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--text);
+      }
+      .card-title em {
+        font-style: italic;
+        color: var(--a1);
+      }
+      .card-desc {
+        padding: 0 20px 16px;
+        font-size: 0.8125rem;
+        color: var(--sub);
+        line-height: 1.65;
+      }
+      .card-pills {
+        padding: 12px 20px 16px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        border-top: 1px solid var(--border);
+      }
+      .card-pill {
+        font-family: var(--mono);
+        font-size: 0.5rem;
+        letter-spacing: 0.06em;
+        padding: 3px 8px;
+        border-radius: 3px;
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        color: var(--muted);
+      }
+      .card-footer {
+        padding: 12px 20px;
+        border-top: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: var(--bg3);
+      }
+      .card-progress-wrap {
+        flex: 1;
+        margin-right: 12px;
+      }
+      .card-progress-label {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--mono);
+        font-size: 0.5rem;
+        color: var(--muted);
+        margin-bottom: 5px;
+      }
+      .card-progress-bar {
+        height: 2px;
+        background: var(--dim);
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .card-progress-fill {
+        height: 100%;
+        border-radius: 2px;
+        transition: width 0.4s ease;
+      }
+      .card-cta {
+        font-family: var(--mono);
+        font-size: 0.5625rem;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: color 0.15s;
+      }
+      .roadmap-card:hover .card-cta {
+        color: var(--a1);
+      }
+
+      /* Card accent bars */
+      .roadmap-card.c-dsa {
+        --card-accent: var(--a1);
+      }
+      .roadmap-card.c-db {
+        --card-accent: var(--a3);
+      }
+      .roadmap-card.c-java {
+        --card-accent: var(--a2);
+      }
+      .roadmap-card.c-soon {
+        --card-accent: var(--dim);
+        pointer-events: none;
+      }
+      .roadmap-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--card-accent, var(--border));
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .roadmap-card:hover::before {
+        opacity: 1;
+      }
+      .card-progress-fill.c-dsa {
+        background: linear-gradient(90deg, var(--a1), var(--a2));
+      }
+      .card-progress-fill.c-db {
+        background: linear-gradient(90deg, var(--a3), var(--a7));
+      }
+      .card-progress-fill.c-java {
+        background: linear-gradient(90deg, var(--a2), var(--a3));
+      }
+
+      /* "Coming soon" card */
+      .roadmap-card.c-soon {
+        opacity: 0.5;
+        border-style: dashed;
+        cursor: default;
+      }
+      .soon-badge {
+        font-family: var(--mono);
+        font-size: 0.5rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 2px 7px;
+        background: var(--bg3);
+        border: 1px solid var(--border);
+        border-radius: 3px;
+        color: var(--muted);
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      /* ── FOOTER ── */
+      .site-footer {
+        border-top: 1px solid var(--border);
+        padding: 28px 40px;
+        font-family: var(--mono);
+        font-size: 0.5625rem;
+        color: var(--muted);
+        text-align: center;
+        line-height: 2.2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .site-footer span {
+        color: var(--dim);
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes cardIn {
+        from {
+          opacity: 0;
+          transform: translateY(14px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes heroIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero {
+        animation: heroIn 0.5s ease both;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 640px) {
+        .topbar {
+          padding: 0 18px;
+        }
+        .topbar-name {
+          display: none;
+        }
+        .hero {
+          padding: 52px 18px 52px;
+        }
+        .section {
+          padding: 0 18px 60px;
+        }
+        .hero h1 {
+          font-size: 2.25rem;
+        }
+        .roadmap-grid {
+          grid-template-columns: 1fr;
+        }
+        .site-footer {
+          padding: 20px 18px;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── TOPBAR ── -->
+    <header class="topbar">
+      <div class="topbar-brand">
+        <div class="topbar-logo">DR</div>
+        <span class="topbar-name">Dev Roadmaps</span>
+      </div>
+      <div class="topbar-right">
+        <button
+          class="theme-btn-top active"
+          id="btn-dark"
+          onclick="setTheme('dark')">
+          🌙 Dark
+        </button>
+        <button
+          class="theme-btn-top"
+          id="btn-light"
+          onclick="setTheme('light')">
+          ☀️ Light
+        </button>
+      </div>
+    </header>
+
+    <div class="page">
+      <!-- ── HERO ── -->
+      <section class="hero">
+        <div class="hero-eyebrow">Learning Hub · Engineer Edition</div>
+        <h1>Every roadmap<br />you <em>actually need</em></h1>
+        <p>
+          Structured, opinionated tracks for backend engineers — from
+          fundamentals to interview-ready. Each roadmap tracks your progress,
+          links resources, and keeps you on the shortest path to expertise.
+        </p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong id="stat-roadmaps">3</strong> roadmaps
+          </div>
+          <div class="hero-stat">
+            <strong id="stat-topics">0</strong> total topics
+          </div>
+          <div class="hero-stat">✓ Progress saved locally</div>
+          <div class="hero-stat">🌙 Dark &amp; light themes</div>
+        </div>
+      </section>
+
+      <!-- ── ROADMAPS ── -->
+      <section class="section">
+        <div class="section-head">
+          <div class="section-label">Available Roadmaps</div>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="roadmap-grid">
+          <!-- DSA -->
+          <a
+            class="roadmap-card c-dsa"
+            href="roadmaps/datastructure-roadmap.html">
+            <div class="card-top">
+              <div
+                class="card-icon"
+                style="background: var(--a1l); border-color: var(--a1b)">
+                🧩
+              </div>
+              <div class="card-meta">
+                <div class="card-tag" style="color: var(--a1)">
+                  Data Structures & Algorithms
+                </div>
+                <div class="card-title">DSA<br /><em>Complete Track</em></div>
+              </div>
+            </div>
+            <div class="card-desc">
+              Arrays to dynamic programming. Every major pattern, complexity
+              analysis, and LeetCode-mapped problems for product company
+              interviews.
+            </div>
+            <div class="card-pills">
+              <span class="card-pill">34 Topics</span>
+              <span class="card-pill">150+ Patterns</span>
+              <span class="card-pill">LeetCode Mapped</span>
+              <span class="card-pill">3–4 Months</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-progress-wrap">
+                <div class="card-progress-label">
+                  <span>Progress</span>
+                  <span id="dsa-pct">0%</span>
+                </div>
+                <div class="card-progress-bar">
+                  <div
+                    class="card-progress-fill c-dsa"
+                    id="dsa-fill"
+                    style="width: 0%"></div>
+                </div>
+              </div>
+              <div class="card-cta">Open →</div>
+            </div>
+          </a>
+
+          <!-- Database -->
+          <a class="roadmap-card c-db" href="roadmaps/database-roadmap.html">
+            <div class="card-top">
+              <div
+                class="card-icon"
+                style="background: var(--a3l); border-color: var(--a3b)">
+                🗄️
+              </div>
+              <div class="card-meta">
+                <div class="card-tag" style="color: var(--a3)">
+                  Database & Cloud
+                </div>
+                <div class="card-title">
+                  DB &amp; Cloud<br /><em>Complete Track</em>
+                </div>
+              </div>
+            </div>
+            <div class="card-desc">
+              PostgreSQL, NoSQL, Redis, AWS, and Azure. Everything a backend
+              engineer needs to design, query, and operate production databases.
+            </div>
+            <div class="card-pills">
+              <span class="card-pill">PostgreSQL</span>
+              <span class="card-pill">NoSQL</span>
+              <span class="card-pill">Redis</span>
+              <span class="card-pill">AWS · Azure</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-progress-wrap">
+                <div class="card-progress-label">
+                  <span>Progress</span>
+                  <span id="db-pct">0%</span>
+                </div>
+                <div class="card-progress-bar">
+                  <div
+                    class="card-progress-fill c-db"
+                    id="db-fill"
+                    style="width: 0%"></div>
+                </div>
+              </div>
+              <div class="card-cta">Open →</div>
+            </div>
+          </a>
+
+          <!-- Java Backend -->
+          <a
+            class="roadmap-card c-java"
+            href="roadmaps/java-backend-roadmap.html">
+            <div class="card-top">
+              <div
+                class="card-icon"
+                style="background: var(--a2l); border-color: var(--a2b)">
+                ☕
+              </div>
+              <div class="card-meta">
+                <div class="card-tag" style="color: var(--a2)">
+                  Java Backend
+                </div>
+                <div class="card-title">
+                  Java Backend<br /><em>Fast Track</em>
+                </div>
+              </div>
+            </div>
+            <div class="card-desc">
+              Spring Boot, Hibernate, microservices, design patterns, and system
+              design. Complete track from core Java to production-grade backend
+              systems.
+            </div>
+            <div class="card-pills">
+              <span class="card-pill">Spring Boot</span>
+              <span class="card-pill">Hibernate</span>
+              <span class="card-pill">Microservices</span>
+              <span class="card-pill">System Design</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-progress-wrap">
+                <div class="card-progress-label">
+                  <span>Progress</span>
+                  <span id="java-pct">0%</span>
+                </div>
+                <div class="card-progress-bar">
+                  <div
+                    class="card-progress-fill c-java"
+                    id="java-fill"
+                    style="width: 0%"></div>
+                </div>
+              </div>
+              <div class="card-cta">Open →</div>
+            </div>
+          </a>
+
+          <!-- Coming Soon -->
+          <div class="roadmap-card c-soon">
+            <div class="card-top">
+              <div class="card-icon" style="background: var(--bg3)">⚙️</div>
+              <div class="card-meta">
+                <div class="card-tag" style="color: var(--muted)">
+                  System Design <span class="soon-badge">Soon</span>
+                </div>
+                <div class="card-title" style="color: var(--muted)">
+                  System Design<br />Full Track
+                </div>
+              </div>
+            </div>
+            <div class="card-desc">
+              Distributed systems, scalability patterns, load balancing,
+              caching, message queues, and large-scale architecture design.
+            </div>
+            <div class="card-pills">
+              <span class="card-pill">Distributed Systems</span>
+              <span class="card-pill">Caching</span>
+              <span class="card-pill">Message Queues</span>
+            </div>
+            <div class="card-footer">
+              <div class="card-progress-wrap">
+                <div class="card-progress-label"><span>Coming soon</span></div>
+                <div class="card-progress-bar">
+                  <div
+                    class="card-progress-fill"
+                    style="width: 0%; background: var(--dim)"></div>
+                </div>
+              </div>
+              <div class="card-cta" style="color: var(--dim)">— —</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      Dev Roadmaps Hub
+      <span>·</span>
+      DSA · Database · Java Backend
+      <span>·</span>
+      Progress tracked in browser
+      <span>·</span>
+      More roadmaps coming soon
+    </footer>
+
+    <script>
+      // ── THEME ──
+      function setTheme(t) {
+        document.documentElement.setAttribute("data-theme", t);
+        document
+          .getElementById("btn-dark")
+          .classList.toggle("active", t === "dark");
+        document
+          .getElementById("btn-light")
+          .classList.toggle("active", t === "light");
+        try {
+          localStorage.setItem("hub-theme", t);
+        } catch (e) {}
+      }
+      (function () {
+        try {
+          const s = localStorage.getItem("hub-theme");
+          if (s) setTheme(s);
+        } catch (e) {}
+      })();
+
+      // ── PROGRESS SYNC ──
+      // Pull saved progress from each roadmap's localStorage state
+      function computeProgress(storageKey) {
+        try {
+          const state = JSON.parse(localStorage.getItem(storageKey) || "{}");
+          const done = Object.values(state).filter(Boolean).length;
+          const total = Object.keys(state).length;
+          return { done, total };
+        } catch (e) {
+          return { done: 0, total: 0 };
+        }
+      }
+
+      function updateCards() {
+        const maps = [
+          { key: "dsa-state", pctId: "dsa-pct", fillId: "dsa-fill" },
+          { key: "dcr-state", pctId: "db-pct", fillId: "db-fill" },
+          { key: "jbr-state", pctId: "java-pct", fillId: "java-fill" },
+        ];
+        let totalTopics = 0;
+        maps.forEach((m) => {
+          const { done, total } = computeProgress(m.key);
+          const pct = total ? Math.round((done / total) * 100) : 0;
+          const pctEl = document.getElementById(m.pctId);
+          const fillEl = document.getElementById(m.fillId);
+          if (pctEl) pctEl.textContent = pct + "%";
+          if (fillEl) fillEl.style.width = pct + "%";
+          totalTopics += total;
+        });
+        // Update hero stat
+        const statEl = document.getElementById("stat-topics");
+        if (statEl && totalTopics > 0) statEl.textContent = totalTopics;
+      }
+
+      // Run on load (reads from localStorage if roadmaps have been visited)
+      updateCards();
+
+      // Also try to count topics from a known static count as fallback
+      (function () {
+        const statEl = document.getElementById("stat-topics");
+        if (statEl && statEl.textContent === "0") statEl.textContent = "95+";
+      })();
+    </script>
+  </body>
+</html>

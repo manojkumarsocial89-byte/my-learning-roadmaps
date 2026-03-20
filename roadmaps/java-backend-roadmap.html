@@ -1,0 +1,4549 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <title>Java Backend Roadmap — Complete Fast Track</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../shared/styles.css" />
+  </head>
+  <body>
+    <!-- Mobile hamburger -->
+    <button class="mobile-menu-btn" aria-label="Toggle menu">
+      <span></span>
+    </button>
+    <div class="sidebar-overlay"></div>
+
+    <div class="shell">
+      <!-- ═══════════ SIDEBAR ═══════════ -->
+      <nav class="sidebar">
+        <div class="sidebar-head">
+          <div class="eyebrow">4–5 hrs/day · Complete Path</div>
+          <h2>Java Backend<br /><em>Fast Track</em></h2>
+        </div>
+
+        <a class="sidebar-home" href="../index.html">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M1 6L6 1L11 6"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round" />
+            <path
+              d="M2 5.5V11H5V8H7V11H10V5.5"
+              stroke="currentColor"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          ← All Roadmaps
+        </a>
+        <div class="theme-toggle">
+          <button
+            class="theme-btn active"
+            id="btn-dark"
+            onclick="setTheme('dark')">
+            🌙 Dark
+          </button>
+          <button class="theme-btn" id="btn-light" onclick="setTheme('light')">
+            ☀️ Light
+          </button>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>Progress</span><span id="prog-pct">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="prog-fill"></div>
+          </div>
+          <div id="prog-counts">0 / 0 topics done</div>
+        </div>
+
+        <div class="nav-scroll">
+          <div class="nav-group">Phase 1 — Java Gaps</div>
+          <a class="nav-link" href="#p1"
+            ><span class="nav-dot"></span>OOP Deep Dive<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W1</span></a
+          >
+          <a class="nav-link" href="#p2"
+            ><span class="nav-dot"></span>Functional Java<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W1</span></a
+          >
+          <a class="nav-link" href="#p3"
+            ><span class="nav-dot"></span>Concurrency<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W2</span></a
+          >
+          <a class="nav-link" href="#p4"
+            ><span class="nav-dot"></span>Modern Java (17–21)<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W2</span></a
+          >
+
+          <div class="nav-group">Phase 2 — Tooling</div>
+          <a class="nav-link" href="#p5"
+            ><span class="nav-dot"></span>Maven<span class="nav-check">✓</span
+            ><span class="nav-week">W2</span></a
+          >
+
+          <div class="nav-group">Phase 3 — Databases</div>
+          <a class="nav-link" href="#p6"
+            ><span class="nav-dot"></span>SQL Deep Dive<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W3</span></a
+          >
+          <a class="nav-link" href="#p7"
+            ><span class="nav-dot"></span>DB Design & Indexing<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W3</span></a
+          >
+          <a class="nav-link" href="#p8"
+            ><span class="nav-dot"></span>Transactions & ACID<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W4</span></a
+          >
+
+          <div class="nav-group">Phase 4 — Spring Boot</div>
+          <a class="nav-link" href="#p9"
+            ><span class="nav-dot"></span>IoC & DI<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W4</span></a
+          >
+          <a class="nav-link" href="#p10"
+            ><span class="nav-dot"></span>Spring Boot Setup<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W4</span></a
+          >
+          <a class="nav-link" href="#p11"
+            ><span class="nav-dot"></span>Spring MVC / REST<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W5</span></a
+          >
+          <a class="nav-link" href="#p12"
+            ><span class="nav-dot"></span>Spring Data JPA<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W5</span></a
+          >
+          <a class="nav-link" href="#p13"
+            ><span class="nav-dot"></span>Validation & DTOs<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W6</span></a
+          >
+          <a class="nav-link" href="#p14"
+            ><span class="nav-dot"></span>Exception Handling<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W6</span></a
+          >
+          <a class="nav-link" href="#p15"
+            ><span class="nav-dot"></span>AOP & @Transactional<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W7</span></a
+          >
+          <a class="nav-link" href="#p16"
+            ><span class="nav-dot"></span>REST API Design<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W7</span></a
+          >
+          <a class="nav-link" href="#p17"
+            ><span class="nav-dot"></span>API Docs (OpenAPI)<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W7</span></a
+          >
+
+          <div class="nav-group">Phase 5 — Security</div>
+          <a class="nav-link" href="#p18"
+            ><span class="nav-dot"></span>Spring Security Core<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W8</span></a
+          >
+          <a class="nav-link" href="#p19"
+            ><span class="nav-dot"></span>JWT Auth<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W9</span></a
+          >
+          <a class="nav-link" href="#p20"
+            ><span class="nav-dot"></span>OAuth2 & OIDC<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W9</span></a
+          >
+
+          <div class="nav-group">Phase 6 — Testing</div>
+          <a class="nav-link" href="#p21"
+            ><span class="nav-dot"></span>JUnit 5 & Mockito<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W10</span></a
+          >
+          <a class="nav-link" href="#p22"
+            ><span class="nav-dot"></span>Spring Boot Testing<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W10</span></a
+          >
+          <a class="nav-link" href="#p23"
+            ><span class="nav-dot"></span>Testcontainers<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W11</span></a
+          >
+
+          <div class="nav-group">Phase 7 — Production</div>
+          <a class="nav-link" href="#p24"
+            ><span class="nav-dot"></span>Docker<span class="nav-check">✓</span
+            ><span class="nav-week">W11</span></a
+          >
+          <a class="nav-link" href="#p25"
+            ><span class="nav-dot"></span>CI/CD — GitHub Actions<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W12</span></a
+          >
+          <a class="nav-link" href="#p26"
+            ><span class="nav-dot"></span>Cloud — AWS<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W12</span></a
+          >
+          <a class="nav-link" href="#p27"
+            ><span class="nav-dot"></span>Monitoring & Logging<span
+              class="nav-check"
+              >✓</span
+            ><span class="nav-week">W13</span></a
+          >
+
+          <div class="nav-group">Phase 8 — Advanced</div>
+          <a class="nav-link" href="#p28"
+            ><span class="nav-dot"></span>Redis Caching<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W13</span></a
+          >
+          <a class="nav-link" href="#p29"
+            ><span class="nav-dot"></span>Kafka Messaging<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W14</span></a
+          >
+          <a class="nav-link" href="#p30"
+            ><span class="nav-dot"></span>Microservices<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W15</span></a
+          >
+          <a class="nav-link" href="#p31"
+            ><span class="nav-dot"></span>System Design<span class="nav-check"
+              >✓</span
+            ><span class="nav-week">W16</span></a
+          >
+        </div>
+      </nav>
+
+      <!-- ═══════════ MAIN ═══════════ -->
+      <main class="main">
+        <div class="hero">
+          <div class="kicker">
+            Complete Path · 4–5 hrs/day · 31 Topics · Interview-Ready
+          </div>
+          <h1>Java Backend<br /><em>Complete Roadmap</em></h1>
+          <p>
+            Every important topic, in exact order, with official docs + videos +
+            practice links. You know Java basics and Node.js — this starts from
+            your gaps and builds to production-grade skills. Skip topics you
+            know using the ⚡ button.
+          </p>
+          <div class="meta-row">
+            <div class="meta-pill">⚡ 3–4 months intensive</div>
+            <div class="meta-pill">📦 31 topics, 100+ subtopics</div>
+            <div class="meta-pill">🎯 Interview tags on every topic</div>
+            <div class="meta-pill">✓ Progress saved in browser</div>
+            <div class="meta-pill">🏗 Build projects per phase</div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 1 — JAVA GAPS -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 1 — Fill Java Gaps</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 1–2 · ~40 hrs</div>
+        </div>
+
+        <div class="phase" id="p1">
+          <div class="phase-head">
+            <div class="phase-num">01</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Java Core</div>
+              <div class="phase-title">OOP — The Deep Parts</div>
+              <div class="phase-time">
+                ⏱ 4 days · Spring relies on every one of these
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            You know classes, objects, inheritance. This phase fills the gaps
+            Spring actually uses — abstract classes, interfaces, generics,
+            exceptions. Don't skip if you haven't written production Java.
+          </div>
+          <span class="skip-all" onclick="skipPhase('p1')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p1">
+            <div class="topic" id="t01">
+              <div class="topic-header" onclick="toggleTopic('t01')">
+                <div class="topic-check" onclick="markDone(event, 't01')"></div>
+                <div class="topic-name">
+                  Abstract Classes vs Interfaces — When to Use Each
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">Core Concepts</div>
+                <ul class="sub-list">
+                  <li>
+                    <strong>Abstract class</strong> — can have state (fields),
+                    constructors, concrete + abstract methods. Use when: IS-A
+                    with shared behavior/state
+                  </li>
+                  <li>
+                    <strong>Interface</strong> — contract only (pre-Java 8). Use
+                    when: CAN-DO capability across unrelated classes
+                  </li>
+                  <li>
+                    <strong>Default methods in interfaces (Java 8+)</strong> —
+                    interfaces can now have concrete methods:
+                    <code>default void log() { ... }</code>
+                  </li>
+                  <li>
+                    <strong>Static methods in interfaces</strong> — utility
+                    methods: <code>static int compare(A a, B b)</code>
+                  </li>
+                  <li>
+                    <strong>Multiple interface implementation</strong> — a class
+                    can implement many interfaces but extend only one class
+                  </li>
+                  <li>
+                    <strong>Marker interfaces</strong> — empty interfaces for
+                    tagging: Serializable, Cloneable, Remote
+                  </li>
+                  <li>
+                    <strong>Functional interface</strong> — exactly ONE abstract
+                    method. Enables lambda assignment.
+                    <code>@FunctionalInterface</code> enforces this
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="sub-section-head">Sub-topics</div>
+                <ul class="sub-list">
+                  <li>
+                    Sealed interfaces (Java 17) — restrict which classes can
+                    implement
+                  </li>
+                  <li>
+                    Interface segregation principle (ISP) — keep interfaces
+                    small and focused
+                  </li>
+                  <li>
+                    Why Spring beans implement interfaces — for JDK dynamic
+                    proxy (AOP)
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Why does Spring recommend coding to interfaces?" — Spring
+                    creates proxies (for @Transactional, @Cacheable) using JDK
+                    Proxy which requires an interface, or CGLIB which
+                    subclasses. Interface makes your code mockable in tests too.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/javase/tutorial/java/IandI/abstract.html"
+                    target="_blank"
+                    >📖 Oracle: Abstract Classes</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/javase/tutorial/java/IandI/createinterface.html"
+                    target="_blank"
+                    >📖 Oracle: Interfaces</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=HvPlEJ3LHgE"
+                    target="_blank"
+                    >▶ Telusko: Interface vs Abstract</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t02">
+              <div class="topic-header" onclick="toggleTopic('t02')">
+                <div class="topic-check" onclick="markDone(event, 't02')"></div>
+                <div class="topic-name">
+                  Generics — &lt;T&gt;, Wildcards, Type Erasure
+                </div>
+                <div class="topic-badge b1">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Generic classes:</strong>
+                    <code>class Repository&lt;T&gt;</code> — type parameter
+                    makes class reusable
+                  </li>
+                  <li>
+                    <strong>Generic methods:</strong>
+                    <code
+                      >&lt;T extends Comparable&lt;T&gt;&gt; T max(T a, T
+                      b)</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Upper bounded wildcard:</strong>
+                    <code>List&lt;? extends Number&gt;</code> — read-only,
+                    accepts Number and subclasses
+                  </li>
+                  <li>
+                    <strong>Lower bounded wildcard:</strong>
+                    <code>List&lt;? super Integer&gt;</code> — write-friendly,
+                    accepts Integer and parents
+                  </li>
+                  <li>
+                    <strong>Unbounded wildcard:</strong>
+                    <code>List&lt;?&gt;</code> — unknown type, very flexible
+                  </li>
+                  <li>
+                    <strong>Type erasure</strong> — generics are compile-time
+                    only. At runtime <code>List&lt;String&gt;</code> becomes
+                    <code>List</code>. Cannot do <code>new T()</code> at runtime
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>PECS rule:</strong> Producer Extends, Consumer Super
+                    — when in doubt what wildcard to use
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/javase/tutorial/java/generics/index.html"
+                    target="_blank"
+                    >📖 Oracle: Generics Tutorial</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=K1iu1kXkVoA"
+                    target="_blank"
+                    >▶ Java Brains: Generics Deep Dive</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t03">
+              <div class="topic-header" onclick="toggleTopic('t03')">
+                <div class="topic-check" onclick="markDone(event, 't03')"></div>
+                <div class="topic-name">
+                  Exception Handling — Checked, Unchecked, Custom
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Exception hierarchy:</strong> Throwable → Error (JVM
+                    errors) | Exception → RuntimeException (unchecked)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Checked exceptions</strong> — must declare with
+                    <code>throws</code> or catch. E.g. IOException, SQLException
+                  </li>
+                  <li>
+                    <strong>Unchecked exceptions</strong> — RuntimeException
+                    subclasses. No forced handling. Spring uses these
+                    exclusively
+                  </li>
+                  <li>
+                    <strong>try-catch-finally</strong> — finally always runs
+                    (even if exception thrown)
+                  </li>
+                  <li>
+                    <strong>try-with-resources</strong> — auto-closes Closeable:
+                    <code>try (Connection c = ds.getConnection()) { ... }</code>
+                  </li>
+                  <li>
+                    <strong>Multi-catch:</strong>
+                    <code>catch (IOException | SQLException e)</code>
+                  </li>
+                  <li>
+                    <strong>Custom exception:</strong> extend RuntimeException,
+                    add message + cause constructor
+                  </li>
+                  <li>
+                    <strong>Exception chaining:</strong>
+                    <code
+                      >throw new ServiceException("msg",
+                      originalException)</code
+                    >
+                    — preserve root cause
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Why does Spring use unchecked exceptions?" — Forces callers
+                    to handle every possible exception (checked) breaks API
+                    contracts when internal implementation changes. Unchecked
+                    lets global @ControllerAdvice catch everything at the
+                    boundary.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/javase/tutorial/essential/exceptions/"
+                    target="_blank"
+                    >📖 Oracle: Exception Handling</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=EWj60p8esD0"
+                    target="_blank"
+                    >▶ Telusko: Exception Handling</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t04">
+              <div class="topic-header" onclick="toggleTopic('t04')">
+                <div class="topic-check" onclick="markDone(event, 't04')"></div>
+                <div class="topic-name">
+                  Collections Framework — List, Map, Set, Queue
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>List:</strong> ArrayList (O(1) get, O(n) insert),
+                    LinkedList (O(1) insert, O(n) get), Vector (synchronized
+                    legacy)
+                  </li>
+                  <li>
+                    <strong>Map:</strong> HashMap (unordered, O(1) avg),
+                    LinkedHashMap (insertion order), TreeMap (sorted keys, O(log
+                    n)), ConcurrentHashMap (thread-safe)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Set:</strong> HashSet (no duplicates, backed by
+                    HashMap), LinkedHashSet (ordered), TreeSet (sorted)
+                  </li>
+                  <li>
+                    <strong>Queue/Deque:</strong> LinkedList, ArrayDeque,
+                    PriorityQueue
+                  </li>
+                  <li>
+                    <strong>Immutable collections:</strong>
+                    <code>List.of()</code>, <code>Map.of()</code>,
+                    <code>Set.of()</code> (Java 9+)
+                  </li>
+                  <li>
+                    <strong>Collections utility class:</strong> sort(),
+                    shuffle(), unmodifiableList(), synchronizedList()
+                  </li>
+                  <li>
+                    <strong>Comparable vs Comparator</strong> — natural ordering
+                    vs custom ordering <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>equals() and hashCode() contract</strong> — if
+                    a.equals(b) then a.hashCode() == b.hashCode(). MUST override
+                    both <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "How does HashMap work internally?" — Array of buckets +
+                    LinkedList/TreeMap per bucket. hashCode() finds bucket,
+                    equals() finds exact key. Load factor 0.75 triggers resize.
+                    Java 8+: bucket becomes TreeMap when size &gt; 8 (O(log n)
+                    worst case).
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/package-summary.html"
+                    target="_blank"
+                    >📖 Java Collections Javadoc</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=GdAon80-0KA"
+                    target="_blank"
+                    >▶ Java Brains: Collections</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p2">
+          <div class="phase-head">
+            <div class="phase-num">02</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Java Core</div>
+              <div class="phase-title">
+                Functional Java — Lambdas, Streams, Optional
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · Critical — all modern Java backend code uses these
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            This is the most important gap to fill. Spring code, Spring Data,
+            Spring Security — all use lambdas and streams heavily. If you can't
+            read them fluently, you'll struggle to use Spring effectively.
+          </div>
+          <span class="skip-all" onclick="skipPhase('p2')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p2">
+            <div class="topic" id="t05">
+              <div class="topic-header" onclick="toggleTopic('t05')">
+                <div class="topic-check" onclick="markDone(event, 't05')"></div>
+                <div class="topic-name">
+                  Lambda Expressions & Functional Interfaces
+                </div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Syntax:</strong> <code>(a, b) -> a + b</code> or
+                    <code>(a, b) -> { return a + b; }</code>
+                  </li>
+                  <li>
+                    <strong>Built-in functional interfaces:</strong>
+                    Predicate&lt;T&gt; (boolean test), Function&lt;T,R&gt; (R
+                    apply), Consumer&lt;T&gt; (void accept), Supplier&lt;T&gt;
+                    (T get), BiFunction, BiConsumer, BiPredicate
+                  </li>
+                  <li>
+                    <strong>Method references 4 types:</strong>
+                    <code>String::toUpperCase</code> (instance),
+                    <code>Math::max</code> (static),
+                    <code>list::add</code> (bound),
+                    <code>String::new</code> (constructor)
+                  </li>
+                  <li>
+                    <strong>Function composition:</strong>
+                    <code>f.andThen(g)</code> — f then g;
+                    <code>f.compose(g)</code> — g then f
+                  </li>
+                  <li>
+                    <strong>Predicate composition:</strong>
+                    <code>p1.and(p2)</code>, <code>p1.or(p2)</code>,
+                    <code>p1.negate()</code>
+                  </li>
+                  <li>
+                    <strong>Effectively final</strong> — variables used in
+                    lambdas must be final or effectively final
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html"
+                    target="_blank"
+                    >📖 Oracle: Lambda Expressions</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=gpIUfj3KaOc"
+                    target="_blank"
+                    >▶ Amigoscode: Lambdas Full</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t06">
+              <div class="topic-header" onclick="toggleTopic('t06')">
+                <div class="topic-check" onclick="markDone(event, 't06')"></div>
+                <div class="topic-name">Streams API — Complete Guide</div>
+                <div class="topic-badge b1">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <div class="sub-section-head">Creating Streams</div>
+                <ul class="sub-list">
+                  <li>
+                    <code>list.stream()</code>, <code>Arrays.stream(arr)</code>,
+                    <code>Stream.of(a,b,c)</code>,
+                    <code>Stream.generate()</code>,
+                    <code>Stream.iterate()</code>,
+                    <code>IntStream.range(0,10)</code>
+                  </li>
+                </ul>
+                <div class="sub-section-head">
+                  Intermediate (lazy, return Stream)
+                </div>
+                <ul class="sub-list">
+                  <li>
+                    <code>filter(Predicate)</code>, <code>map(Function)</code>,
+                    <code>flatMap(Function)</code>, <code>distinct()</code>,
+                    <code>sorted()</code>, <code>sorted(Comparator)</code>,
+                    <code>limit(n)</code>, <code>skip(n)</code>,
+                    <code>peek(Consumer)</code> (debug only)
+                  </li>
+                </ul>
+                <div class="sub-section-head">
+                  Terminal (eager, consume Stream)
+                </div>
+                <ul class="sub-list">
+                  <li>
+                    <code>collect()</code>, <code>forEach()</code>,
+                    <code>reduce(identity, BinaryOperator)</code>,
+                    <code>count()</code>, <code>findFirst()</code>,
+                    <code>findAny()</code>, <code>anyMatch()</code>,
+                    <code>allMatch()</code>, <code>noneMatch()</code>,
+                    <code>min()</code>, <code>max()</code>,
+                    <code>toArray()</code>
+                  </li>
+                </ul>
+                <div class="sub-section-head">Collectors (most important)</div>
+                <ul class="sub-list">
+                  <li>
+                    <code>Collectors.toList()</code>, <code>toSet()</code>,
+                    <code>toMap(key, val)</code>, <code>joining(", ")</code>
+                  </li>
+                  <li>
+                    <code>groupingBy(classifier)</code> — returns
+                    <code>Map&lt;K, List&lt;T&gt;&gt;</code>
+                  </li>
+                  <li>
+                    <code>groupingBy(classifier, counting())</code> — returns
+                    <code>Map&lt;K, Long&gt;</code>
+                  </li>
+                  <li>
+                    <code>partitioningBy(Predicate)</code> — returns
+                    <code>Map&lt;Boolean, List&lt;T&gt;&gt;</code>
+                  </li>
+                  <li>
+                    <code
+                      >collectingAndThen(toList(),
+                      Collections::unmodifiableList)</code
+                    >
+                  </li>
+                  <li>
+                    <code>Collectors.toUnmodifiableList()</code> (Java 10+)
+                  </li>
+                </ul>
+                <ul class="sub-list">
+                  <li>
+                    <strong>map vs flatMap:</strong> map is 1-to-1, flatMap is
+                    1-to-many and flattens nested streams
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Parallel streams:</strong>
+                    <code>list.parallelStream()</code> — uses ForkJoinPool. Only
+                    faster if work per element is heavy AND order doesn't matter
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Streams are not reusable</strong> — once terminal op
+                    called, stream is closed
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Stream.html"
+                    target="_blank"
+                    >📖 Stream Javadoc</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/Collectors.html"
+                    target="_blank"
+                    >📖 Collectors Javadoc</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=Q93lQ84v7Ok"
+                    target="_blank"
+                    >▶ Amigoscode: Streams Complete</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://exercism.org/tracks/java"
+                    target="_blank"
+                    >💻 Exercism Java Track</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t07">
+              <div class="topic-header" onclick="toggleTopic('t07')">
+                <div class="topic-check" onclick="markDone(event, 't07')"></div>
+                <div class="topic-name">Optional — Null-Safe Programming</div>
+                <div class="topic-badge b2">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Creating:</strong>
+                    <code>Optional.of(value)</code> (NPE if null),
+                    <code>Optional.ofNullable(value)</code> (safe),
+                    <code>Optional.empty()</code>
+                  </li>
+                  <li>
+                    <strong>Checking:</strong> <code>isPresent()</code>,
+                    <code>isEmpty()</code> (Java 11)
+                  </li>
+                  <li>
+                    <strong>Getting:</strong> <code>get()</code> (throws if
+                    empty), <code>orElse(default)</code>,
+                    <code>orElseGet(() -> compute())</code>,
+                    <code>orElseThrow()</code>,
+                    <code>orElseThrow(ExceptionSupplier)</code>
+                  </li>
+                  <li>
+                    <strong>Transforming:</strong> <code>map(Function)</code>,
+                    <code>flatMap(Function)</code>,
+                    <code>filter(Predicate)</code>
+                  </li>
+                  <li>
+                    <strong>Side effects:</strong>
+                    <code>ifPresent(Consumer)</code>,
+                    <code>ifPresentOrElse(Consumer, Runnable)</code> (Java 9)
+                  </li>
+                  <li>
+                    <strong>Don't use Optional as:</strong> method parameter,
+                    field, or collection element
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Spring Data JPA</strong> returns
+                    <code>Optional&lt;T&gt;</code> from
+                    <code>findById()</code> — chain
+                    <code>.orElseThrow(() -> new NotFoundException(...))</code>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html"
+                    target="_blank"
+                    >📖 Optional Javadoc</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=vKVzRbsMnTQ"
+                    target="_blank"
+                    >▶ Java Brains: Optional</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p3">
+          <div class="phase-head">
+            <div class="phase-num">03</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Java Core</div>
+              <div class="phase-title">Concurrency & Multithreading</div>
+              <div class="phase-time">
+                ⏱ 3 days · Interview heavy — understand conceptually
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Spring handles threading for you in web apps, but concurrency
+            questions are frequent in interviews. You need to understand
+            threads, locks, and async execution to read Spring internals too.
+          </div>
+          <span class="skip-all" onclick="skipPhase('p3')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p3">
+            <div class="topic" id="t08">
+              <div class="topic-header" onclick="toggleTopic('t08')">
+                <div class="topic-check" onclick="markDone(event, 't08')"></div>
+                <div class="topic-name">
+                  Threads, Runnable, Callable, Future
+                </div>
+                <div class="topic-badge b1">Interview Heavy</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Thread lifecycle:</strong> NEW → RUNNABLE →
+                    BLOCKED/WAITING/TIMED_WAITING → TERMINATED
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Runnable</strong> — no return value:
+                    <code>new Thread(() -> doWork()).start()</code>
+                  </li>
+                  <li>
+                    <strong>Callable&lt;T&gt;</strong> — returns value + throws
+                    checked exceptions
+                  </li>
+                  <li>
+                    <strong>Future&lt;T&gt;</strong> — handle for async result:
+                    <code>future.get()</code> (blocks),
+                    <code>future.isDone()</code>
+                  </li>
+                  <li>
+                    <strong>Race condition</strong> — two threads access shared
+                    mutable state without synchronization
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Deadlock</strong> — thread A holds lock X waits for
+                    Y, thread B holds Y waits for X
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>synchronized keyword</strong> — only one thread at a
+                    time enters block. Works on object monitor
+                  </li>
+                  <li>
+                    <strong>volatile</strong> — guarantees visibility (changes
+                    visible to all threads), not atomicity
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>AtomicInteger, AtomicLong, AtomicReference</strong>
+                    — lock-free thread-safe operations
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/package-summary.html"
+                    target="_blank"
+                    >📖 java.util.concurrent Javadoc</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=r_MbozD32eo"
+                    target="_blank"
+                    >▶ Telusko: Multithreading</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t09">
+              <div class="topic-header" onclick="toggleTopic('t09')">
+                <div class="topic-check" onclick="markDone(event, 't09')"></div>
+                <div class="topic-name">
+                  ExecutorService, Thread Pools, CompletableFuture
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>ExecutorService</strong> — manages a pool of
+                    threads: <code>Executors.newFixedThreadPool(10)</code>,
+                    <code>newCachedThreadPool()</code>,
+                    <code>newSingleThreadExecutor()</code>
+                  </li>
+                  <li>
+                    <strong>submit() vs execute()</strong> — submit returns
+                    Future, execute is fire-and-forget
+                  </li>
+                  <li>
+                    <strong>shutdown() vs shutdownNow()</strong> — graceful vs
+                    immediate
+                  </li>
+                  <li>
+                    <strong>CompletableFuture</strong> — async pipelines without
+                    blocking
+                  </li>
+                  <li>
+                    Creating:
+                    <code>CompletableFuture.supplyAsync(() -> fetch())</code>,
+                    <code>runAsync(() -> doWork())</code>
+                  </li>
+                  <li>
+                    Chaining: <code>thenApply(Function)</code> (same thread),
+                    <code>thenApplyAsync(Function)</code> (new thread)
+                  </li>
+                  <li>
+                    Completion: <code>thenAccept(Consumer)</code>,
+                    <code>thenRun(Runnable)</code>
+                  </li>
+                  <li>
+                    Combining: <code>thenCompose()</code> (flat-map),
+                    <code>thenCombine()</code> (combine two futures)
+                  </li>
+                  <li>
+                    Error handling: <code>exceptionally(ex -> fallback)</code>,
+                    <code>handle(BiFunction)</code>
+                  </li>
+                  <li>
+                    <strong>Virtual Threads (Java 21)</strong> — lightweight
+                    threads managed by JVM, not OS. Spring Boot 3.2+ supports
+                    them. Fix for thread-per-request scalability
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/CompletableFuture.html"
+                    target="_blank"
+                    >📖 CompletableFuture Javadoc</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://openjdk.org/jeps/444"
+                    target="_blank"
+                    >📖 JEP 444: Virtual Threads</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=0hyfZineFl8"
+                    target="_blank"
+                    >▶ CompletableFuture Deep Dive</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p4">
+          <div class="phase-head">
+            <div class="phase-num">04</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">Java Core</div>
+              <div class="phase-title">
+                Modern Java — Records, Sealed Classes, Pattern Matching
+              </div>
+              <div class="phase-time">
+                ⏱ 2 days · Modern code uses these everywhere
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('p4')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p4">
+            <div class="topic" id="t10">
+              <div class="topic-header" onclick="toggleTopic('t10')">
+                <div class="topic-check" onclick="markDone(event, 't10')"></div>
+                <div class="topic-name">
+                  Records, Sealed Classes, Pattern Matching, Text Blocks
+                </div>
+                <div class="topic-badge b2">Modern Java</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Records (Java 16)</strong> — immutable data
+                    carriers.
+                    <code>record Point(int x, int y) {}</code> auto-generates
+                    constructor, getters, equals, hashCode, toString. Use for
+                    DTOs <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Record limitations:</strong> no field mutation,
+                    can't extend classes, can't be JPA @Entity (needs no-arg
+                    constructor)
+                  </li>
+                  <li>
+                    <strong>Compact constructors in records:</strong> validate
+                    in constructor body without repeating parameters
+                  </li>
+                  <li>
+                    <strong>Sealed classes (Java 17):</strong>
+                    <code>sealed class Shape permits Circle, Rectangle</code> —
+                    restricts inheritance to listed classes
+                  </li>
+                  <li>
+                    <strong>Pattern matching instanceof (Java 16):</strong>
+                    <code>if (obj instanceof String s) { s.length(); }</code> —
+                    no cast needed
+                  </li>
+                  <li>
+                    <strong>Switch expressions (Java 14):</strong>
+                    <code
+                      >String result = switch(day) { case MON -> "Mon"; default
+                      -> "Other"; }</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Text blocks (Java 15):</strong> multiline strings
+                    with <code>"""..."""</code> — great for JSON in tests
+                  </li>
+                  <li>
+                    <strong>var (Java 10):</strong> local variable type
+                    inference —
+                    <code>var list = new ArrayList&lt;String&gt;()</code>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://openjdk.org/jeps/395"
+                    target="_blank"
+                    >📖 JEP 395: Records</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://dev.java/learn/"
+                    target="_blank"
+                    >📖 dev.java — Official Learning</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=nqAFSQAx6cU"
+                    target="_blank"
+                    >▶ Java 17+ New Features</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 2 — MAVEN -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 2 — Build Tools</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 2 · ~8 hrs</div>
+        </div>
+
+        <div class="phase" id="p5">
+          <div class="phase-head">
+            <div class="phase-num">05</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Tooling</div>
+              <div class="phase-title">
+                Maven — Dependency & Build Management
+              </div>
+              <div class="phase-time">
+                ⏱ 2 days · Think of it as package.json + npm scripts for Java
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('p5')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p5">
+            <div class="topic" id="t11">
+              <div class="topic-header" onclick="toggleTopic('t11')">
+                <div class="topic-check" onclick="markDone(event, 't11')"></div>
+                <div class="topic-name">
+                  pom.xml, Dependencies, Lifecycle, Plugins
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>pom.xml coordinates:</strong> groupId (com.company),
+                    artifactId (project-name), version (1.0.0)
+                  </li>
+                  <li>
+                    <strong>Parent POM:</strong>
+                    <code>spring-boot-starter-parent</code> manages all
+                    dependency versions — no version conflicts
+                  </li>
+                  <li>
+                    <strong>Dependency scopes:</strong> compile (default, in
+                    classpath always), test (test only), provided (container
+                    provides it), runtime (not for compile)
+                  </li>
+                  <li>
+                    <strong>Maven lifecycle phases:</strong> validate → compile
+                    → test → package → verify → install → deploy
+                  </li>
+                  <li>
+                    <strong>Key commands:</strong>
+                    <code>mvn clean package</code>,
+                    <code>mvn spring-boot:run</code>, <code>mvn test</code>,
+                    <code>mvn dependency:tree</code>
+                  </li>
+                  <li>
+                    <strong>Transitive dependencies</strong> — if A depends on B
+                    which depends on C, A gets C too. Can cause conflicts
+                  </li>
+                  <li>
+                    <strong>Dependency exclusions</strong> — exclude a
+                    transitive dep you don't want
+                  </li>
+                  <li>
+                    <strong>Profiles:</strong> <code>&lt;profiles&gt;</code> —
+                    different configs for dev/prod:
+                    <code>mvn package -Pprod</code>
+                  </li>
+                  <li>
+                    <strong>Spring Boot Maven Plugin:</strong> creates
+                    executable fat JAR with embedded Tomcat
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html"
+                    target="_blank"
+                    >📖 Maven in 5 Minutes</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html"
+                    target="_blank"
+                    >📖 Introduction to POM</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://search.maven.org/"
+                    target="_blank"
+                    >🔍 Maven Central</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=al7bRZzz4oU"
+                    target="_blank"
+                    >▶ Maven Full Tutorial</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 3 — DATABASES -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 3 — Databases</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 3–4 · ~40 hrs</div>
+        </div>
+
+        <div class="phase" id="p6">
+          <div class="phase-head">
+            <div class="phase-num">06</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Database</div>
+              <div class="phase-title">
+                SQL Deep Dive — Queries, JOINs, Window Functions
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · Learn SQL first — don't go to JPA without this
+              </div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('p6')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p6">
+            <div class="topic" id="t12">
+              <div class="topic-header" onclick="toggleTopic('t12')">
+                <div class="topic-check" onclick="markDone(event, 't12')"></div>
+                <div class="topic-name">
+                  Core SQL — SELECT, JOINs, Aggregates, Subqueries, CTEs
+                </div>
+                <div class="topic-badge b3">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>JOINs:</strong> INNER (matched both), LEFT (all left
+                    + matched right), RIGHT, FULL OUTER, CROSS, SELF JOIN
+                  </li>
+                  <li>
+                    <strong>Aggregates:</strong> COUNT(*), COUNT(DISTINCT col),
+                    SUM, AVG, MAX, MIN — with GROUP BY and HAVING
+                  </li>
+                  <li>
+                    <strong>Subqueries:</strong> in WHERE (correlated), in FROM
+                    (derived table), in SELECT (scalar)
+                  </li>
+                  <li>
+                    <strong>CTEs (WITH clause):</strong> readable alternative to
+                    subqueries, can be recursive
+                  </li>
+                  <li>
+                    <strong>Window functions:</strong> ROW_NUMBER(), RANK(),
+                    DENSE_RANK(), NTILE(), LAG(), LEAD(), FIRST_VALUE(), SUM()
+                    OVER() <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>PARTITION BY:</strong> divide rows into groups for
+                    window functions
+                  </li>
+                  <li>
+                    <strong>OVER():</strong> defines the window:
+                    <code
+                      >ROW_NUMBER() OVER (PARTITION BY dept ORDER BY salary
+                      DESC)</code
+                    >
+                  </li>
+                  <li>
+                    <strong>LIMIT + OFFSET:</strong>
+                    <code>LIMIT 10 OFFSET 20</code> — page 3 of size 10
+                  </li>
+                  <li><strong>DISTINCT, ORDER BY, NULLS FIRST/LAST</strong></li>
+                  <li>
+                    <strong>String functions:</strong> LOWER(), UPPER(), TRIM(),
+                    CONCAT(), SUBSTRING(), LIKE, ILIKE (postgres
+                    case-insensitive)
+                  </li>
+                  <li>
+                    <strong>Date functions:</strong> NOW(), CURRENT_DATE,
+                    EXTRACT, DATE_TRUNC, AGE()
+                  </li>
+                  <li>
+                    <strong>CASE WHEN:</strong> inline conditional logic in
+                    SELECT
+                  </li>
+                  <li>
+                    <strong>COALESCE(a, b, c):</strong> first non-null value
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.postgresql.org/docs/current/tutorial-sql.html"
+                    target="_blank"
+                    >📖 PostgreSQL SQL Tutorial</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://pgexercises.com/"
+                    target="_blank"
+                    >💻 PostgreSQL Exercises</a
+                  >
+                  <a
+                    class="res-link prac"
+                    href="https://leetcode.com/studyplan/top-sql-50/"
+                    target="_blank"
+                    >💻 LeetCode SQL 50</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=7S_tz1z_5bA"
+                    target="_blank"
+                    >▶ MySQL Full Course (SQL syntax same)</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p7">
+          <div class="phase-head">
+            <div class="phase-num">07</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Database</div>
+              <div class="phase-title">
+                Database Design, Normalization & Indexing
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <span class="skip-all" onclick="skipPhase('p7')"
+            >⚡ Know this already — mark all done</span
+          >
+          <div class="topics" id="p7">
+            <div class="topic" id="t13">
+              <div class="topic-header" onclick="toggleTopic('t13')">
+                <div class="topic-check" onclick="markDone(event, 't13')"></div>
+                <div class="topic-name">Relationships, Normalization, Keys</div>
+                <div class="topic-badge b3">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Relationships:</strong> One-to-One, One-to-Many
+                    (most common), Many-to-Many (via junction table)
+                  </li>
+                  <li>
+                    <strong>Primary key:</strong> uniquely identifies a row.
+                    Integer SERIAL/BIGSERIAL or UUID
+                  </li>
+                  <li>
+                    <strong>Foreign key:</strong> references PK of another
+                    table. ON DELETE CASCADE vs RESTRICT vs SET NULL
+                  </li>
+                  <li>
+                    <strong>Composite keys:</strong> multiple columns together
+                    form the PK (e.g. user_id + role_id in user_roles)
+                  </li>
+                  <li>
+                    <strong>Normalization:</strong> 1NF (atomic values, no
+                    repeating groups) → 2NF (no partial dependency on composite
+                    key) → 3NF (no transitive dependency)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Denormalization:</strong> intentionally duplicate
+                    data for read performance (e.g. reporting tables)
+                  </li>
+                  <li>
+                    <strong>UUID vs auto-increment:</strong> UUID = globally
+                    unique, good for distributed systems; auto-increment =
+                    sequential, smaller, faster for indexing
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.postgresql.org/docs/current/ddl.html"
+                    target="_blank"
+                    >📖 PostgreSQL DDL</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=QpdhBUYk7Kk"
+                    target="_blank"
+                    >▶ Database Design Full Course</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t14">
+              <div class="topic-header" onclick="toggleTopic('t14')">
+                <div class="topic-check" onclick="markDone(event, 't14')"></div>
+                <div class="topic-name">
+                  PostgreSQL — Indexes, EXPLAIN, JSONB, Constraints
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>B-tree index (default):</strong> best for equality
+                    and range queries.
+                    <code>CREATE INDEX idx_email ON users(email)</code>
+                  </li>
+                  <li>
+                    <strong>When to add index:</strong> columns in WHERE, JOIN
+                    ON, ORDER BY, high cardinality (many unique values)
+                  </li>
+                  <li>
+                    <strong>Composite indexes:</strong>
+                    <code>CREATE INDEX ON orders(user_id, created_at)</code> —
+                    order matters (leftmost prefix rule)
+                  </li>
+                  <li>
+                    <strong>Partial index:</strong>
+                    <code
+                      >CREATE INDEX ON users(email) WHERE active = true</code
+                    >
+                  </li>
+                  <li>
+                    <strong>EXPLAIN ANALYZE:</strong> shows query plan + actual
+                    execution time. Look for Seq Scan (bad on large tables) vs
+                    Index Scan (good)
+                  </li>
+                  <li>
+                    <strong>Constraints:</strong> NOT NULL, UNIQUE, CHECK,
+                    FOREIGN KEY
+                  </li>
+                  <li>
+                    <strong>JSONB:</strong> PostgreSQL's binary JSON column
+                    type. Can index into it with GIN index
+                  </li>
+                  <li>
+                    <strong>Partial vs full table scan:</strong> understand when
+                    Postgres chooses index vs sequential scan
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.postgresql.org/docs/current/indexes.html"
+                    target="_blank"
+                    >📖 PostgreSQL: Indexes</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://www.postgresql.org/docs/current/using-explain.html"
+                    target="_blank"
+                    >📖 PostgreSQL: Using EXPLAIN</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p8">
+          <div class="phase-head">
+            <div class="phase-num">08</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Database</div>
+              <div class="phase-title">
+                Transactions, ACID, Locking & Connection Pooling
+              </div>
+              <div class="phase-time">⏱ 2 days · Interview staple</div>
+            </div>
+          </div>
+          <div class="topics" id="p8">
+            <div class="topic" id="t15">
+              <div class="topic-header" onclick="toggleTopic('t15')">
+                <div class="topic-check" onclick="markDone(event, 't15')"></div>
+                <div class="topic-name">
+                  ACID, Isolation Levels, Locking, Deadlocks
+                </div>
+                <div class="topic-badge b3">Interview Heavy</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Atomicity</strong> — all operations in transaction
+                    succeed, or all fail (rolled back)
+                  </li>
+                  <li>
+                    <strong>Consistency</strong> — transaction brings DB from
+                    one valid state to another (constraints must hold)
+                  </li>
+                  <li>
+                    <strong>Isolation</strong> — concurrent transactions don't
+                    see each other's intermediate state
+                  </li>
+                  <li>
+                    <strong>Durability</strong> — committed data persists even
+                    after crash (written to WAL/disk)
+                  </li>
+                  <li>
+                    <strong>Isolation levels:</strong> READ UNCOMMITTED (dirty
+                    reads) → READ COMMITTED (default PostgreSQL) → REPEATABLE
+                    READ → SERIALIZABLE <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Read phenomena:</strong> Dirty read (uncommitted
+                    data), Non-repeatable read (data changed between reads),
+                    Phantom read (new rows appear between reads)
+                  </li>
+                  <li>
+                    <strong>Optimistic locking:</strong> no lock, use @Version
+                    field, fail if stale. Good for low contention
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Pessimistic locking:</strong> SELECT FOR UPDATE —
+                    acquires row lock. Good for high contention
+                  </li>
+                  <li>
+                    <strong>Deadlock:</strong> A waits for B's lock, B waits for
+                    A's. PostgreSQL detects and aborts one
+                  </li>
+                  <li>
+                    <strong>HikariCP (Spring default):</strong> connection pool
+                    — reuse DB connections. Config: maximumPoolSize,
+                    minimumIdle, connectionTimeout
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Explain ACID" and "What's the difference between optimistic
+                    and pessimistic locking?" — Answer optimistic: use @Version
+                    annotation in JPA, @Lock(LockModeType.OPTIMISTIC).
+                    Pessimistic: @Lock(LockModeType.PESSIMISTIC_WRITE).
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.postgresql.org/docs/current/transaction-iso.html"
+                    target="_blank"
+                    >📖 PostgreSQL: Transaction Isolation</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=pomxJOFVcQs"
+                    target="_blank"
+                    >▶ Hussein Nasser: ACID Explained</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=I_8XKdp7nxc"
+                    target="_blank"
+                    >▶ Hussein Nasser: Locking</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 4 — SPRING BOOT -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 4 — Spring Boot (The Core)</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 4–9 · Biggest Phase · ~120 hrs</div>
+        </div>
+
+        <div class="phase" id="p9">
+          <div class="phase-head">
+            <div class="phase-num">09</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Core</div>
+              <div class="phase-title">
+                IoC Container & Dependency Injection
+              </div>
+              <div class="phase-time">
+                ⏱ 3 days · THE foundation. Understand this deeply.
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            If you understand IoC and DI at a deep level, every single Spring
+            feature immediately makes sense. Spring Security, Spring Data,
+            Spring Batch — all are just beans wired together.
+          </div>
+          <div class="topics" id="p9">
+            <div class="topic" id="t16">
+              <div class="topic-header" onclick="toggleTopic('t16')">
+                <div class="topic-check" onclick="markDone(event, 't16')"></div>
+                <div class="topic-name">
+                  IoC, DI, ApplicationContext, Bean Lifecycle
+                </div>
+                <div class="topic-badge b4">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>IoC (Inversion of Control)</strong> — you don't
+                    create objects, you describe what you need and Spring
+                    creates/wires them <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>DI types:</strong> Constructor injection ✅
+                    (immutable, testable, recommended), Setter injection, Field
+                    injection (@Autowired on field — avoid in new code)
+                  </li>
+                  <li>
+                    <strong
+                      >@Component, @Service, @Repository, @Controller,
+                      @RestController</strong
+                    >
+                    — stereotype annotations, component-scan picks them up
+                  </li>
+                  <li>
+                    <strong>@Bean + @Configuration</strong> — explicit bean
+                    creation for third-party classes you can't annotate
+                  </li>
+                  <li>
+                    <strong>@Autowired</strong> — inject by type. With
+                    constructor injection, @Autowired is optional (implicit when
+                    one constructor)
+                  </li>
+                  <li>
+                    <strong>@Qualifier("beanName")</strong> — disambiguate when
+                    multiple beans of same type
+                  </li>
+                  <li>
+                    <strong>@Primary</strong> — mark one bean as default when
+                    multiple of same type
+                  </li>
+                  <li>
+                    <strong>Bean scopes:</strong> Singleton (one per
+                    ApplicationContext, default), Prototype (new on each
+                    injection), Request (per HTTP request), Session (per HTTP
+                    session) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Bean lifecycle:</strong> instantiate → inject
+                    dependencies → @PostConstruct → in use → @PreDestroy →
+                    destroyed
+                  </li>
+                  <li>
+                    <strong>@PostConstruct / @PreDestroy</strong> — lifecycle
+                    callbacks
+                  </li>
+                  <li>
+                    <strong>ApplicationContext vs BeanFactory</strong> —
+                    ApplicationContext extends BeanFactory, adds i18n, events,
+                    AOP, etc. Always use ApplicationContext
+                  </li>
+                  <li>
+                    <strong>ApplicationEvent + @EventListener</strong> — loose
+                    coupling via events within the app
+                  </li>
+                  <li>
+                    <strong>@Lazy</strong> — don't create bean until first use
+                    (saves startup time)
+                  </li>
+                  <li>
+                    <strong>@ConditionalOnProperty, @ConditionalOnClass</strong>
+                    — create beans conditionally
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "Explain Spring Bean lifecycle" — Instantiated via
+                    constructor → Dependencies injected → @PostConstruct called
+                    → ready → @PreDestroy called → destroyed. Also: "What's the
+                    difference between Singleton and Prototype scope?" Singleton
+                    = shared state risk, Prototype = new instance each time.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/core/beans.html"
+                    target="_blank"
+                    >📖 Spring: IoC Container</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html"
+                    target="_blank"
+                    >📖 Spring: Bean Scopes</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=aS9SQITRocc"
+                    target="_blank"
+                    >▶ Java Brains: Spring IoC</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=cKzpHMz7HSk"
+                    target="_blank"
+                    >▶ Amigoscode: Spring Beans Deep Dive</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p10">
+          <div class="phase-head">
+            <div class="phase-num">10</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">
+                Spring Boot — Auto-configuration, Profiles, Config
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p10">
+            <div class="topic" id="t17">
+              <div class="topic-header" onclick="toggleTopic('t17')">
+                <div class="topic-check" onclick="markDone(event, 't17')"></div>
+                <div class="topic-name">
+                  Auto-configuration, Starters, application.yml, Profiles
+                </div>
+                <div class="topic-badge b4">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@SpringBootApplication</strong> =
+                    @SpringBootConfiguration + @EnableAutoConfiguration +
+                    @ComponentScan on current package
+                  </li>
+                  <li>
+                    <strong>Auto-configuration magic:</strong> add
+                    <code>spring-boot-starter-web</code> → Tomcat, Jackson,
+                    Spring MVC auto-configured. Reads
+                    META-INF/spring/auto-configuration files
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Starters:</strong> spring-boot-starter-web,
+                    data-jpa, security, test, validation, actuator, mail, cache,
+                    data-redis
+                  </li>
+                  <li>
+                    <strong>application.yml (prefer over .properties):</strong>
+                    server.port, spring.datasource.url, spring.jpa.show-sql
+                  </li>
+                  <li>
+                    <strong>@Value("${app.name:default}")</strong> — inject
+                    single property with default
+                  </li>
+                  <li>
+                    <strong>@ConfigurationProperties(prefix="app")</strong> —
+                    bind group of properties to a typed class. Better than
+                    @Value for groups
+                  </li>
+                  <li>
+                    <strong>Profiles:</strong> application-dev.yml,
+                    application-prod.yml. Activate with
+                    <code>spring.profiles.active=dev</code> or env var
+                    SPRING_PROFILES_ACTIVE=prod
+                  </li>
+                  <li>
+                    <strong>@Profile("dev")</strong> — only create bean in this
+                    profile
+                  </li>
+                  <li>
+                    <strong>Environment variables</strong> — override any
+                    property: <code>SPRING_DATASOURCE_URL=...</code> (dots
+                    become underscores, uppercase)
+                  </li>
+                  <li>
+                    <strong
+                      >spring.factories /
+                      spring.auto-configuration.imports</strong
+                    >
+                    — how auto-config is discovered
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/using/auto-configuration.html"
+                    target="_blank"
+                    >📖 Spring Boot: Auto-configuration</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/features/external-config.html"
+                    target="_blank"
+                    >📖 Spring Boot: External Config</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://start.spring.io"
+                    target="_blank"
+                    >🚀 Spring Initializr</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=9SGDpanrc8U"
+                    target="_blank"
+                    >▶ Amigoscode: Spring Boot Full Course</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p11">
+          <div class="phase-head">
+            <div class="phase-num">11</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">
+                Spring MVC — REST Controllers & HTTP Layer
+              </div>
+              <div class="phase-time">
+                ⏱ 4 days · Like Express.js but more structured
+              </div>
+            </div>
+          </div>
+          <div class="topics" id="p11">
+            <div class="topic" id="t18">
+              <div class="topic-header" onclick="toggleTopic('t18')">
+                <div class="topic-check" onclick="markDone(event, 't18')"></div>
+                <div class="topic-name">
+                  Controllers, Mappings, Request/Response, DispatcherServlet
+                </div>
+                <div class="topic-badge b4">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@RestController</strong> = @Controller +
+                    @ResponseBody — every method returns data, not view
+                  </li>
+                  <li>
+                    <strong>@RequestMapping("/api/v1/users")</strong> — base
+                    path on class
+                  </li>
+                  <li>
+                    <strong>Method annotations:</strong> @GetMapping,
+                    @PostMapping, @PutMapping, @DeleteMapping, @PatchMapping
+                  </li>
+                  <li>
+                    <strong>@PathVariable Long id</strong> — extract from URL
+                    path /users/{id}
+                  </li>
+                  <li>
+                    <strong>@RequestParam(defaultValue="0") int page</strong> —
+                    query parameter /users?page=0&size=10
+                  </li>
+                  <li>
+                    <strong>@RequestBody UserRequest req</strong> — deserializes
+                    JSON body via Jackson
+                  </li>
+                  <li>
+                    <strong
+                      >@RequestHeader("Authorization") String token</strong
+                    >
+                    — extract header
+                  </li>
+                  <li>
+                    <strong>ResponseEntity&lt;T&gt;</strong> — full control:
+                    body + status + headers:
+                    <code>ResponseEntity.created(uri).body(dto)</code>
+                  </li>
+                  <li>
+                    <strong>DispatcherServlet</strong> — front controller
+                    pattern. All requests hit it, routed to handlers, response
+                    assembled <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Jackson</strong> — JSON serialization library.
+                    @JsonIgnore, @JsonProperty("name"), @JsonFormat
+                  </li>
+                  <li>
+                    <strong>Content negotiation:</strong> produces/consumes on
+                    @RequestMapping — Accept and Content-Type headers
+                  </li>
+                  <li>
+                    <strong>@CrossOrigin</strong> — enable CORS on specific
+                    endpoints (or configure globally)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller.html"
+                    target="_blank"
+                    >📖 Spring MVC Controllers</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-servlet.html"
+                    target="_blank"
+                    >📖 DispatcherServlet Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=31KTdfRH6nY"
+                    target="_blank"
+                    >▶ Spring MVC Tutorial</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p12">
+          <div class="phase-head">
+            <div class="phase-num">12</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">
+                Spring Data JPA — Complete ORM Layer
+              </div>
+              <div class="phase-time">
+                ⏱ 6 days · Most complex Spring topic. Take your time.
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            JPA is where most developers get stuck. The N+1 problem alone has
+            caused production outages at major companies. Learn it properly, not
+            just the happy path.
+          </div>
+          <div class="topics" id="p12">
+            <div class="topic" id="t19">
+              <div class="topic-header" onclick="toggleTopic('t19')">
+                <div class="topic-check" onclick="markDone(event, 't19')"></div>
+                <div class="topic-name">@Entity Mapping — Full Reference</div>
+                <div class="topic-badge b4">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@Entity + @Table(name="users")</strong> — maps class
+                    to DB table
+                  </li>
+                  <li>
+                    <strong>@Id + @GeneratedValue:</strong> IDENTITY (DB
+                    auto-increment), SEQUENCE (DB sequence), UUID
+                    (<code>@UuidGenerator</code>)
+                  </li>
+                  <li>
+                    <strong
+                      >@Column(name="email_address", unique=true,
+                      nullable=false, length=255)</strong
+                    >
+                  </li>
+                  <li>
+                    <strong>@Transient</strong> — field not persisted to DB
+                  </li>
+                  <li>
+                    <strong>@Enumerated(EnumType.STRING)</strong> — store enum
+                    as string (not ordinal!)
+                  </li>
+                  <li>
+                    <strong>Auditing:</strong> @CreatedDate, @LastModifiedDate,
+                    @CreatedBy — extend AbstractAuditingEntity or use
+                    @EnableJpaAuditing
+                  </li>
+                  <li>
+                    <strong>@Embedded + @Embeddable</strong> — embed value
+                    objects (Address, Money) into entity
+                  </li>
+                  <li>
+                    <strong>@Version</strong> — optimistic locking:
+                    auto-incremented int on each update, throws
+                    OptimisticLockException on conflict
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-data/jpa/reference/"
+                    target="_blank"
+                    >📖 Spring Data JPA Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=8SGI_XS5OPw"
+                    target="_blank"
+                    >▶ Amigoscode: Spring Data JPA</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t20">
+              <div class="topic-header" onclick="toggleTopic('t20')">
+                <div class="topic-check" onclick="markDone(event, 't20')"></div>
+                <div class="topic-name">
+                  JpaRepository — CRUD, Derived Queries, @Query, Pagination
+                </div>
+                <div class="topic-badge b4">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>JpaRepository&lt;Entity, ID&gt;</strong>: save(),
+                    saveAll(), findById(), findAll(), delete(), existsById(),
+                    count()
+                  </li>
+                  <li>
+                    <strong>Derived queries:</strong> Spring generates SQL from
+                    method name: findByEmailIgnoreCase(),
+                    findByAgeGreaterThan(), findByStatusIn(List)
+                  </li>
+                  <li>
+                    <strong
+                      >findBy +
+                      And/Or/Between/Like/LessThan/GreaterThan/OrderBy</strong
+                    >
+                  </li>
+                  <li>
+                    <strong>@Query JPQL:</strong>
+                    <code
+                      >@Query("SELECT u FROM User u WHERE u.email =
+                      :email")</code
+                    >
+                    — uses entity/field names
+                  </li>
+                  <li>
+                    <strong>@Query nativeQuery=true:</strong> raw SQL — use when
+                    JPQL can't express the query
+                  </li>
+                  <li>
+                    <strong>@Modifying + @Query:</strong> for UPDATE/DELETE
+                    queries. Requires @Transactional
+                  </li>
+                  <li>
+                    <strong>Pagination:</strong>
+                    <code>Page&lt;User&gt; findAll(Pageable pageable)</code>,
+                    pass
+                    <code>PageRequest.of(page, size, Sort.by("name"))</code>
+                  </li>
+                  <li>
+                    <strong>Slice&lt;T&gt;</strong> — like Page but no total
+                    count query (faster for infinite scroll)
+                  </li>
+                  <li>
+                    <strong>Custom Repository:</strong> interface MyCustomRepo +
+                    MyCustomRepoImpl class for complex queries
+                  </li>
+                  <li>
+                    <strong>Specifications:</strong> type-safe dynamic WHERE
+                    clauses — use when filters are optional
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html"
+                    target="_blank"
+                    >📖 Spring Data: Query Methods</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-data/commons/reference/repositories/core-concepts.html"
+                    target="_blank"
+                    >📖 Spring Data: Pagination</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t21">
+              <div class="topic-header" onclick="toggleTopic('t21')">
+                <div class="topic-check" onclick="markDone(event, 't21')"></div>
+                <div class="topic-name">
+                  JPA Relationships — N+1, Lazy vs Eager, Cascade, @EntityGraph
+                </div>
+                <div class="topic-badge b4">Critical + Interview</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong
+                      >@OneToMany(mappedBy="user", cascade=CascadeType.ALL,
+                      orphanRemoval=true)</strong
+                    >
+                    — on parent side
+                  </li>
+                  <li>
+                    <strong>@ManyToOne(fetch=FetchType.LAZY)</strong> — on child
+                    side, always make LAZY
+                  </li>
+                  <li>
+                    <strong>@ManyToMany @JoinTable</strong> — creates junction
+                    table
+                  </li>
+                  <li>
+                    <strong>Default fetch types:</strong> @OneToMany = LAZY,
+                    @ManyToOne = EAGER, @OneToOne = EAGER. Change EAGER to LAZY
+                    everywhere! <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>N+1 Problem:</strong> findAll() loads 100 users (1
+                    query) then accesses user.getOrders() on each (100 queries)
+                    = 101 queries <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Fix N+1:</strong>
+                    <code
+                      >@Query("SELECT u FROM User u JOIN FETCH u.orders")</code
+                    >
+                    or <code>@EntityGraph(attributePaths={"orders"})</code>
+                  </li>
+                  <li>
+                    <strong>CascadeType:</strong> PERSIST (save child with
+                    parent), MERGE, REMOVE (delete child with parent), REFRESH,
+                    ALL
+                  </li>
+                  <li>
+                    <strong>orphanRemoval=true</strong> — delete child when
+                    removed from parent's collection
+                  </li>
+                  <li>
+                    <strong>@BatchSize(size=50)</strong> — batch load lazy
+                    collections to reduce queries
+                  </li>
+                  <li>
+                    <strong>spring.jpa.show-sql=true</strong> — see what queries
+                    JPA generates (essential for debugging)
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "What is the N+1 problem and how do you fix it?" — Critical
+                    question. Also be ready for "What's the difference between
+                    LAZY and EAGER loading?" and "When would you use
+                    @EntityGraph?"
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-data/jpa/reference/jpa/entity-graph.html"
+                    target="_blank"
+                    >📖 Spring Data: EntityGraph</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=sI_2HUQP35A"
+                    target="_blank"
+                    >▶ Vlad Mihalcea: N+1 Problem</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t22">
+              <div class="topic-header" onclick="toggleTopic('t22')">
+                <div class="topic-check" onclick="markDone(event, 't22')"></div>
+                <div class="topic-name">Flyway — Database Migrations</div>
+                <div class="topic-badge b4">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Why migrations:</strong> schema changes tracked in
+                    version control alongside code. Team members get same DB
+                    state
+                  </li>
+                  <li>
+                    <strong>Naming:</strong> V1__create_users.sql,
+                    V2__add_email_index.sql, V3__create_orders.sql
+                  </li>
+                  <li>
+                    <strong>Location:</strong> src/main/resources/db/migration/
+                  </li>
+                  <li>Spring Boot auto-runs pending migrations at startup</li>
+                  <li>
+                    <strong>Golden rule:</strong> never edit an already-applied
+                    migration. Create a new one instead
+                  </li>
+                  <li>
+                    <strong>Baseline:</strong> for existing databases, create V1
+                    as baseline
+                  </li>
+                  <li>
+                    <strong>Repeatable migrations:</strong> R__seed_data.sql —
+                    re-runs when checksum changes
+                  </li>
+                  <li>
+                    <strong>Undo scripts</strong> (paid feature): V2__undo.sql
+                  </li>
+                  <li>Flyway tracks history in flyway_schema_history table</li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://flywaydb.org/documentation/"
+                    target="_blank"
+                    >📖 Flyway Docs</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/data/sql.html#data.sql.flyway"
+                    target="_blank"
+                    >📖 Spring Boot + Flyway</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p13">
+          <div class="phase-head">
+            <div class="phase-num">13</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">Validation & DTOs — Clean API Layer</div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p13">
+            <div class="topic" id="t23">
+              <div class="topic-header" onclick="toggleTopic('t23')">
+                <div class="topic-check" onclick="markDone(event, 't23')"></div>
+                <div class="topic-name">
+                  DTOs with Records, Bean Validation, MapStruct
+                </div>
+                <div class="topic-badge b4">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>DTO pattern:</strong> separate API shape from
+                    @Entity — avoids exposing DB structure, allows different
+                    shapes per endpoint <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Record DTOs:</strong>
+                    <code
+                      >public record UserResponse(Long id, String email, String
+                      name) {}</code
+                    >
+                    — immutable, auto equals/hashCode
+                  </li>
+                  <li>
+                    <strong>Request vs Response DTO:</strong> UserCreateRequest
+                    (what comes in), UserResponse (what goes out),
+                    UserUpdateRequest (partial update)
+                  </li>
+                  <li>
+                    <strong>@NotNull, @NotBlank, @NotEmpty</strong> — null/empty
+                    checks
+                  </li>
+                  <li><strong>@Size(min=2, max=50)</strong> — string length</li>
+                  <li><strong>@Email</strong> — email format validation</li>
+                  <li>
+                    <strong>@Pattern(regexp="...")</strong> — regex validation
+                  </li>
+                  <li>
+                    <strong>@Min, @Max, @Positive, @PositiveOrZero</strong> —
+                    numeric validation
+                  </li>
+                  <li>
+                    <strong>@Valid</strong> on @RequestBody parameter — triggers
+                    validation. Returns 400 with errors if invalid
+                  </li>
+                  <li>
+                    <strong>@Validated (class-level)</strong> — enables group
+                    validation
+                  </li>
+                  <li>
+                    <strong>Custom validator:</strong> implement
+                    ConstraintValidator&lt;Annotation, Type&gt;
+                  </li>
+                  <li>
+                    <strong>MapStruct:</strong> annotation processor generates
+                    mapper at compile time —
+                    <code>@Mapper(componentModel = "spring")</code>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/core/validation/beanvalidation.html"
+                    target="_blank"
+                    >📖 Spring: Bean Validation</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://mapstruct.org/documentation/stable/reference/html/"
+                    target="_blank"
+                    >📖 MapStruct Docs</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p14">
+          <div class="phase-head">
+            <div class="phase-num">14</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">
+                Global Exception Handling — @ControllerAdvice
+              </div>
+              <div class="phase-time">⏱ 1 day</div>
+            </div>
+          </div>
+          <div class="topics" id="p14">
+            <div class="topic" id="t24">
+              <div class="topic-header" onclick="toggleTopic('t24')">
+                <div class="topic-check" onclick="markDone(event, 't24')"></div>
+                <div class="topic-name">
+                  @ControllerAdvice, ProblemDetail, Custom Exception Hierarchy
+                </div>
+                <div class="topic-badge b4">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@ControllerAdvice</strong> — one class catches
+                    exceptions from all controllers globally
+                  </li>
+                  <li>
+                    <strong
+                      >@ExceptionHandler(UserNotFoundException.class)</strong
+                    >
+                    — maps exception type to HTTP response
+                  </li>
+                  <li>
+                    <strong>ProblemDetail (RFC 9457, Spring 6)</strong> —
+                    standardized error response: type, title, status, detail,
+                    instance <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>ResponseEntityExceptionHandler</strong> — extend
+                    this to handle Spring MVC built-in exceptions
+                  </li>
+                  <li>
+                    <strong>Custom exception hierarchy:</strong
+                    ><br />BaseException (RuntimeException) → NotFoundException
+                    (404), ConflictException (409), ForbiddenException (403)
+                  </li>
+                  <li>
+                    <strong>MethodArgumentNotValidException</strong> — thrown
+                    when @Valid fails. Extract field errors from BindingResult
+                  </li>
+                  <li>
+                    <strong>HttpMessageNotReadableException</strong> — invalid
+                    JSON in request body
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-advice.html"
+                    target="_blank"
+                    >📖 Spring: ControllerAdvice</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-ann-rest-exceptions.html"
+                    target="_blank"
+                    >📖 Spring: ProblemDetail</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p15">
+          <div class="phase-head">
+            <div class="phase-num">15</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">
+                AOP & @Transactional — Cross-Cutting Concerns
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p15">
+            <div class="topic" id="t25">
+              <div class="topic-header" onclick="toggleTopic('t25')">
+                <div class="topic-check" onclick="markDone(event, 't25')"></div>
+                <div class="topic-name">AOP — Aspects, Advice, Pointcuts</div>
+                <div class="topic-badge b4">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>AOP purpose:</strong> apply cross-cutting concerns
+                    (logging, security, transactions) without modifying business
+                    code
+                  </li>
+                  <li>
+                    <strong>Aspect</strong> — class with advice:
+                    <code>@Aspect @Component class LoggingAspect</code>
+                  </li>
+                  <li>
+                    <strong>Pointcut</strong> — expression defining where advice
+                    runs:
+                    <code
+                      >@Pointcut("execution(* com.app.service.*.*(..))")</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Advice types:</strong> @Before (before method),
+                    @After (after regardless), @AfterReturning (after success),
+                    @AfterThrowing (after exception), @Around (wrap method —
+                    most powerful)
+                  </li>
+                  <li>
+                    <strong>JoinPoint</strong> — represents the method being
+                    intercepted. Access method name, args, return value
+                  </li>
+                  <li>
+                    <strong>ProceedingJoinPoint</strong> — used in @Around:
+                    <code>Object result = pjp.proceed()</code>
+                  </li>
+                  <li>
+                    Spring AOP uses JDK Proxy (interface-based) or CGLIB (class
+                    subclassing) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Self-invocation problem:</strong> calling annotated
+                    method from same class bypasses proxy — AOP doesn't apply
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/core/aop.html"
+                    target="_blank"
+                    >📖 Spring: AOP Reference</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t26">
+              <div class="topic-header" onclick="toggleTopic('t26')">
+                <div class="topic-check" onclick="markDone(event, 't26')"></div>
+                <div class="topic-name">@Transactional — Full Reference</div>
+                <div class="topic-badge b4">Critical + Interview</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@Transactional</strong> — Spring wraps method in DB
+                    transaction. Commit on success, rollback on RuntimeException
+                  </li>
+                  <li>
+                    <strong>Propagation.REQUIRED (default)</strong> — join
+                    existing transaction or create new one
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Propagation.REQUIRES_NEW</strong> — always new
+                    transaction, suspends outer
+                  </li>
+                  <li>
+                    <strong>Propagation.SUPPORTS</strong> — run in transaction
+                    if one exists, else without
+                  </li>
+                  <li>
+                    <strong>Propagation.NOT_SUPPORTED</strong> — suspend any
+                    existing transaction
+                  </li>
+                  <li>
+                    <strong>rollbackFor=Exception.class</strong> — by default,
+                    ONLY rolls back on RuntimeException! Add this for checked
+                    exceptions <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>noRollbackFor</strong> — don't rollback for this
+                    specific exception
+                  </li>
+                  <li>
+                    <strong>readOnly=true</strong> — performance hint for
+                    SELECT-only methods (Hibernate optimizations)
+                  </li>
+                  <li>
+                    <strong>timeout=30</strong> — transaction timeout in seconds
+                  </li>
+                  <li>
+                    <strong>Isolation level</strong> — set per transaction:
+                    <code
+                      >@Transactional(isolation=Isolation.READ_COMMITTED)</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Self-invocation problem</strong> — method A calls
+                    @Transactional method B in same class → B's @Transactional
+                    is ignored because proxy is bypassed
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "What happens when @Transactional method throws a checked
+                    exception?" — No rollback by default. This surprises many.
+                    Fix:
+                    <code>@Transactional(rollbackFor = Exception.class)</code>.
+                    Also: "Explain the self-invocation problem with
+                    @Transactional."
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/annotations.html"
+                    target="_blank"
+                    >📖 Spring: @Transactional</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative/tx-propagation.html"
+                    target="_blank"
+                    >📖 Spring: Transaction Propagation</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p16">
+          <div class="phase-head">
+            <div class="phase-num">16</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">REST API Design Best Practices</div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p16">
+            <div class="topic" id="t27">
+              <div class="topic-header" onclick="toggleTopic('t27')">
+                <div class="topic-check" onclick="markDone(event, 't27')"></div>
+                <div class="topic-name">
+                  REST Principles, HTTP Semantics, Pagination, Idempotency
+                </div>
+                <div class="topic-badge b4">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Resource naming:</strong> nouns plural: /users,
+                    /orders, /products. Not /getUsers, not /createProduct
+                  </li>
+                  <li>
+                    <strong>HTTP semantics:</strong> GET (read, safe,
+                    idempotent), POST (create, not idempotent), PUT (full
+                    replace, idempotent), PATCH (partial update), DELETE
+                    (idempotent) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Status codes:</strong> 200 OK, 201 Created (+
+                    Location header), 204 No Content (DELETE/PUT success), 400
+                    Bad Request, 401 Unauthorized (not logged in), 403 Forbidden
+                    (logged in, no permission), 404 Not Found, 409 Conflict
+                    (duplicate), 422 Unprocessable Entity (validation), 429 Too
+                    Many Requests, 500 Internal Server Error
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Versioning:</strong> /api/v1/users — in URL path
+                    (most common), or Accept: application/vnd.app.v1+json header
+                  </li>
+                  <li>
+                    <strong>Pagination response envelope:</strong>
+                    <code
+                      >{ "data": [...], "page": 0, "size": 10, "totalElements":
+                      100, "totalPages": 10 }</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Cursor-based pagination</strong> — better for large
+                    datasets, uses last-seen ID: ?after=abc123
+                  </li>
+                  <li>
+                    <strong>Filtering + sorting:</strong>
+                    ?status=ACTIVE&sort=name,asc&sort=createdAt,desc
+                  </li>
+                  <li>
+                    <strong>Idempotency key</strong> — Idempotency-Key header
+                    for POST requests to prevent duplicate operations
+                  </li>
+                  <li>
+                    <strong>HATEOAS</strong> — include links in response to
+                    related resources (optional, used in REST Level 3)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://www.rfc-editor.org/rfc/rfc9457"
+                    target="_blank"
+                    >📖 RFC 9457: Problem Details</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://restfulapi.net/"
+                    target="_blank"
+                    >📖 REST API Design Guide</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p17">
+          <div class="phase-head">
+            <div class="phase-num">17</div>
+            <div class="phase-meta">
+              <div class="phase-tag c4">Spring Boot</div>
+              <div class="phase-title">
+                API Documentation — OpenAPI / Swagger + Actuator
+              </div>
+              <div class="phase-time">⏱ 1 day</div>
+            </div>
+          </div>
+          <div class="topics" id="p17">
+            <div class="topic" id="t28">
+              <div class="topic-header" onclick="toggleTopic('t28')">
+                <div class="topic-check" onclick="markDone(event, 't28')"></div>
+                <div class="topic-name">
+                  Springdoc OpenAPI, Swagger UI, Spring Actuator
+                </div>
+                <div class="topic-badge b4">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Springdoc OpenAPI</strong> — add dependency, get
+                    Swagger UI at /swagger-ui.html automatically
+                  </li>
+                  <li>
+                    <strong
+                      >@Operation(summary="...", description="...")</strong
+                    >
+                    — document an endpoint
+                  </li>
+                  <li>
+                    <strong
+                      >@Parameter(description="...", example="...")</strong
+                    >
+                    — document a parameter
+                  </li>
+                  <li>
+                    <strong
+                      >@ApiResponse(responseCode="200",
+                      description="...")</strong
+                    >
+                  </li>
+                  <li>
+                    <strong>@Schema(description="...", example="...")</strong> —
+                    document DTO fields
+                  </li>
+                  <li>
+                    <strong>OpenAPI spec</strong> — generated at /v3/api-docs
+                    (JSON), use to generate client SDKs
+                  </li>
+                  <li>
+                    <strong>Spring Boot Actuator</strong> — add
+                    spring-boot-starter-actuator, get: /actuator/health,
+                    /actuator/info, /actuator/metrics, /actuator/env
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    Actuator: expose endpoints selectively in production (never
+                    expose /actuator/env publicly)
+                  </li>
+                  <li>
+                    <strong>Custom health indicators</strong> — implement
+                    HealthIndicator for custom /health checks
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://springdoc.org/"
+                    target="_blank"
+                    >📖 Springdoc OpenAPI</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/actuator/index.html"
+                    target="_blank"
+                    >📖 Spring Actuator Docs</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="build-box">
+              <div class="build-box-lbl">🏗 Build — Phase 4 Checkpoint</div>
+              <p>
+                Build a complete Blog API: Users, Posts (with tags), Comments.
+                Use PostgreSQL + Flyway + DTOs with validation + global
+                exception handler + pagination + OpenAPI docs. This project
+                alone touches 90% of Spring Boot. Push to GitHub.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 5 — SECURITY -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 5 — Security</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 9–11 · ~50 hrs</div>
+        </div>
+
+        <div class="phase" id="p18">
+          <div class="phase-head">
+            <div class="phase-num">18</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Security</div>
+              <div class="phase-title">
+                Spring Security Core — Filter Chain, UserDetails, BCrypt
+              </div>
+              <div class="phase-time">
+                ⏱ 5 days · Steepest learning curve in Spring
+              </div>
+            </div>
+          </div>
+          <div class="phase-note">
+            Understand the SecurityFilterChain FIRST. Every request passes
+            through filters in order. Once you see the chain, JWT and OAuth2
+            become "just another filter."
+          </div>
+          <div class="topics" id="p18">
+            <div class="topic" id="t29">
+              <div class="topic-header" onclick="toggleTopic('t29')">
+                <div class="topic-check" onclick="markDone(event, 't29')"></div>
+                <div class="topic-name">
+                  SecurityFilterChain, Authentication, UserDetails, CSRF, CORS
+                </div>
+                <div class="topic-badge b5">Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>SecurityFilterChain</strong> — ordered list of
+                    filters. Every HTTP request passes through all filters
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Key filters:</strong>
+                    UsernamePasswordAuthenticationFilter,
+                    BasicAuthenticationFilter, JwtAuthenticationFilter (custom)
+                  </li>
+                  <li>
+                    <strong>SecurityContext / SecurityContextHolder</strong> —
+                    stores current user's Authentication. ThreadLocal by default
+                  </li>
+                  <li>
+                    <strong>Authentication object</strong> — principal
+                    (UserDetails), credentials, authorities (roles)
+                  </li>
+                  <li>
+                    <strong>AuthenticationManager</strong> — delegates to
+                    AuthenticationProvider chain to authenticate
+                  </li>
+                  <li>
+                    <strong>UserDetails interface</strong> — getUsername(),
+                    getPassword(), getAuthorities(), isEnabled(),
+                    isAccountNonLocked()
+                  </li>
+                  <li>
+                    <strong>UserDetailsService</strong> —
+                    <code>loadUserByUsername(String username)</code> — load user
+                    from DB
+                  </li>
+                  <li>
+                    <strong>PasswordEncoder</strong> — always
+                    BCryptPasswordEncoder. NEVER store plain text. NEVER MD5/SHA
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>SecurityFilterChain @Bean config:</strong>
+                    .csrf().disable() for REST APIs,
+                    .sessionManagement(stateless), .authorizeHttpRequests()
+                  </li>
+                  <li>
+                    <strong>CSRF</strong> — disable for stateless REST (no
+                    cookies/sessions). Keep enabled for form-based apps
+                  </li>
+                  <li>
+                    <strong>CORS</strong> — configure allowed origins, methods,
+                    headers via CorsConfigurationSource bean
+                  </li>
+                  <li>
+                    <strong>DaoAuthenticationProvider</strong> — wires
+                    UserDetailsService + PasswordEncoder together
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-security/reference/servlet/architecture.html"
+                    target="_blank"
+                    >📖 Spring Security Architecture</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-security/reference/"
+                    target="_blank"
+                    >📖 Spring Security Full Reference</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=b9O9NI-RJ3o"
+                    target="_blank"
+                    >▶ Amigoscode: Spring Security 6</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t30">
+              <div class="topic-header" onclick="toggleTopic('t30')">
+                <div class="topic-check" onclick="markDone(event, 't30')"></div>
+                <div class="topic-name">
+                  Authorization — Roles, @PreAuthorize, Method Security
+                </div>
+                <div class="topic-badge b5">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@EnableMethodSecurity</strong> — MUST add to config
+                    class to enable method-level annotations
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>@PreAuthorize("hasRole('ADMIN')")</strong> — check
+                    before method runs
+                  </li>
+                  <li>
+                    <strong
+                      >@PostAuthorize("returnObject.owner ==
+                      authentication.name")</strong
+                    >
+                    — check after method returns
+                  </li>
+                  <li>
+                    <strong>Roles vs Authorities:</strong> roles are prefixed
+                    with ROLE_ internally. <code>hasRole('ADMIN')</code> =
+                    <code>hasAuthority('ROLE_ADMIN')</code>
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>URL-level security in config:</strong>
+                    .requestMatchers("/admin/**").hasRole("ADMIN")
+                  </li>
+                  <li>
+                    <strong>Method expressions:</strong> hasRole(),
+                    hasAnyRole(), hasAuthority(), isAuthenticated(),
+                    isAnonymous(), permitAll(), denyAll()
+                  </li>
+                  <li>
+                    <strong>Get current user:</strong>
+                    <code>@AuthenticationPrincipal UserDetails user</code> in
+                    controller method parameter
+                  </li>
+                  <li>
+                    <strong
+                      >SecurityContextHolder.getContext().getAuthentication()</strong
+                    >
+                    — get current auth anywhere
+                  </li>
+                  <li>
+                    <strong>Custom AccessDeniedHandler</strong> — return clean
+                    403 JSON response
+                  </li>
+                  <li>
+                    <strong>Custom AuthenticationEntryPoint</strong> — return
+                    clean 401 JSON response
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html"
+                    target="_blank"
+                    >📖 Spring Security: Method Security</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p19">
+          <div class="phase-head">
+            <div class="phase-num">19</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Security</div>
+              <div class="phase-title">
+                JWT Authentication — Complete Implementation
+              </div>
+              <div class="phase-time">⏱ 4 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p19">
+            <div class="topic" id="t31">
+              <div class="topic-header" onclick="toggleTopic('t31')">
+                <div class="topic-check" onclick="markDone(event, 't31')"></div>
+                <div class="topic-name">
+                  JWT — Structure, Flow, Filter, Refresh Tokens
+                </div>
+                <div class="topic-badge b5">Industry Standard</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>JWT structure:</strong> header.payload.signature
+                    (base64url-encoded) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Header:</strong> algorithm (HS256, RS256) + token
+                    type
+                  </li>
+                  <li>
+                    <strong>Payload claims:</strong> sub (subject/userId), iat
+                    (issued at), exp (expiry), custom: roles, email
+                  </li>
+                  <li>
+                    <strong>Signature:</strong>
+                    HMAC-SHA256(base64(header).base64(payload), secret).
+                    Tamper-proof
+                  </li>
+                  <li>
+                    <strong>Stateless auth flow:</strong> POST /auth/login →
+                    validate credentials → sign JWT → return access token +
+                    refresh token in response
+                  </li>
+                  <li>
+                    <strong>Client sends:</strong> Authorization: Bearer
+                    &lt;access_token&gt; on every request
+                  </li>
+                  <li>
+                    <strong>JwtAuthenticationFilter</strong> (extends
+                    OncePerRequestFilter): extract token → validate → build
+                    Authentication → set in SecurityContext
+                  </li>
+                  <li>
+                    <strong>Access token</strong> — short-lived (15 min).
+                    Stateless. Can't be revoked without blacklist
+                  </li>
+                  <li>
+                    <strong>Refresh token</strong> — long-lived (7–30 days).
+                    Stored in DB. Can be revoked. Used to get new access token
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Rotation strategy</strong> — issue new refresh token
+                    on each use, invalidate old one
+                  </li>
+                  <li>
+                    <strong>Token storage:</strong> HttpOnly cookie (XSS-safe,
+                    CSRF risk) vs localStorage (CSRF-safe, XSS risk)
+                  </li>
+                  <li>
+                    <strong>JWT libraries:</strong> io.jsonwebtoken:jjwt or
+                    Spring's built-in OAuth2 Resource Server (preferred)
+                  </li>
+                  <li>
+                    <strong>RS256 vs HS256</strong> — RS256 uses asymmetric keys
+                    (public key to verify, private to sign) — better for
+                    microservices
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "How does JWT authentication work?" "What's access token vs
+                    refresh token?" "Can JWT be revoked?" (No, unless you
+                    maintain a blacklist or use short expiry + refresh tokens).
+                    These are standard questions.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://jwt.io/introduction"
+                    target="_blank"
+                    >📖 JWT.io Introduction</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-security/reference/servlet/oauth2/resource-server/jwt.html"
+                    target="_blank"
+                    >📖 Spring: JWT Resource Server</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=KxqlJblhzfI"
+                    target="_blank"
+                    >▶ Amigoscode: JWT Full Implementation</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p20">
+          <div class="phase-head">
+            <div class="phase-num">20</div>
+            <div class="phase-meta">
+              <div class="phase-tag c5">Security</div>
+              <div class="phase-title">
+                OAuth2, OpenID Connect, Social Login
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p20">
+            <div class="topic" id="t32">
+              <div class="topic-header" onclick="toggleTopic('t32')">
+                <div class="topic-check" onclick="markDone(event, 't32')"></div>
+                <div class="topic-name">
+                  OAuth2 Authorization Code Flow, OIDC, Spring OAuth2 Client
+                </div>
+                <div class="topic-badge b5">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>OAuth2 purpose</strong> — delegate authentication to
+                    trusted provider (Google, GitHub, Azure AD)
+                  </li>
+                  <li>
+                    <strong>Authorization Code Flow:</strong> User → App → Auth
+                    Server (login page) → code → App exchanges code for token →
+                    App uses token for API calls
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>PKCE (Proof Key for Code Exchange)</strong> —
+                    required for public clients (mobile, SPA). Prevents auth
+                    code interception
+                  </li>
+                  <li>
+                    <strong>OpenID Connect (OIDC)</strong> — adds identity layer
+                    on top of OAuth2. Returns ID token (JWT) with user info
+                    (sub, email, name)
+                  </li>
+                  <li>
+                    <strong>OAuth2 Client (Spring)</strong> — configure
+                    providers in application.yml: google, github, okta. Spring
+                    handles the flow
+                  </li>
+                  <li>
+                    <strong>Roles:</strong> Resource Owner (user), Client (your
+                    app), Authorization Server (Google), Resource Server (API)
+                  </li>
+                  <li>
+                    <strong>Keycloak</strong> — self-hosted Identity Provider.
+                    Good for enterprise: users, roles, realms, clients
+                  </li>
+                  <li>
+                    <strong>Token types in OAuth2:</strong> Access Token (for
+                    API), ID Token (user identity), Refresh Token
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html"
+                    target="_blank"
+                    >📖 Spring OAuth2 Docs</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://www.keycloak.org/docs/latest/server_admin/"
+                    target="_blank"
+                    >📖 Keycloak Admin Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=t18YB3xDfXI"
+                    target="_blank"
+                    >▶ OAuth2 Explained Simply</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 6 — TESTING -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 6 — Testing</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 11–12 · ~40 hrs</div>
+        </div>
+
+        <div class="phase" id="p21">
+          <div class="phase-head">
+            <div class="phase-num">21</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Testing</div>
+              <div class="phase-title">JUnit 5 & Mockito — Unit Testing</div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p21">
+            <div class="topic" id="t33">
+              <div class="topic-header" onclick="toggleTopic('t33')">
+                <div class="topic-check" onclick="markDone(event, 't33')"></div>
+                <div class="topic-name">
+                  JUnit 5 — Complete Testing Reference
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@Test</strong> — test method. @DisplayName("readable
+                    name")
+                  </li>
+                  <li>
+                    <strong>@BeforeEach / @AfterEach</strong> — setup/teardown
+                    per test
+                  </li>
+                  <li>
+                    <strong>@BeforeAll / @AfterAll</strong> — run once per class
+                    (must be static)
+                  </li>
+                  <li>
+                    <strong>Assertions:</strong> assertEquals(expected, actual),
+                    assertNotNull(), assertTrue(), assertFalse(),
+                    assertThrows(Exception.class, () → ...),
+                    assertDoesNotThrow(), assertAll()
+                  </li>
+                  <li>
+                    <strong>assertThrows:</strong>
+                    <code
+                      >UserNotFoundException ex =
+                      assertThrows(UserNotFoundException.class, () ->
+                      service.findById(-1L)); assertEquals("User not found",
+                      ex.getMessage())</code
+                    >
+                  </li>
+                  <li>
+                    <strong>@ParameterizedTest + @ValueSource:</strong>
+                    <code>@ValueSource(strings = {"", " ", "invalid@"})</code>
+                  </li>
+                  <li>
+                    <strong>@MethodSource("provideTestData")</strong> — static
+                    method returns Stream&lt;Arguments&gt;
+                  </li>
+                  <li>
+                    <strong>@CsvSource({"1, one", "2, two"})</strong> — tabular
+                    test data
+                  </li>
+                  <li>
+                    <strong>@Nested</strong> — inner class for grouping related
+                    tests
+                  </li>
+                  <li>
+                    <strong>@Disabled("reason")</strong> — skip test temporarily
+                  </li>
+                  <li>
+                    <strong>@Tag("integration")</strong> — tag tests for
+                    selective running
+                  </li>
+                  <li>
+                    <strong>AAA pattern:</strong> Arrange (setup) → Act (call) →
+                    Assert (verify) — structure every test
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Test naming:</strong>
+                    methodName_StateUnderTest_ExpectedBehavior — e.g.
+                    findById_WhenUserNotFound_ThrowsException
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://junit.org/junit5/docs/current/user-guide/"
+                    target="_blank"
+                    >📖 JUnit 5 User Guide</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=flpmSXVTqBI"
+                    target="_blank"
+                    >▶ JUnit 5 Full Tutorial</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="topic" id="t34">
+              <div class="topic-header" onclick="toggleTopic('t34')">
+                <div class="topic-check" onclick="markDone(event, 't34')"></div>
+                <div class="topic-name">
+                  Mockito — Mocking, Stubbing, Verification
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@ExtendWith(MockitoExtension.class)</strong> —
+                    required on test class for JUnit 5
+                  </li>
+                  <li>
+                    <strong>@Mock</strong> — create mock of dependency. @Spy —
+                    real object but can stub specific methods
+                  </li>
+                  <li>
+                    <strong>@InjectMocks</strong> — create instance of class
+                    under test and inject @Mocks
+                  </li>
+                  <li>
+                    <strong>when(mock.method(arg)).thenReturn(value)</strong> —
+                    stub method call
+                  </li>
+                  <li>
+                    <strong
+                      >when(mock.method(any())).thenThrow(new
+                      RuntimeException())</strong
+                    >
+                    — simulate failure
+                  </li>
+                  <li>
+                    <strong>doReturn, doThrow, doAnswer</strong> — for void
+                    methods or Spy
+                  </li>
+                  <li>
+                    <strong>verify(mock).method(arg)</strong> — assert method
+                    was called exactly once
+                  </li>
+                  <li>
+                    <strong>verify(mock, times(2)).method()</strong> — called
+                    exactly N times
+                  </li>
+                  <li>
+                    <strong>verify(mock, never()).method()</strong> — never
+                    called
+                  </li>
+                  <li>
+                    <strong>ArgumentCaptor&lt;T&gt;</strong> — capture argument
+                    passed to mock:
+                    <code
+                      >ArgumentCaptor&lt;User&gt; captor =
+                      ArgumentCaptor.forClass(User.class);
+                      verify(repo).save(captor.capture()); assertEquals("John",
+                      captor.getValue().getName())</code
+                    >
+                  </li>
+                  <li>
+                    <strong>ArgumentMatchers:</strong> any(), anyString(),
+                    anyLong(), eq("exact"), argThat(predicate)
+                  </li>
+                  <li>
+                    <strong>Mockito.mockStatic()</strong> — mock static methods
+                    (Mockito 3.4+)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://site.mockito.org/"
+                    target="_blank"
+                    >📖 Mockito Official Docs</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://javadoc.io/doc/org.mockito/mockito-core/latest/index.html"
+                    target="_blank"
+                    >📖 Mockito Javadoc</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=d2KwvXQgQx4"
+                    target="_blank"
+                    >▶ Amigoscode: Mockito Complete</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p22">
+          <div class="phase-head">
+            <div class="phase-num">22</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Testing</div>
+              <div class="phase-title">
+                Spring Boot Testing — @SpringBootTest, MockMvc, @WebMvcTest
+              </div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p22">
+            <div class="topic" id="t35">
+              <div class="topic-header" onclick="toggleTopic('t35')">
+                <div class="topic-check" onclick="markDone(event, 't35')"></div>
+                <div class="topic-name">
+                  Slice Tests, MockMvc, @MockBean, Integration Tests
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>@SpringBootTest</strong> — loads full
+                    ApplicationContext. Slow. Use for integration tests only
+                  </li>
+                  <li>
+                    <strong>@SpringBootTest(webEnvironment=RANDOM_PORT)</strong>
+                    — starts real server on random port. Use with
+                    TestRestTemplate
+                  </li>
+                  <li>
+                    <strong>@WebMvcTest(UserController.class)</strong> — loads
+                    only web layer (controllers, filters). Fast. Mock services
+                    with @MockBean
+                  </li>
+                  <li>
+                    <strong>@DataJpaTest</strong> — loads only JPA layer. Uses
+                    in-memory H2. Good for repository tests
+                  </li>
+                  <li>
+                    <strong>@MockBean</strong> — replace a Spring bean in
+                    context with Mockito mock. Different from @Mock (no Spring
+                    context)
+                  </li>
+                  <li>
+                    <strong>MockMvc</strong> — test HTTP requests without a real
+                    server:
+                    <code
+                      >mockMvc.perform(get("/users/1")).andExpect(status().isOk()).andExpect(jsonPath("$.email").value("<a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="fd89988e89bd98909c9491d39e9290"
+                        >[email&#160;protected]</a
+                      >"))</code
+                    >
+                  </li>
+                  <li>
+                    <strong>@AutoConfigureMockMvc</strong> — auto-configure
+                    MockMvc in @SpringBootTest
+                  </li>
+                  <li>
+                    <strong>TestRestTemplate</strong> — makes real HTTP calls in
+                    @SpringBootTest with RANDOM_PORT
+                  </li>
+                  <li>
+                    <strong>WebTestClient</strong> — reactive alternative to
+                    TestRestTemplate, fluent API
+                  </li>
+                  <li>
+                    <strong>@Sql</strong> — run SQL scripts before/after test:
+                    <code>@Sql("/test-data.sql")</code>
+                  </li>
+                  <li>
+                    <strong>@Transactional on test class</strong> — rolls back
+                    all DB changes after each test
+                  </li>
+                  <li>
+                    <strong>jsonPath assertions:</strong> $.fieldName,
+                    $.list[0].name, $.list.length()
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/testing/index.html"
+                    target="_blank"
+                    >📖 Spring Boot Testing Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=erp-7MCK5BU"
+                    target="_blank"
+                    >▶ Amigoscode: Spring Boot Testing</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p23">
+          <div class="phase-head">
+            <div class="phase-num">23</div>
+            <div class="phase-meta">
+              <div class="phase-tag c2">Testing</div>
+              <div class="phase-title">
+                Testcontainers & WireMock — Real Dependencies in Tests
+              </div>
+              <div class="phase-time">⏱ 2 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p23">
+            <div class="topic" id="t36">
+              <div class="topic-header" onclick="toggleTopic('t36')">
+                <div class="topic-check" onclick="markDone(event, 't36')"></div>
+                <div class="topic-name">
+                  Testcontainers, WireMock, Test Coverage
+                </div>
+                <div class="topic-badge b2">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Testcontainers</strong> — spin up real Docker
+                    containers (PostgreSQL, Redis, Kafka) during tests. Tests
+                    against real infrastructure, not mocks
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>@Testcontainers + @Container</strong> — JUnit 5
+                    integration:
+                    <code
+                      >@Container static PostgreSQLContainer&lt;?&gt; postgres =
+                      new PostgreSQLContainer&lt;&gt;("postgres:16")</code
+                    >
+                  </li>
+                  <li>
+                    <strong>@DynamicPropertySource</strong> — inject container
+                    connection URL into Spring context
+                  </li>
+                  <li>
+                    <strong>Singleton containers</strong> — reuse container
+                    across tests for speed:
+                    <code>static { container.start(); }</code>
+                  </li>
+                  <li>
+                    <strong>WireMock</strong> — mock external HTTP APIs your
+                    service calls. Stub with:
+                    <code
+                      >stubFor(get("/api/users/1").willReturn(okJson(userJson)))</code
+                    >
+                  </li>
+                  <li>
+                    <strong>@WireMockTest</strong> — Spring Boot WireMock
+                    integration
+                  </li>
+                  <li>
+                    <strong>Test coverage with JaCoCo</strong> — add plugin to
+                    Maven, generates coverage report. Aim for 70%+ on business
+                    logic
+                  </li>
+                  <li>
+                    <strong>Mutation testing with PIT</strong> — checks if your
+                    tests actually catch bugs
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://testcontainers.com/guides/testing-spring-boot-rest-api-using-testcontainers/"
+                    target="_blank"
+                    >📖 Testcontainers + Spring Guide</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://wiremock.org/docs/"
+                    target="_blank"
+                    >📖 WireMock Docs</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 7 — PRODUCTION -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 7 — Production</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 12–14 · ~50 hrs</div>
+        </div>
+
+        <div class="phase" id="p24">
+          <div class="phase-head">
+            <div class="phase-num">24</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">DevOps</div>
+              <div class="phase-title">
+                Docker — Containerize Your Application
+              </div>
+              <div class="phase-time">⏱ 4 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p24">
+            <div class="topic" id="t37">
+              <div class="topic-header" onclick="toggleTopic('t37')">
+                <div class="topic-check" onclick="markDone(event, 't37')"></div>
+                <div class="topic-name">
+                  Dockerfile, Multi-stage Builds, docker-compose, Networking
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Spring Boot Dockerfile:</strong>
+                    <code>FROM eclipse-temurin:21-jre-alpine</code> →
+                    <code>COPY target/*.jar app.jar</code> →
+                    <code>ENTRYPOINT ["java","-jar","app.jar"]</code>
+                  </li>
+                  <li>
+                    <strong>Multi-stage build</strong> — Stage 1: FROM
+                    maven:3.9-jdk-21 to build. Stage 2: FROM
+                    eclipse-temurin:21-jre-alpine to run. Final image has no
+                    build tools (smaller) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Layer caching:</strong> COPY pom.xml → RUN mvn
+                    dependency:go-offline → COPY src → RUN mvn package.
+                    Dependencies cached if pom.xml unchanged
+                  </li>
+                  <li>
+                    <strong>Key commands:</strong> docker build -t myapp:1.0 .,
+                    docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE=prod
+                    myapp, docker ps, docker logs -f, docker exec -it container
+                    bash, docker stop, docker rm
+                  </li>
+                  <li>
+                    <strong>docker-compose.yml</strong> — define app + postgres
+                    + redis together. Startup order with depends_on +
+                    healthcheck
+                  </li>
+                  <li>
+                    <strong>Environment variables:</strong> use env_file: .env
+                    in compose for secrets
+                  </li>
+                  <li>
+                    <strong>Volumes:</strong> persist PostgreSQL data:
+                    <code
+                      >volumes: - postgres_data:/var/lib/postgresql/data</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Docker networking:</strong> containers in same
+                    compose network communicate by service name:
+                    <code>jdbc:postgresql://postgres:5432/mydb</code>
+                  </li>
+                  <li>
+                    <strong>.dockerignore</strong> — exclude target/, .git, etc.
+                    from build context
+                  </li>
+                  <li>
+                    <strong>JVM in containers:</strong> always set -Xmx in
+                    JAVA_OPTS. Container memory limits != JVM heap
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.docker.com/get-started/"
+                    target="_blank"
+                    >📖 Docker Getting Started</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.docker.com/compose/"
+                    target="_blank"
+                    >📖 Docker Compose Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=3c-iBn73dDE"
+                    target="_blank"
+                    >▶ TechWorld Nana: Docker Full Course</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p25">
+          <div class="phase-head">
+            <div class="phase-num">25</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">DevOps</div>
+              <div class="phase-title">CI/CD — GitHub Actions Pipeline</div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p25">
+            <div class="topic" id="t38">
+              <div class="topic-header" onclick="toggleTopic('t38')">
+                <div class="topic-check" onclick="markDone(event, 't38')"></div>
+                <div class="topic-name">
+                  GitHub Actions — Build, Test, Docker, Deploy Pipeline
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Workflow file:</strong> .github/workflows/ci.yml.
+                    Triggers: push, pull_request, schedule, workflow_dispatch
+                  </li>
+                  <li>
+                    <strong>Jobs and steps:</strong> checkout → setup-java →
+                    cache maven deps → mvn test → docker build → push to
+                    registry → deploy
+                  </li>
+                  <li>
+                    <strong>Matrix strategy</strong> — run same job across
+                    multiple Java versions
+                  </li>
+                  <li>
+                    <strong>GitHub Secrets</strong> — store DB_PASSWORD,
+                    DOCKER_HUB_TOKEN, AWS credentials. Access as
+                    <code>${{ secrets.MY_SECRET }}</code>
+                  </li>
+                  <li>
+                    <strong>Service containers</strong> — run PostgreSQL in CI
+                    for integration tests
+                  </li>
+                  <li>
+                    <strong>Caching Maven dependencies:</strong> actions/cache
+                    for ~/.m2/repository → faster builds
+                  </li>
+                  <li>
+                    <strong>Branch protection rules</strong> — require CI pass
+                    before merge to main
+                  </li>
+                  <li>
+                    <strong>Environments:</strong> define staging and prod
+                    environments with required reviewers
+                  </li>
+                  <li>
+                    <strong>Reusable workflows</strong> — define once, call from
+                    multiple workflows
+                  </li>
+                  <li>
+                    <strong>Artifact upload/download</strong> — pass JAR between
+                    jobs
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.github.com/en/actions"
+                    target="_blank"
+                    >📖 GitHub Actions Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=R8_veQiYBjI"
+                    target="_blank"
+                    >▶ TechWorld Nana: CI/CD</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p26">
+          <div class="phase-head">
+            <div class="phase-num">26</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">DevOps</div>
+              <div class="phase-title">
+                Cloud — AWS Essentials for Java Developers
+              </div>
+              <div class="phase-time">⏱ 5 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p26">
+            <div class="topic" id="t39">
+              <div class="topic-header" onclick="toggleTopic('t39')">
+                <div class="topic-check" onclick="markDone(event, 't39')"></div>
+                <div class="topic-name">
+                  IAM, EC2, RDS, S3, ECR, ECS Fargate, VPC
+                </div>
+                <div class="topic-badge b1">Must Know</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>IAM</strong> — users, roles, policies. Least
+                    privilege principle. Never use root account. IAM roles for
+                    EC2/ECS <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>EC2</strong> — virtual machine. Security groups
+                    (firewall rules). SSH key pair. t2.micro is free tier
+                  </li>
+                  <li>
+                    <strong>RDS</strong> — managed PostgreSQL. Multi-AZ for HA.
+                    Read replicas for scale. Automated backups
+                  </li>
+                  <li>
+                    <strong>S3</strong> — object storage. Buckets, objects,
+                    keys. Use for file uploads, static assets, backups.
+                    Pre-signed URLs for secure upload from client
+                  </li>
+                  <li>
+                    <strong>ECR</strong> — Docker image registry. Push images
+                    from CI, pull in ECS
+                  </li>
+                  <li>
+                    <strong>ECS Fargate</strong> — serverless containers. Task
+                    definition, Service, Cluster. No EC2 management
+                  </li>
+                  <li>
+                    <strong>VPC</strong> — private network. Public subnets (load
+                    balancer), private subnets (app, DB). NAT Gateway for
+                    outbound from private
+                  </li>
+                  <li>
+                    <strong>Application Load Balancer</strong> — HTTPS
+                    termination, route traffic to ECS tasks, health checks
+                  </li>
+                  <li>
+                    <strong>AWS Secrets Manager</strong> — store DB credentials,
+                    API keys. Spring Boot can read from Secrets Manager
+                  </li>
+                  <li>
+                    <strong>AWS Free Tier:</strong> EC2 t2.micro 750hrs/month,
+                    RDS 750hrs. Set billing alarm at $10!
+                  </li>
+                  <li>
+                    <strong>SQS</strong> — managed message queue (alternative to
+                    Kafka for simple cases)
+                  </li>
+                  <li>
+                    <strong>Parameter Store</strong> — store config values
+                    (cheaper than Secrets Manager for non-secrets)
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/getting-started.html"
+                    target="_blank"
+                    >📖 AWS ECS Getting Started</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+                    target="_blank"
+                    >📖 AWS RDS Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=ulprqHHWlng"
+                    target="_blank"
+                    >▶ TechWorld Nana: AWS for DevOps</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p27">
+          <div class="phase-head">
+            <div class="phase-num">27</div>
+            <div class="phase-meta">
+              <div class="phase-tag c1">DevOps</div>
+              <div class="phase-title">Monitoring, Logging & Observability</div>
+              <div class="phase-time">⏱ 3 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p27">
+            <div class="topic" id="t40">
+              <div class="topic-header" onclick="toggleTopic('t40')">
+                <div class="topic-check" onclick="markDone(event, 't40')"></div>
+                <div class="topic-name">
+                  Structured Logging, Micrometer, Prometheus, Distributed
+                  Tracing
+                </div>
+                <div class="topic-badge b1">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Three pillars of observability:</strong> Logs (what
+                    happened), Metrics (how much/often), Traces (how long,
+                    where) <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Logback (Spring default):</strong>
+                    logback-spring.xml config. Log levels: TRACE &lt; DEBUG &lt;
+                    INFO &lt; WARN &lt; ERROR
+                  </li>
+                  <li>
+                    <strong>Structured JSON logging</strong> — use
+                    logstash-logback-encoder. Parse-able by
+                    Elasticsearch/CloudWatch
+                  </li>
+                  <li>
+                    <strong>MDC (Mapped Diagnostic Context)</strong> — add
+                    requestId, userId to all log lines in a request
+                    automatically
+                  </li>
+                  <li>
+                    <strong>Correlation ID</strong> — add X-Correlation-ID
+                    header, propagate through services for request tracing
+                  </li>
+                  <li>
+                    <strong>Micrometer</strong> — Spring's metrics facade.
+                    Exports to Prometheus, DataDog, etc. via Spring Actuator
+                  </li>
+                  <li>
+                    <strong>Prometheus + Grafana</strong> — scrape metrics from
+                    /actuator/prometheus, visualize dashboards
+                  </li>
+                  <li>
+                    <strong>Micrometer Tracing (Spring 3)</strong> — distributed
+                    tracing. Integrates with Zipkin or Jaeger
+                  </li>
+                  <li>
+                    <strong>@Timed</strong> — annotate methods to automatically
+                    collect timing metrics
+                  </li>
+                  <li>
+                    <strong>Custom metrics:</strong> Counter, Gauge, Timer,
+                    DistributionSummary via MeterRegistry
+                  </li>
+                  <li>
+                    <strong>AWS CloudWatch</strong> — logs and metrics in AWS.
+                    CloudWatch Alarms for alerts
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/actuator/metrics.html"
+                    target="_blank"
+                    >📖 Spring Boot: Metrics</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://micrometer.io/docs"
+                    target="_blank"
+                    >📖 Micrometer Docs</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════ -->
+        <!-- PHASE 8 — ADVANCED -->
+        <!-- ══════════════════════════════════════════════════ -->
+        <div class="sec-div">
+          <div class="sec-div-label">Phase 8 — Advanced Topics</div>
+          <div class="sec-div-line"></div>
+          <div class="sec-div-time">Week 14–16 · ~60 hrs</div>
+        </div>
+
+        <div class="phase" id="p28">
+          <div class="phase-head">
+            <div class="phase-num">28</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Advanced</div>
+              <div class="phase-title">
+                Redis — Caching, Sessions, Rate Limiting
+              </div>
+              <div class="phase-time">⏱ 4 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p28">
+            <div class="topic" id="t41">
+              <div class="topic-header" onclick="toggleTopic('t41')">
+                <div class="topic-check" onclick="markDone(event, 't41')"></div>
+                <div class="topic-name">
+                  Redis Data Structures, Spring Cache, Patterns
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Redis data structures:</strong> String (simple
+                    key-value), Hash (object fields), List (queue/stack), Set
+                    (unique members), Sorted Set (scored ranking), HyperLogLog
+                    (cardinality), Pub/Sub (messaging)
+                  </li>
+                  <li>
+                    <strong>TTL (Time To Live):</strong>
+                    <code>EXPIRE key 3600</code> — auto-expire keys
+                  </li>
+                  <li>
+                    <strong>Atomic operations:</strong> INCR, INCRBY, SETNX (set
+                    if not exists), GETSET
+                  </li>
+                  <li>
+                    <strong>Spring Cache abstraction:</strong> @EnableCaching →
+                    @Cacheable("users") on service method → @CacheEvict on
+                    update/delete → @CachePut to update cache
+                  </li>
+                  <li>
+                    <strong>RedisCacheManager</strong> — configure TTL per
+                    cache, serialization (use JSON not Java serialization)
+                  </li>
+                  <li>
+                    <strong>Cache-aside pattern:</strong> check cache → miss →
+                    query DB → populate cache → return
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Write-through:</strong> write to cache and DB
+                    simultaneously
+                  </li>
+                  <li>
+                    <strong>Cache stampede</strong> — many requests miss cache
+                    simultaneously → DB overload. Fix: locking or probabilistic
+                    early expiry
+                  </li>
+                  <li>
+                    <strong>Cache invalidation strategies:</strong> TTL expiry,
+                    event-driven eviction, cache aside
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Session storage:</strong> Spring Session + Redis —
+                    store HTTP sessions in Redis for horizontal scaling
+                  </li>
+                  <li>
+                    <strong>Rate limiting with Redis:</strong> sliding window
+                    using ZADD + ZRANGE, or token bucket with INCR
+                  </li>
+                  <li>
+                    <strong>Bucket4j</strong> — rate limiting library with Redis
+                    backend for distributed limiting
+                  </li>
+                  <li>
+                    <strong>Redis pub/sub</strong> — lightweight messaging:
+                    PUBLISH channel message, SUBSCRIBE channel
+                  </li>
+                  <li>
+                    <strong>RedisTemplate vs StringRedisTemplate</strong> —
+                    StringRedisTemplate for String keys/values (simpler)
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "How would you implement caching in Spring?" and "What's the
+                    cache-aside pattern?" and "What are the challenges of
+                    caching?" (invalidation, stampede, consistency with DB).
+                    Common system design questions too.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://redis.io/docs/latest/"
+                    target="_blank"
+                    >📖 Redis Official Docs</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-boot/reference/io/caching.html"
+                    target="_blank"
+                    >📖 Spring Boot: Caching</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-data/redis/reference/"
+                    target="_blank"
+                    >📖 Spring Data Redis Docs</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=jgpVdJB2sKQ"
+                    target="_blank"
+                    >▶ Redis Crash Course</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p29">
+          <div class="phase-head">
+            <div class="phase-num">29</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Advanced</div>
+              <div class="phase-title">
+                Apache Kafka — Async Messaging & Event Streaming
+              </div>
+              <div class="phase-time">⏱ 5 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p29">
+            <div class="topic" id="t42">
+              <div class="topic-header" onclick="toggleTopic('t42')">
+                <div class="topic-check" onclick="markDone(event, 't42')"></div>
+                <div class="topic-name">
+                  Kafka Architecture, Spring Kafka, Patterns
+                </div>
+                <div class="topic-badge b3">Important</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Why Kafka:</strong> decouple producers from
+                    consumers. Async processing. Replay events. Fan-out to
+                    multiple consumers
+                  </li>
+                  <li>
+                    <strong>Core concepts:</strong> Topic (category), Partition
+                    (parallelism unit), Offset (position in partition), Consumer
+                    Group (parallel consumers)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Producer</strong> — sends to topic. Key determines
+                    partition (same key → same partition → order guaranteed)
+                  </li>
+                  <li>
+                    <strong>Consumer Group</strong> — each partition consumed by
+                    one consumer in group. Scale consumers by adding to group
+                  </li>
+                  <li>
+                    <strong>Broker</strong> — Kafka server. Replication factor
+                    for fault tolerance
+                  </li>
+                  <li>
+                    <strong>Retention</strong> — messages kept for configurable
+                    period (7 days default). Can replay
+                  </li>
+                  <li>
+                    <strong>KafkaTemplate</strong> — send messages:
+                    <code>kafkaTemplate.send("orders", key, orderEvent)</code>
+                  </li>
+                  <li>
+                    <strong>@KafkaListener</strong> — consume:
+                    <code
+                      >@KafkaListener(topics="orders",
+                      groupId="order-service")</code
+                    >
+                  </li>
+                  <li>
+                    <strong>Serialization:</strong> use JSON serializer
+                    (JsonSerializer/JsonDeserializer). Configure via
+                    @KafkaListener or properties
+                  </li>
+                  <li>
+                    <strong>At-least-once delivery</strong> — default. Consumer
+                    may reprocess. Make consumers idempotent
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Exactly-once (transactions)</strong> — Kafka
+                    transactions + idempotent producer. Complex
+                  </li>
+                  <li>
+                    <strong>Dead Letter Topic (DLT)</strong> — failed messages
+                    go to orders-dlt after retry exhausted
+                  </li>
+                  <li>
+                    <strong>Retry + backoff:</strong> @RetryableTopic for
+                    automatic retry with exponential backoff
+                  </li>
+                  <li>
+                    <strong>Outbox Pattern</strong> — write event to outbox
+                    table in same transaction as business data. Separate process
+                    publishes to Kafka. Guarantees consistency
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Consumer lag</strong> — how far behind consumers are
+                    from latest offset. Monitor this in production
+                  </li>
+                </ul>
+                <div class="int-box">
+                  <div class="int-box-lbl">🎯 Interview</div>
+                  <p>
+                    "How does Kafka differ from RabbitMQ?" — Kafka = log-based,
+                    durable, replayable, high throughput. RabbitMQ =
+                    message-broker, routed, messages deleted on consume, complex
+                    routing rules. Also: "Explain the outbox pattern."
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://kafka.apache.org/documentation/"
+                    target="_blank"
+                    >📖 Apache Kafka Docs</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-kafka/reference/"
+                    target="_blank"
+                    >📖 Spring Kafka Reference</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=ZJJHm_bd9Zo"
+                    target="_blank"
+                    >▶ Amigoscode: Kafka + Spring Boot</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=uvb00oaa3k8"
+                    target="_blank"
+                    >▶ TechWorld Nana: Kafka Deep Dive</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p30">
+          <div class="phase-head">
+            <div class="phase-num">30</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Advanced</div>
+              <div class="phase-title">
+                Microservices — Architecture & Patterns
+              </div>
+              <div class="phase-time">⏱ 5 days</div>
+            </div>
+          </div>
+          <div class="topics" id="p30">
+            <div class="topic" id="t43">
+              <div class="topic-header" onclick="toggleTopic('t43')">
+                <div class="topic-check" onclick="markDone(event, 't43')"></div>
+                <div class="topic-name">
+                  Microservices Patterns — Gateway, Circuit Breaker, Service
+                  Discovery, Saga
+                </div>
+                <div class="topic-badge b3">Senior Level</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>Monolith vs microservices:</strong> start monolith,
+                    extract services when you hit clear boundaries. Don't
+                    over-engineer from day one
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>API Gateway</strong> — single entry point. Handles:
+                    routing, auth, rate limiting, SSL termination. Spring Cloud
+                    Gateway
+                  </li>
+                  <li>
+                    <strong>Service Discovery</strong> — services register
+                    themselves, others find them by name. Eureka (Spring Cloud),
+                    Consul, Kubernetes DNS
+                  </li>
+                  <li>
+                    <strong>Load balancing</strong> — Spring Cloud LoadBalancer
+                    (replaces Ribbon). Client-side load balancing
+                  </li>
+                  <li>
+                    <strong>Circuit Breaker (Resilience4j)</strong> — prevent
+                    cascade failures. States: CLOSED (normal) → OPEN (failing,
+                    reject requests) → HALF_OPEN (test one request).
+                    @CircuitBreaker annotation
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Fallback</strong> — return cached data or default
+                    response when circuit is open
+                  </li>
+                  <li>
+                    <strong>Retry with @Retry</strong> — retry failed calls with
+                    exponential backoff
+                  </li>
+                  <li>
+                    <strong>Rate Limiter with @RateLimiter</strong> — protect
+                    downstream services
+                  </li>
+                  <li>
+                    <strong>RestTemplate vs WebClient vs OpenFeign</strong> —
+                    Feign is declarative HTTP client:
+                    <code>@FeignClient("user-service")</code>
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Distributed tracing</strong> — trace ID propagated
+                    through services. Micrometer Tracing + Zipkin/Jaeger
+                  </li>
+                  <li>
+                    <strong>Saga pattern</strong> — manage distributed
+                    transactions across services. Choreography (events) vs
+                    Orchestration (coordinator)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>CQRS</strong> — Command Query Responsibility
+                    Segregation: separate read/write models. Read from replica,
+                    write to primary
+                  </li>
+                  <li>
+                    <strong>Event Sourcing</strong> — store events not state.
+                    Rebuild state by replaying events
+                  </li>
+                  <li>
+                    <strong>gRPC</strong> — binary protocol, faster than REST
+                    for inter-service. Protocol Buffers for schema
+                  </li>
+                </ul>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://resilience4j.readme.io/docs"
+                    target="_blank"
+                    >📖 Resilience4j Docs</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://docs.spring.io/spring-cloud-gateway/reference/"
+                    target="_blank"
+                    >📖 Spring Cloud Gateway</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://microservices.io/patterns/"
+                    target="_blank"
+                    >📖 Microservices Patterns (microservices.io)</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=s4ShbtOHMCA"
+                    target="_blank"
+                    >▶ TechWorld Nana: Microservices</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phase" id="p31">
+          <div class="phase-head">
+            <div class="phase-num">31</div>
+            <div class="phase-meta">
+              <div class="phase-tag c3">Advanced</div>
+              <div class="phase-title">
+                System Design — Interview Preparation
+              </div>
+              <div class="phase-time">⏱ 5+ days · Ongoing practice</div>
+            </div>
+          </div>
+          <div class="topics" id="p31">
+            <div class="topic" id="t44">
+              <div class="topic-header" onclick="toggleTopic('t44')">
+                <div class="topic-check" onclick="markDone(event, 't44')"></div>
+                <div class="topic-name">
+                  System Design Concepts — CAP, Scaling, Patterns
+                </div>
+                <div class="topic-badge b3">Interview Critical</div>
+                <div class="topic-arrow">▸</div>
+              </div>
+              <div class="topic-body">
+                <ul class="sub-list">
+                  <li>
+                    <strong>CAP Theorem:</strong> Consistency, Availability,
+                    Partition Tolerance — can only guarantee 2 of 3 in
+                    distributed system <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Horizontal scaling (scale out)</strong> — add more
+                    servers. vs Vertical scaling (scale up) — bigger server
+                  </li>
+                  <li>
+                    <strong>Stateless services</strong> — any instance can
+                    handle any request. Required for horizontal scaling. Store
+                    state in Redis/DB not in-memory
+                  </li>
+                  <li>
+                    <strong>Load balancing algorithms:</strong> Round Robin,
+                    Least Connections, IP Hash (sticky sessions), Weighted
+                  </li>
+                  <li>
+                    <strong>CDN</strong> — cache static assets at edge. Reduce
+                    latency globally
+                  </li>
+                  <li>
+                    <strong>Rate limiting:</strong> Token Bucket (burst
+                    allowed), Fixed Window, Sliding Window, Leaky Bucket
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Database scaling:</strong> Read replicas (read from
+                    replica, write to primary), Sharding (partition data by
+                    key), Connection pooling
+                  </li>
+                  <li>
+                    <strong>Consistent hashing</strong> — distribute keys across
+                    nodes with minimal redistribution when nodes added/removed
+                  </li>
+                  <li>
+                    <strong>Message queues</strong> — decouple components,
+                    handle traffic spikes, async processing
+                  </li>
+                  <li>
+                    <strong>Design URL shortener:</strong> Base62 encoding,
+                    Redis cache for popular URLs, consistent hashing for
+                    distribution <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Design Twitter feed:</strong> Fan-out on write vs
+                    fan-out on read. Celebrity problem. Hybrid approach
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                  <li>
+                    <strong>Design notification service:</strong> Kafka for
+                    async, multiple consumers per channel (email, SMS, push)
+                    <span class="int-tag">INTERVIEW</span>
+                  </li>
+                </ul>
+                <div class="build-box">
+                  <div class="build-box-lbl">🏗 Final Capstone Project</div>
+                  <p>
+                    Build an e-commerce backend: Products, Orders, Users,
+                    Payments. Use: Spring Boot + PostgreSQL + Redis
+                    (cart/sessions) + Kafka (order events) + Docker + GitHub
+                    Actions CI/CD + JWT auth + Testcontainers. This project is
+                    your portfolio anchor.
+                  </p>
+                </div>
+                <div class="res-row">
+                  <a
+                    class="res-link doc"
+                    href="https://bytebytego.com/"
+                    target="_blank"
+                    >📖 ByteByteGo System Design</a
+                  >
+                  <a
+                    class="res-link doc"
+                    href="https://github.com/donnemartin/system-design-primer"
+                    target="_blank"
+                    >📖 System Design Primer (GitHub)</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/c/SystemDesignInterview"
+                    target="_blank"
+                    >▶ Gaurav Sen: System Design</a
+                  >
+                  <a
+                    class="res-link vid"
+                    href="https://www.youtube.com/watch?v=bUHFg8CZFws"
+                    target="_blank"
+                    >▶ Design URL Shortener</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer">
+          Java Backend Complete Roadmap · 31 Topics · 4–5 hrs/day · 3–4
+          months<br />
+          Click topics to expand · Check boxes to track progress · Progress
+          saved in browser<br />
+          <span style="color: var(--dim)"
+            >Build one real project after each phase. Your GitHub is your
+            resume.</span
+          >
+        </div>
+      </main>
+    </div>
+
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+    <script src="../shared/roadmap.js"></script>
+    <script>
+      initRoadmap({
+        storageKey: "jbr-state",
+        themeKey: "jbr-theme",
+        phaseIds: [
+          "p1",
+          "p2",
+          "p3",
+          "p4",
+          "p5",
+          "p6",
+          "p7",
+          "p8",
+          "p9",
+          "p10",
+          "p11",
+          "p12",
+          "p13",
+          "p14",
+          "p15",
+          "p16",
+          "p17",
+          "p18",
+          "p19",
+          "p20",
+          "p21",
+          "p22",
+          "p23",
+          "p24",
+          "p25",
+          "p26",
+          "p27",
+          "p28",
+          "p29",
+          "p30",
+          "p31",
+        ],
+      });
+
+      // Wire theme buttons
+      document
+        .getElementById("btn-dark")
+        .addEventListener("click", () => setTheme("dark", "jbr-theme"));
+      document
+        .getElementById("btn-light")
+        .addEventListener("click", () => setTheme("light", "jbr-theme"));
+    </script>
+  </body>
+</html>
