@@ -14,6 +14,9 @@
     if (btnLight) btnLight.classList.toggle("active", t === "light");
     try {
       localStorage.setItem(themeKey, t);
+      if (window.onRoadmapStateChange) {
+        window.onRoadmapStateChange(themeKey, t);
+      }
     } catch (e) {}
   };
 
@@ -86,6 +89,9 @@
       });
       try {
         localStorage.setItem(storageKey, JSON.stringify(state));
+        if (window.onRoadmapStateChange) {
+          window.onRoadmapStateChange(storageKey, state);
+        }
       } catch (e) {}
     };
 
